@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "main.h": "c",
-        "gtk.h": "c",
-        "stdio.h": "c"
-    }
-}
