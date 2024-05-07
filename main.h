@@ -1,5 +1,6 @@
 // main.h
 #include <gtk/gtk.h>
+#include <cairo.h>
 #ifndef MAIN_H
 #define MAIN_H
 

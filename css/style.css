@@ -1,16 +1,20 @@
+#window {
+    background-color: #142d62;
+}
+
+/*
+LOGIN PAGE
+//
+//
+//
+//
+*/
 #jocaTITLE {
     font-size: 100px;
     margin-left: 265px;
     margin-top: 30px;
     color: #ffffff;
 }
-
-#adminTITLE {
-    font-size: 100px;
-    margin-left: 250px;
-    margin-top: 30px;
-}
-
 
 #login_button {
     margin-left: 350px;
@@ -50,6 +54,51 @@
     font-size: 20px;
     color: #ffffff;
 }
+
+
+
+
+/*
+ADMIN PAGE
+//
+//
+//
+//
+*/
+#adminTITLE {
+    font-size: 80px;
+    margin-left: 370px;
+    margin-top: 30px;
+}
+
+#say_JOKER_admin {
+    margin-left: 35px;
+    margin-top: 50px;
+    font-size: 50px;
+    color: #ffffff;
+}
+
+#users_see_admin {
+    margin-left: 40px;
+    margin-top: 150px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#perguntas_admin {
+    margin-left: 40px;
+    margin-top: 200px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#say_JOKER {
+    margin-left: 35px;
+    margin-top: 50px;
+    font-size: 50px;
+    color: #ffffff;
+}
+
 
 #window {
     background-color: #142d62;
