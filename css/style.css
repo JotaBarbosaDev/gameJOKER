@@ -1,20 +1,57 @@
-#button1 {
-    color: rgb(0, 255, 68);
-    border: 2px solid #4CAF50;
-    padding-left: 100px;
-    margin-left: 100px;
-    background-color: blue;
+#jocaTITLE {
+    font-size: 100px;
+    margin-left: 265px;
+    margin-top: 30px;
 }
 
-#button2 {
-    color: rgba(255, 0, 68, 1);
-    border: 2px solid rgba(255, 0, 0, 1);
-    padding-left: 100px;
-    margin-left: 100px;
-    background-color: rgba(255, 0, 0, 1);
-    opacity: 0.5;
+#adminTITLE {
+    font-size: 100px;
+    margin-left: 250px;
+    margin-top: 30px;
+}
+
+
+#login_button {
+    margin-left: 350px;
+    margin-top: 400px;
+    background-color: #142d62;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    font-size: 16px;
+}
+
+#login_input {
+    margin-left: 320px;
+    margin-top: 220px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#password_input {
+    margin-left: 320px;
+    margin-top: 310px;
+    font-size: 20px;
+    color: #ffffff;
+
+
+}
+
+
+#login_label {
+    margin-left: 320px;
+    margin-top: 180px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#password_label {
+    margin-left: 320px;
+    margin-top: 270px;
+    font-size: 20px;
+    color: #ffffff;
 }
 
 #window {
-    background-color: #4CAF50;
+    background-color: #142d62;
 }
