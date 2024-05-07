@@ -13,8 +13,8 @@ void menu_admin();
 
 void login_func()
 {
-    const u_char *login_text = gtk_entry_get_text(GTK_ENTRY(login));
-    const u_char *password_text = gtk_entry_get_text(GTK_ENTRY(password));
+    const gchar *login_text = gtk_entry_get_text(GTK_ENTRY(login));
+    const gchar *password_text = gtk_entry_get_text(GTK_ENTRY(password));
 
     if (strcmp(login_text, "admin") == 0 && strcmp(password_text, "admin") == 0)
     {
