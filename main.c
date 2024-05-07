@@ -20,7 +20,7 @@ void import_css()
 
     gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-    const gchar *css_style_file = "gtk.css";
+    const gchar *css_style_file = "css/style.css";
     GError *error = 0;
 
     gtk_css_provider_load_from_file(provider, g_file_new_for_path(css_style_file), &error);
