@@ -70,6 +70,7 @@ void menu_admin()
     create_button("perguntas_admin", "Questões", NULL);
 
     gtk_widget_show_all(window);
+    okay("UI admin loaded successfully");
     gtk_main();
 }
 
@@ -89,6 +90,7 @@ void menu_principal()
     create_button("login_button", "Entrar", login_func);
 
     gtk_widget_show_all(window);
+    okay("UI menu loaded successfully");
     gtk_main();
 }
 

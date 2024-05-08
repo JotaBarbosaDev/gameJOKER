@@ -15,10 +15,16 @@ void import_css()
 
     const gchar *css_style_file = "css/style.css";
     GError *error = 0;
-
     gtk_css_provider_load_from_file(provider, g_file_new_for_path(css_style_file), &error);
 
     g_object_unref(provider);
+    if (error)
+    {
+        error("Error: %s\n", error->message);
+        g_printerr("Error: %s\n", error->message);
+        g_error_free(error);
+    }
+    okay("CSS loaded successfully");
 }
 
 void clear_all()
@@ -30,6 +36,7 @@ void clear_all()
         gtk_widget_destroy(GTK_WIDGET(iter->data));
     }
     g_list_free(children);
+    okay("All widgets cleared successfully");
 }
 
 GtkWidget *create_button(const gchar *css_ID, const gchar *label, void *func)
@@ -38,8 +45,11 @@ GtkWidget *create_button(const gchar *css_ID, const gchar *label, void *func)
     button = gtk_button_new_with_label(label);
     gtk_fixed_put(GTK_FIXED(fixed), button, 0, 0);
     gtk_widget_set_name(button, "button");
-    g_signal_connect(button, "clicked", G_CALLBACK(func), NULL);
+    if (func != NULL)
+        g_signal_connect(button, "clicked", G_CALLBACK(func), NULL);
     gtk_widget_set_name(button, css_ID);
+
+    okay("Button '%s' created successfully", label);
     return button;
 }
 
@@ -49,6 +59,7 @@ GtkWidget *create_label(const gchar *css_ID, const gchar *label)
     text = gtk_label_new(label);
     gtk_fixed_put(GTK_FIXED(fixed), text, 0, 0);
     gtk_widget_set_name(text, css_ID);
+    okay("Label '%s' created successfully", label);
     return text;
 }
 
@@ -59,6 +70,7 @@ GtkWidget *create_password_entry(const gchar *css_ID)
     gtk_entry_set_visibility(GTK_ENTRY(entry), FALSE);
     gtk_fixed_put(GTK_FIXED(fixed), entry, 0, 0);
     gtk_widget_set_name(entry, css_ID);
+    okay("Password entry created successfully");
     return entry;
 }
 
@@ -68,5 +80,6 @@ GtkWidget *create_entry(const gchar *css_ID)
     entry = gtk_entry_new();
     gtk_fixed_put(GTK_FIXED(fixed), entry, 0, 0);
     gtk_widget_set_name(entry, css_ID);
+    okay("Entry created successfully");
     return entry;
 }
