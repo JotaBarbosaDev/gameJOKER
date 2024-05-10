@@ -80,12 +80,9 @@ void menu_principal()
 
     create_label("jocaTITLE", "JOCA");
 
-    login = create_entry("login_input");
+    login = create_placeholder_entry("login_input", "Login");
 
-    password = create_password_entry("password_input");
-
-    create_label("login_label", "Login:");
-    create_label("password_label", "Senha:");
+    password = create_password_entry_placeholder("password_input");
 
     create_button("login_button", "Entrar", login_func);
 

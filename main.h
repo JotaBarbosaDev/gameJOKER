@@ -13,6 +13,8 @@ GtkWidget *create_button(const gchar *css_ID, const gchar *label, void *func);
 GtkWidget *create_label(const gchar *css_ID, const gchar *label);
 GtkWidget *create_password_entry(const gchar *css_ID);
 GtkWidget *create_entry(const gchar *css_ID);
+GtkWidget *create_placeholder_entry(const gchar *css_ID, const gchar *placeholder);
+GtkWidget *create_password_entry_placeholder(const gchar *css_ID);
 
 int main_UI(int argc, char *argv[]);
 

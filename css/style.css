@@ -12,7 +12,7 @@ LOGIN PAGE
 #jocaTITLE {
     font-size: 100px;
     margin-left: 265px;
-    margin-top: 30px;
+    margin-top: 90px;
     color: #ffffff;
 }
 
@@ -28,35 +28,17 @@ LOGIN PAGE
 
 #login_input {
     margin-left: 320px;
-    margin-top: 220px;
+    margin-top: 290px;
     font-size: 20px;
     color: #ffffff;
 }
 
 #password_input {
     margin-left: 320px;
-    margin-top: 310px;
+    margin-top: 350px;
     font-size: 20px;
     color: #ffffff;
 }
-
-
-#login_label {
-    margin-left: 320px;
-    margin-top: 180px;
-    font-size: 20px;
-    color: #ffffff;
-}
-
-#password_label {
-    margin-left: 320px;
-    margin-top: 270px;
-    font-size: 20px;
-    color: #ffffff;
-}
-
-
-
 
 /*
 ADMIN PAGE

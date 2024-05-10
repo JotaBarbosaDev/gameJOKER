@@ -70,6 +70,19 @@ GtkWidget *create_password_entry(const gchar *css_ID)
     gtk_entry_set_visibility(GTK_ENTRY(entry), FALSE);
     gtk_fixed_put(GTK_FIXED(fixed), entry, 0, 0);
     gtk_widget_set_name(entry, css_ID);
+    gtk_widget_set_can_focus(entry, FALSE); // Disable autofocus
+    okay("Password entry created successfully");
+    return entry;
+}
+
+GtkWidget *create_password_entry_placeholder(const gchar *css_ID)
+{
+    GtkWidget *entry;
+    entry = gtk_entry_new();
+    gtk_entry_set_visibility(GTK_ENTRY(entry), FALSE);
+    gtk_entry_set_placeholder_text(GTK_ENTRY(entry), "Password");
+    gtk_fixed_put(GTK_FIXED(fixed), entry, 0, 0);
+    gtk_widget_set_name(entry, css_ID);
     okay("Password entry created successfully");
     return entry;
 }
@@ -81,5 +94,16 @@ GtkWidget *create_entry(const gchar *css_ID)
     gtk_fixed_put(GTK_FIXED(fixed), entry, 0, 0);
     gtk_widget_set_name(entry, css_ID);
     okay("Entry created successfully");
+    return entry;
+}
+
+GtkWidget *create_placeholder_entry(const gchar *css_ID, const gchar *placeholder)
+{
+    GtkWidget *entry;
+    entry = gtk_entry_new();
+    gtk_entry_set_placeholder_text(GTK_ENTRY(entry), placeholder);
+    gtk_fixed_put(GTK_FIXED(fixed), entry, 0, 0);
+    gtk_widget_set_name(entry, css_ID);
+    okay("Placeholder entry created successfully");
     return entry;
 }
