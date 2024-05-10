@@ -23,6 +23,7 @@ LOGIN PAGE
     padding: 0px;
     text-decoration: none;
     font-size: 16px;
+    background-color: rgba(39, 39, 39, 0);
 }
 
 #login_button>label {
