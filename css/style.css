@@ -17,13 +17,19 @@ LOGIN PAGE
 }
 
 #login_button {
-    margin-left: 350px;
+    margin-left: 355px;
     margin-top: 400px;
-    background-color: #142d62;
-    color: white;
     border: none;
-    padding: 15px 32px;
+    padding: 0px;
+    text-decoration: none;
     font-size: 16px;
+}
+
+#login_button>label {
+    color: white;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 15px 30px;
+    border-radius: 5px;
 }
 
 #login_input {
