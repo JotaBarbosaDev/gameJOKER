@@ -23,4 +23,31 @@ int main_UI(int argc, char *argv[]);
 #define error(msg, ...) printf("\033[1;31m[ - ]\033[0m " msg "\n", ##__VA_ARGS__)
 #define info(msg, ...) printf("\033[1;34m[ i ]\033[0m " msg "\n", ##__VA_ARGS__)
 
+// Perguntas
+typedef struct
+{
+    char *pergunta;
+    char **respostas;
+    int resposta_certa;
+    int dificuldade; // 0-facil 1-medio 2-dificil
+    int id;
+    int tema;
+    float tempo;
+    int tipo; // 0-normal 1-imagens 2-50/50
+} Pergunta;
+
+typedef struct Perguntas
+{
+    Pergunta *perguntas;
+    int size;
+} Perguntas;
+
+/// @brief Struct perguntas_struct
+extern Perguntas perguntas_struct;
+
+extern char temas[5][20];
+
+void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
+void print_pergunta();
+
 #endif
