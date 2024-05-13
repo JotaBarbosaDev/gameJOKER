@@ -10,6 +10,7 @@ GtkWidget *fixed;
 #define HEIGHT 600
 
 void menu_admin();
+void menu_left_admin();
 
 void login_func()
 {
@@ -50,11 +51,32 @@ gboolean barra_left(GtkWidget *widget, cairo_t *cr, gpointer user_data)
     return FALSE;
 }
 
+//Criar tela
+void menu_admin_users()
+{
+    clear_all();
+    menu_left_admin();
+
+    create_button("users_create_users", "Criar Usuario", NULL);
+    create_button("users_edit_users", "Editar Usuario", NULL);
+    create_button("users_delete_users", "Apagar Usuario", NULL);
+
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
+    gtk_main();
+}
+
 void menu_left_admin()
 {
     GtkWidget *drawing_area = gtk_drawing_area_new();
     gtk_widget_set_size_request(drawing_area, 200, HEIGHT);
     gtk_fixed_put(GTK_FIXED(fixed), drawing_area, 0, 0);
+
+    create_label("say_JOKER_admin", "Admin");
+    create_button("users_see_admin", "Usuários", menu_admin_users);
+    create_button("perguntas_admin", "Questões", NULL);
+    create_button("estatisticas_admin", "Estatisticas", NULL);
 
     g_signal_connect(G_OBJECT(drawing_area), "draw", G_CALLBACK(barra_left), NULL);
 }
@@ -63,11 +85,8 @@ void menu_admin()
 {
     clear_all();
 
-    create_label("adminTITLE", "ADMIN");
     menu_left_admin();
-    create_label("say_JOKER_admin", "JOCA");
-    create_button("users_see_admin", "Usuários", NULL);
-    create_button("perguntas_admin", "Questões", NULL);
+    
 
     gtk_widget_show_all(window);
     okay("UI admin loaded successfully");

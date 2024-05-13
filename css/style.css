@@ -38,6 +38,8 @@ LOGIN PAGE
     margin-top: 290px;
     font-size: 20px;
     color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
 }
 
 #password_input {
@@ -45,6 +47,8 @@ LOGIN PAGE
     margin-top: 350px;
     font-size: 20px;
     color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
 }
 
 /*
@@ -68,17 +72,60 @@ ADMIN PAGE
 }
 
 #users_see_admin {
-    margin-left: 40px;
+    margin-left: 10px;
     margin-top: 150px;
     font-size: 20px;
     color: #ffffff;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    background-color: rgba(39, 39, 39, 255);
+}
+
+#users_see_admin > label {
+    color: #fff;
+    border: 1px solid #9e9e9e;
+    padding: 15px 40px;
+    background-color: rgba(39, 39, 39, 255);
+    border-radius: 5px;
 }
 
 #perguntas_admin {
-    margin-left: 40px;
-    margin-top: 200px;
+    margin-left: 10px;
+    margin-top: 220px;
     font-size: 20px;
-    color: #ffffff;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(39, 39, 39, 255);
+}
+
+#perguntas_admin > label {
+    color: #fff;
+    border: 1px solid #9e9e9e;
+    padding: 15px 37px;
+    background-color: rgba(39, 39, 39, 255);
+    border-radius: 5px;
+}
+
+#estatisticas_admin {
+    margin-left: 10px;
+    margin-top: 290px;
+    font-size: 20px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(39, 39, 39, 255);
+}
+
+#estatisticas_admin > label {
+    color: #fff;
+    border: 1px solid #9e9e9e;
+    padding: 15px 30px;
+    background-color: rgba(39, 39, 39, 255);
+    border-radius: 5px;
 }
 
 #say_JOKER {
@@ -91,4 +138,70 @@ ADMIN PAGE
 
 #window {
     background-color: #142d62;
+}
+
+
+/*
+ADMIN USERS PAGE
+//
+//
+//
+//
+*/
+
+#users_create_users{
+    margin-left: 250px;
+    margin-top: 290px;
+    font-size: 20px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(39, 39, 39, 255);
+}
+
+#users_create_users > label{
+    color: #fff;
+    border: 1px solid #9e9e9e;
+    padding: 15px 30px;
+    background-color: rgba(39, 39, 39, 255);
+    border-radius: 5px;
+}
+
+#users_edit_users{
+    margin-left: 350px;
+    margin-top: 290px;
+    font-size: 20px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(39, 39, 39, 255);
+}
+
+#users_edit_users > label{
+    color: #fff;
+    border: 1px solid #9e9e9e;
+    padding: 15px 30px;
+    background-color: rgba(39, 39, 39, 255);
+    border-radius: 5px;
+}
+
+#users_delete_users{
+    margin-left: 450px;
+    margin-top: 290px;
+    font-size: 20px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(39, 39, 39, 255);
+}
+
+#users_delete_users > label{
+    color: #fff;
+    border: 1px solid #9e9e9e;
+    padding: 15px 30px;
+    background-color: rgba(39, 39, 39, 255);
+    border-radius: 5px;
 }
