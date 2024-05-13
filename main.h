@@ -36,18 +36,22 @@ typedef struct
     int tipo; // 0-normal 1-imagens 2-50/50
 } Pergunta;
 
-typedef struct Perguntas
+typedef struct Pergunta_node
 {
-    Pergunta *perguntas;
-    int size;
-} Perguntas;
-
-/// @brief Struct perguntas_struct
-extern Perguntas perguntas_struct;
+    Pergunta *pergunta;
+    struct Pergunta_node *next;
+} Pergunta_node;
 
 extern char temas[5][20];
 
+void init_perguntas(Pergunta *p);
+void free_pergunta(Pergunta *pergunta);
+Pergunta *create_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
 void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
 void print_pergunta();
+void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
+void delete_pergunta(int id);
+Pergunta **get_all_perguntas();
+int get_number_of_perguntas();
 
 #endif
