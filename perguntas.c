@@ -136,7 +136,7 @@ void delete_pergunta(int id) // FALTA DAR FREE
 
     if (temp_node == pergunta_head && temp_node->next == NULL)
     {
-        error("O programa deve ter pelo menos 1 pergunta (LL delete_pergunta)");
+        error("O programa deve ter pelo menos 1 pergunta (LL delete_pergunta)"); // da para fzr de outra maneira :D
         return;
     }
 
@@ -152,6 +152,8 @@ void delete_pergunta(int id) // FALTA DAR FREE
     {
         antes->next = depois;
     }
+    free_pergunta(temp_node->pergunta); // free a pergunta
+    free(temp_node);                    // free ao nodo da pergunta
 }
 
 Pergunta **get_all_perguntas()

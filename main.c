@@ -8,7 +8,7 @@
 
 
 materias para usar
-linked list
+linked list     :D
 stacks
 filas
 binary search
