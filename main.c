@@ -9,11 +9,25 @@
 
 materias para usar
 linked list     :D
-stacks
-filas
+stacks          ->ultimos jogos jogados
+
 binary search
-insertion sort
-trees
+insertion sort    //usar os 2 para ordenar as jogos por jogadores e encontrar jogadores com binary search
+
+trees             //usar para ordernar jogos por pontuacao e encontrar jogos com mais ou menos q x pontos
+binary tree search
+
+hash tables      //encontrar / salvar jogadores
+*/
+
+/*
+todo:
+    perguntas.c
+        get_question
+        save_perguntas
+        load_perguntas
+
+
 */
 
 int main(int argc, char *argv[])
@@ -39,6 +53,17 @@ int main(int argc, char *argv[])
     for (int i = 0; i < number_perguntas; i++)
     {
         printf("Pergunta -> %s\n\n", perguntas_get[i]->pergunta);
+        printf("Resposta 1 -> %s\n", perguntas_get[i]->respostas[0]);
+        printf("Resposta 2 -> %s\n", perguntas_get[i]->respostas[1]);
+        printf("Resposta 3 -> %s\n", perguntas_get[i]->respostas[2]);
+        printf("Resposta 4 -> %s\n", perguntas_get[i]->respostas[3]);
+        printf("Resposta certa -> %d\n", perguntas_get[i]->resposta_certa);
+        printf("Dificuldade -> %d\n", perguntas_get[i]->dificuldade);
+        printf("ID -> %d\n", perguntas_get[i]->id);
+        printf("Tema -> %d\n", perguntas_get[i]->tema);
+        printf("Tempo -> %f\n", perguntas_get[i]->tempo);
+        printf("Tipo -> %d\n", perguntas_get[i]->tipo);
+        printf("\n\n");
     }
 
     printf("START\n");
