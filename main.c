@@ -32,6 +32,15 @@ todo:
 
 int main(int argc, char *argv[])
 {
+    unsigned long simple_ash = djb2("ola");
+    printf("HASH -> %lu\n", simple_ash);
+
+    unsigned long simple_ash2 = djb2("ola2defr");
+    printf("HASH -> %lu\n", simple_ash2);
+
+    unsigned long simple_ash3 = djb2("wfehiuwrhfiuerhf");
+    printf("HASH -> %lu\n", simple_ash3);
+
     Pergunta *per = create_pergunta("1", "Lisboa", "Porto", "Coimbra", "Faro", 0, 1, 1, 3, 10.0, 0);
     init_perguntas(per);
 

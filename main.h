@@ -54,4 +54,7 @@ void delete_pergunta(int id);
 Pergunta **get_all_perguntas();
 int get_number_of_perguntas();
 
+// Users
+unsigned long djb2(const char *str);
+
 #endif
