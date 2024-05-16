@@ -15,6 +15,7 @@ void init_perguntas(Pergunta *p)
     pergunta_head = malloc(sizeof(Pergunta_node));
     pergunta_head->next = NULL;
     pergunta_head->pergunta = p;
+    okay("Perguntas initialized");
     return;
 }
 
@@ -84,6 +85,11 @@ void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *res
     new->pergunta = p;
     new->next = NULL;
     temp_node->next = new;
+}
+
+void add_pergunta_with_struct(Pergunta *p)
+{
+    add_pergunta(p->pergunta, p->respostas[0], p->respostas[1], p->respostas[2], p->respostas[3], p->resposta_certa, p->dificuldade, p->id, p->tema, p->tempo, p->tipo);
 }
 
 void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo)
@@ -198,4 +204,106 @@ void print_pergunta()
     printf("Tempo: %f\n", temp_node->pergunta->tempo);
     printf("Tipo: %d\n", temp_node->pergunta->tipo);
     printf("\n\n");
+}
+
+void load_perguntas()
+{
+    okay("Loading perguntas\n");
+    // abrir,verificar se existe,ler,guardar na lista
+    FILE *f = fopen("perguntas.bin", "rb");
+
+    if (f == NULL)
+    {
+        error("Error opening file");
+        return;
+    }
+
+    okay("File opened\n");
+    Pergunta *p = malloc(sizeof(Pergunta));
+
+    if (p == NULL)
+    {
+        error("Error allocating memory");
+        return;
+    }
+
+    int is_first_time = 0;
+    while (fread(p, sizeof(Pergunta), 1, f))
+    {
+        RW_Pergunta rw_pergunta;
+        fread(&rw_pergunta, sizeof(RW_Pergunta), 1, f);
+
+        p->pergunta = malloc(rw_pergunta.pergunta_len);
+
+        fread(p->pergunta, sizeof(char), rw_pergunta.pergunta_len, f);
+
+        p->respostas = (char **)malloc(4 * sizeof(char *));
+
+        p->respostas[0] = malloc(rw_pergunta.resposta0_len);
+        fread(p->respostas[0], sizeof(char), rw_pergunta.resposta0_len, f);
+
+        p->respostas[1] = malloc(rw_pergunta.resposta1_len);
+        fread(p->respostas[1], sizeof(char), rw_pergunta.resposta1_len, f);
+
+        p->respostas[2] = malloc(rw_pergunta.resposta2_len);
+        fread(p->respostas[2], sizeof(char), rw_pergunta.resposta2_len, f);
+
+        p->respostas[3] = malloc(rw_pergunta.resposta3_len);
+        fread(p->respostas[3], sizeof(char), rw_pergunta.resposta3_len, f);
+
+        if (is_first_time == 0)
+        {
+            init_perguntas(create_pergunta(p->pergunta, p->respostas[0], p->respostas[1], p->respostas[2], p->respostas[3], p->resposta_certa, p->dificuldade, p->id, p->tema, p->tempo, p->tipo));
+            is_first_time = 1;
+        }
+        else
+        {
+            add_pergunta_with_struct(create_pergunta(p->pergunta, p->respostas[0], p->respostas[1], p->respostas[2], p->respostas[3], p->resposta_certa, p->dificuldade, p->id, p->tema, p->tempo, p->tipo));
+        }
+    }
+
+    free(p);
+    fclose(f);
+}
+
+void write_to_file(FILE *f, Pergunta_node *temp_node, RW_Pergunta rw_pergunta)
+{
+    fwrite(temp_node->pergunta, sizeof(Pergunta), 1, f);
+
+    rw_pergunta.pergunta_len = strlen(temp_node->pergunta->pergunta) + 1;
+    rw_pergunta.resposta0_len = strlen(temp_node->pergunta->respostas[0]) + 1;
+    rw_pergunta.resposta1_len = strlen(temp_node->pergunta->respostas[1]) + 1;
+    rw_pergunta.resposta2_len = strlen(temp_node->pergunta->respostas[2]) + 1;
+    rw_pergunta.resposta3_len = strlen(temp_node->pergunta->respostas[3]) + 1;
+
+    fwrite(&rw_pergunta, sizeof(RW_Pergunta), 1, f);
+
+    fwrite(temp_node->pergunta->pergunta, sizeof(char), rw_pergunta.pergunta_len, f);
+    for (int i = 0; i < 4; i++)
+    {
+        fwrite(temp_node->pergunta->respostas[i], sizeof(char), strlen(temp_node->pergunta->respostas[i]) + 1, f);
+    }
+}
+
+void save_perguntas()
+{
+    FILE *f = fopen("perguntas.bin", "wb");
+
+    if (f == NULL)
+    {
+        error("Error opening file");
+        return;
+    }
+
+    Pergunta_node *temp_node = pergunta_head;
+    RW_Pergunta rw_pergunta;
+    while (temp_node->next != NULL)
+    {
+        write_to_file(f, temp_node, rw_pergunta);
+        temp_node = temp_node->next;
+    }
+
+    write_to_file(f, temp_node, rw_pergunta);
+
+    fclose(f);
 }

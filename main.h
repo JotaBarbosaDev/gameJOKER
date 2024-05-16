@@ -22,6 +22,7 @@ int main_UI(int argc, char *argv[]);
 #define okay(msg, ...) printf("\033[1;32m[ + ]\033[0m " msg "\n", ##__VA_ARGS__)
 #define error(msg, ...) printf("\033[1;31m[ - ]\033[0m " msg "\n", ##__VA_ARGS__)
 #define info(msg, ...) printf("\033[1;34m[ i ]\033[0m " msg "\n", ##__VA_ARGS__)
+int getRandomNumber(int x);
 
 // Perguntas
 typedef struct
@@ -42,12 +43,22 @@ typedef struct Pergunta_node
     struct Pergunta_node *next;
 } Pergunta_node;
 
+typedef struct
+{
+    int pergunta_len;
+    int resposta0_len;
+    int resposta1_len;
+    int resposta2_len;
+    int resposta3_len;
+} RW_Pergunta;
+
 extern char temas[5][20];
 
 void init_perguntas(Pergunta *p);
 void free_pergunta(Pergunta *pergunta);
 Pergunta *create_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
 void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
+void add_pergunta_with_struct(Pergunta *p);
 void print_pergunta();
 void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
 void delete_pergunta(int id);
@@ -56,5 +67,7 @@ int get_number_of_perguntas();
 
 // @brief Hash function to hash a string https://theartincode.stanis.me/008-djb2/
 unsigned long djb2(const char *str);
+void save_perguntas();
+void load_perguntas();
 
 #endif
