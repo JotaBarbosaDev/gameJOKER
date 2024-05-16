@@ -46,10 +46,7 @@ typedef struct Pergunta_node
 typedef struct
 {
     int pergunta_len;
-    int resposta0_len;
-    int resposta1_len;
-    int resposta2_len;
-    int resposta3_len;
+    int respostas_len[4];
 } RW_Pergunta;
 
 extern char temas[5][20];

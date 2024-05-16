@@ -239,17 +239,11 @@ void load_perguntas()
 
         p->respostas = (char **)malloc(4 * sizeof(char *));
 
-        p->respostas[0] = malloc(rw_pergunta.resposta0_len);
-        fread(p->respostas[0], sizeof(char), rw_pergunta.resposta0_len, f);
-
-        p->respostas[1] = malloc(rw_pergunta.resposta1_len);
-        fread(p->respostas[1], sizeof(char), rw_pergunta.resposta1_len, f);
-
-        p->respostas[2] = malloc(rw_pergunta.resposta2_len);
-        fread(p->respostas[2], sizeof(char), rw_pergunta.resposta2_len, f);
-
-        p->respostas[3] = malloc(rw_pergunta.resposta3_len);
-        fread(p->respostas[3], sizeof(char), rw_pergunta.resposta3_len, f);
+        for (int i = 0; i <= 3; i++)
+        {
+            p->respostas[i] = malloc(rw_pergunta.respostas_len[i]);
+            fread(p->respostas[i], sizeof(char), rw_pergunta.respostas_len[i], f);
+        }
 
         if (is_first_time == 0)
         {
@@ -271,10 +265,11 @@ void write_to_file(FILE *f, Pergunta_node *temp_node, RW_Pergunta rw_pergunta)
     fwrite(temp_node->pergunta, sizeof(Pergunta), 1, f);
 
     rw_pergunta.pergunta_len = strlen(temp_node->pergunta->pergunta) + 1;
-    rw_pergunta.resposta0_len = strlen(temp_node->pergunta->respostas[0]) + 1;
-    rw_pergunta.resposta1_len = strlen(temp_node->pergunta->respostas[1]) + 1;
-    rw_pergunta.resposta2_len = strlen(temp_node->pergunta->respostas[2]) + 1;
-    rw_pergunta.resposta3_len = strlen(temp_node->pergunta->respostas[3]) + 1;
+
+    for (int i = 0; i <= 3; i++)
+    {
+        rw_pergunta.respostas_len[i] = strlen(temp_node->pergunta->respostas[i]) + 1;
+    }
 
     fwrite(&rw_pergunta, sizeof(RW_Pergunta), 1, f);
 
