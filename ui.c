@@ -51,7 +51,7 @@ gboolean barra_left(GtkWidget *widget, cairo_t *cr, gpointer user_data)
     return FALSE;
 }
 
-//Criar tela
+//Criar tela admin -> users
 void menu_admin_users()
 {
     clear_all();
@@ -67,6 +67,37 @@ void menu_admin_users()
     gtk_main();
 }
 
+//Criar tela admin -> quests
+
+void menu_admin_quests()
+{
+    clear_all();
+    menu_left_admin();
+
+    create_button("quests_create_quest", "Criar Pergunta", NULL);
+    create_button("quests_edit_quest", "Editar Pergunta", NULL);
+    create_button("quests_delete_quest", "Apagar Pergunta", NULL);
+
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
+    gtk_main();
+}
+
+//Criar tela admin -> stats
+
+void menu_admin_stats()
+{
+    clear_all();
+    menu_left_admin();
+
+    okay("Stats admin loaded successfully");
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
+    gtk_main();
+}
+
 void menu_left_admin()
 {
     GtkWidget *drawing_area = gtk_drawing_area_new();
@@ -75,8 +106,8 @@ void menu_left_admin()
 
     create_label("say_JOKER_admin", "Admin");
     create_button("users_see_admin", "Usuários", menu_admin_users);
-    create_button("perguntas_admin", "Questões", NULL);
-    create_button("estatisticas_admin", "Estatisticas", NULL);
+    create_button("perguntas_admin", "Questões", menu_admin_quests);
+    create_button("estatisticas_admin", "Estatisticas", menu_admin_stats);
 
     g_signal_connect(G_OBJECT(drawing_area), "draw", G_CALLBACK(barra_left), NULL);
 }
