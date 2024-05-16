@@ -78,9 +78,8 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    Pergunta *per = create_pergunta("1rg", "Lisboa", "Porto", "Coimbra", "Faro", 0, 1, 1, 3, 10.0, 0);
-    init_perguntas(per);
-
+    // Pergunta *per = create_pergunta("1rg", "Lisboa", "Porto", "Coimbra", "Faro", 0, 1, 1, 3, 10.0, 0);
+    // init_perguntas(per);
     // add_pergunta("2egre", "Lisboa2", "Porto2", "Coimbra2", "Faro2", 5, 6, 2, 8, 20.0, 1);
     // add_pergunta("3grehgeg", "Lisboa3", "Porto3", "Coimbra3", "Faro3", 9, 10, 3, 12, 40.0, 2);
     // add_pergunta("4reger", "Lisboa4", "Porto4", "Coimbra4", "Faro4", 9, 10, 4, 12, 40.0, 2);
