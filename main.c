@@ -18,28 +18,60 @@ trees             //usar para ordernar jogos por pontuacao e encontrar jogos com
 binary tree search
 
 hash tables      //encontrar / salvar jogadores
+
+
+
+falta jogo.c, onde mantemos as informacoes do jogo tipo tempo, perguntas, respostas, pontuacao, numero de jocas, etc
 */
 
-/*
-todo:
-    perguntas.c
-        get_question
-        save_perguntas
-        load_perguntas
+int test_hash()
+{
+    unsigned long simple_hash = djb2("ola");
+    printf("HASH -> %lu\n", simple_hash); //->193501537
 
+    unsigned long simple_hash2 = djb2("ola2defr");
+    printf("HASH -> %lu\n", simple_hash2); // ->7572758759602260
 
-*/
+    unsigned long simple_hash3 = djb2("wfehiuwrhfiuerhf");
+    printf("HASH -> %lu\n", simple_hash3); // -> 14512354368336641287
+
+    if (simple_hash == 193501537)
+    {
+        okay("Hash function1 working");
+    }
+    else
+    {
+        error("Hash function not working");
+        return -1;
+    }
+
+    if (simple_hash2 == 7572758759602260)
+    {
+        okay("Hash function2 working");
+    }
+    else
+    {
+        error("Hash function2 not working");
+        return -1;
+    }
+
+    if (simple_hash3 == 14512354368336641287UL) // UL -> unsigned long
+    {
+        okay("Hash function3 working");
+    }
+    else
+    {
+        error("Hash function3 not working");
+        return -1;
+    }
+}
 
 int main(int argc, char *argv[])
 {
-    unsigned long simple_ash = djb2("ola");
-    printf("HASH -> %lu\n", simple_ash);
-
-    unsigned long simple_ash2 = djb2("ola2defr");
-    printf("HASH -> %lu\n", simple_ash2);
-
-    unsigned long simple_ash3 = djb2("wfehiuwrhfiuerhf");
-    printf("HASH -> %lu\n", simple_ash3);
+    if (test_hash() == -1)
+    {
+        return -1;
+    }
 
     Pergunta *per = create_pergunta("1", "Lisboa", "Porto", "Coimbra", "Faro", 0, 1, 1, 3, 10.0, 0);
     init_perguntas(per);

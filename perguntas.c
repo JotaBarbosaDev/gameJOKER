@@ -1,5 +1,11 @@
 #include "main.h"
 
+/*
+get_question
+save_perguntas
+load_perguntas
+*/
+
 char temas[5][20] = {"tema0", "tema1", "tema2", "tema3", "tema4"};
 
 Pergunta_node *pergunta_head;
@@ -12,16 +18,8 @@ void init_perguntas(Pergunta *p)
     return;
 }
 
-/*
-1-as respostas[0,1,2,3]
-
-2- respoastas
-
-3-Pergunta em si
-*/
 void free_pergunta(Pergunta *pergunta)
 {
-
     for (int i = 0; i < 4; i++)
     {
         free(pergunta->respostas[i]);

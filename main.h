@@ -54,7 +54,7 @@ void delete_pergunta(int id);
 Pergunta **get_all_perguntas();
 int get_number_of_perguntas();
 
-// Users
+// @brief Hash function to hash a string https://theartincode.stanis.me/008-djb2/
 unsigned long djb2(const char *str);
 
 #endif
