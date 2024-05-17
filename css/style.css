@@ -338,12 +338,117 @@ ADMIN USERS PAGE
     padding:0px 5px;
 }
 
-#tempo_input{
+#perguntaCerta_label{
     margin-left: 50px;
-    margin-top: 270px;
+    margin-top: 250px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
     padding:0px 5px;
 }
+
+#respostaCerta_1{
+    margin-left: 50px;
+    margin-top: 300px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#respostaCerta_2{
+    margin-left: 170px;
+    margin-top: 300px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#respostaCerta_3{
+    margin-left: 290px;
+    margin-top: 300px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#respostaCerta_4{
+    margin-left: 410px;
+    margin-top: 300px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#dificulde_label{
+    margin-left: 50px;
+    margin-top: 370px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#dificuldadeEasy{
+    margin-left: 50px;
+    margin-top: 420px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#dificuldadeMedium{
+    margin-left: 120px;
+    margin-top: 420px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#dificuldadeHard{
+    margin-left: 205px;
+    margin-top: 420px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#tempo_input{
+    margin-left: 50px;
+    margin-top: 490px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:0px 5px;
+}
+
+#tema_0{
+    
+}
+
+#pergunta_create_button{
+    margin-left: 530px;
+    margin-top: 550px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding:5px 10px;
+}
+

@@ -24,6 +24,8 @@ hash tables      //encontrar / salvar jogadores
 falta jogo.c, onde mantemos as informacoes do jogo tipo tempo, perguntas, respostas, pontuacao, numero de jocas, etc
 */
 
+char temas[9][20] = {"Geografia", "Historia", "Ciencia", "Desporto", "Arte", "Tecnologia", "Matematica", "Literatura", "Geral"};
+
 int getRandomNumber(int x)
 {
     return rand() % (x + 1);
@@ -78,16 +80,16 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    // Pergunta *per = create_pergunta("1rg", "Lisboa", "Porto", "Coimbra", "Faro", 0, 1, 1, 3, 10.0, 0);
+    // Pergunta *per = create_pergunta("Qual é a capital de Portugal", "Lisboa", "Porto", "Coimbra", "Faro", 0, 0, 0, 0, 10.0, 0);
     // init_perguntas(per);
-    // add_pergunta("2egre", "Lisboa2", "Porto2", "Coimbra2", "Faro2", 5, 6, 2, 8, 20.0, 1);
-    // add_pergunta("3grehgeg", "Lisboa3", "Porto3", "Coimbra3", "Faro3", 9, 10, 3, 12, 40.0, 2);
-    // add_pergunta("4reger", "Lisboa4", "Porto4", "Coimbra4", "Faro4", 9, 10, 4, 12, 40.0, 2);
-    // add_pergunta("5thrh", "5fkopr", "5ijrejg", "5voper", "5dwedn", 0, 1, 5, 0, 10, 0);
-    // add_pergunta("6hrt", "6rif", "6", "6", "6vreçkg", 0, 1, 6, 0, 10, 0);
-    // add_pergunta("7erhe4g", "7reg", "7erg", "7wrg", "7erg", 0, 1, 7, 0, 10, 0);
-    // add_pergunta("8g4trg", "8tgrt", "8rth", "8", "8rth", 0, 1, 8, 0, 10, 0);
-    // add_pergunta("9grtg", "9kjhghk", "9909", "9TRIGOOOOO", "9dewf", 0, 1, 9, 0, 11, 0);
+    // add_pergunta("Qual é a capital de Espanha", "Madrid", "Barcelona", "Sevilha", "Valencia", 0, 0, 1, 0, 10.0);
+    // add_pergunta("Qual é a capital de França", "Paris", "Marselha", "Lyon", "Toulouse", 0, 0, 2, 0, 10.0);
+    // add_pergunta("Qual é a capital de Inglaterra", "Londres", "Manchester", "Liverpool", "Birmingham", 0, 0, 2, 0, 10.0);
+    // add_pergunta("Qual é a capital de Alemanha", "Berlim", "Munique", "Hamburgo", "Colónia", 0, 0, 0, 0, 10.0);
+    // add_pergunta("Qual é a capital de Itália", "Roma", "Milão", "Nápoles", "Turim", 0, 0, 3, 0, 10.0);
+    // add_pergunta("Qual é a capital de Rússia", "Moscou", "São Petersburgo", "Novosibirsk", "Ecaterimburgo", 0, 0, 5, 0, 10.0);
+    // add_pergunta("Qual é a capital de China", "Pequim", "Xangai", "Cantão", "Shenzhen", 0, 0, 4, 0, 10.0);
+    // add_pergunta("Qual é a capital de Japão", "Tóquio", "Osaka", "Nagoya", "Sapporo", 0, 0, 5, 0, 10.0);
     // save_perguntas();
 
     load_perguntas();

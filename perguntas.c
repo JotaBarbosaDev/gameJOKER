@@ -6,8 +6,6 @@ save_perguntas
 load_perguntas
 */
 
-char temas[5][20] = {"tema0", "tema1", "tema2", "tema3", "tema4"};
-
 Pergunta_node *pergunta_head;
 
 void init_perguntas(Pergunta *p)
@@ -70,26 +68,28 @@ Pergunta *create_pergunta(char *pergunta, char *resposta_1, char *resposta_2, ch
     return p;
 }
 
-void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo)
+void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int tema, float tempo, int tipo)
 {
-    Pergunta *p = create_pergunta(pergunta, resposta_1, resposta_2, resposta_3, resposta_4, resposta_certa, dificuldade, id, tema, tempo, tipo);
 
     Pergunta_node *temp_node = pergunta_head;
-
     while (temp_node->next != NULL)
     {
         temp_node = temp_node->next;
     }
+    int last_id = temp_node->pergunta->id + 1;
 
+    Pergunta *p = create_pergunta(pergunta, resposta_1, resposta_2, resposta_3, resposta_4, resposta_certa, dificuldade, last_id, tema, tempo, tipo);
+    printf("ID: %d\n", last_id);
     Pergunta_node *new = malloc(sizeof(Pergunta_node));
     new->pergunta = p;
     new->next = NULL;
     temp_node->next = new;
+    save_perguntas();
 }
 
 void add_pergunta_with_struct(Pergunta *p)
 {
-    add_pergunta(p->pergunta, p->respostas[0], p->respostas[1], p->respostas[2], p->respostas[3], p->resposta_certa, p->dificuldade, p->id, p->tema, p->tempo, p->tipo);
+    add_pergunta(p->pergunta, p->respostas[0], p->respostas[1], p->respostas[2], p->respostas[3], p->resposta_certa, p->dificuldade, p->tema, p->tempo, p->tipo);
 }
 
 void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo)

@@ -49,12 +49,12 @@ typedef struct
     int respostas_len[4];
 } RW_Pergunta;
 
-extern char temas[5][20];
+extern char temas[9][20];
 
 void init_perguntas(Pergunta *p);
 void free_pergunta(Pergunta *pergunta);
 Pergunta *create_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
-void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
+void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int tema, float tempo, int tipo);
 void add_pergunta_with_struct(Pergunta *p);
 void print_pergunta();
 void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
