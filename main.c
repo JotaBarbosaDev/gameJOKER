@@ -25,6 +25,7 @@ falta jogo.c, onde mantemos as informacoes do jogo tipo tempo, perguntas, respos
 */
 
 char temas[9][20] = {"Geografia", "Historia", "Ciencia", "Desporto", "Arte", "Tecnologia", "Matematica", "Literatura", "Geral"};
+char dificuldades[3][20] = {"Facil", "Medio", "Dificil"};
 
 int getRandomNumber(int x)
 {

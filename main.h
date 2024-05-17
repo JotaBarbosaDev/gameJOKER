@@ -50,6 +50,7 @@ typedef struct
 } RW_Pergunta;
 
 extern char temas[9][20];
+extern char dificuldades[3][20];
 
 void init_perguntas(Pergunta *p);
 void free_pergunta(Pergunta *pergunta);
