@@ -11,6 +11,7 @@ GtkWidget *fixed;
 
 void menu_admin();
 void menu_left_admin();
+void menu_admin_quests();
 
 void login_func()
 {
@@ -51,7 +52,7 @@ gboolean barra_left(GtkWidget *widget, cairo_t *cr, gpointer user_data)
     return FALSE;
 }
 
-//Criar tela admin -> users
+// Criar tela admin -> users
 void menu_admin_users()
 {
     clear_all();
@@ -61,30 +62,54 @@ void menu_admin_users()
     create_button("users_edit_users", "Editar Usuario", NULL);
     create_button("users_delete_users", "Apagar Usuario", NULL);
 
-
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");
     gtk_main();
 }
 
-//Criar tela admin -> quests
+// Criar tela admin -> quests
+
+void tela_create_pergunta()
+{
+    clear_all();
+
+    GtkWidget *pergunta = create_placeholder_entry("pergunta_input", "Pergunta");
+    GtkWidget *resposta_1 = create_placeholder_entry("resposta_1_input", "Resposta 1");
+    GtkWidget *resposta_2 = create_placeholder_entry("resposta_2_input", "Resposta 2");
+    GtkWidget *resposta_3 = create_placeholder_entry("resposta_3_input", "Resposta 3");
+    GtkWidget *resposta_4 = create_placeholder_entry("resposta_4_input", "Resposta 4");
+    GtkWidget *tempo = create_placeholder_entry("tempo_input", "Seg");
+
+    gtk_entry_set_width_chars(GTK_ENTRY(pergunta), 100);
+    gtk_entry_set_width_chars(GTK_ENTRY(resposta_1), 48);
+    gtk_entry_set_width_chars(GTK_ENTRY(resposta_2), 48);
+    gtk_entry_set_width_chars(GTK_ENTRY(resposta_3), 48);
+    gtk_entry_set_width_chars(GTK_ENTRY(resposta_4), 48);
+    gtk_entry_set_width_chars(GTK_ENTRY(tempo), 9);
+
+    create_button("pergunta_create_button", "Criar Pergunta", NULL);
+    create_button("leave_creation_button", "<", menu_admin_quests);
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
+    gtk_main();
+}
 
 void menu_admin_quests()
 {
     clear_all();
     menu_left_admin();
 
-    create_button("quests_create_quest", "Criar Pergunta", NULL);
+    create_button("quests_create_quest", "Criar Pergunta", tela_create_pergunta);
     create_button("quests_edit_quest", "Editar Pergunta", NULL);
     create_button("quests_delete_quest", "Apagar Pergunta", NULL);
-
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");
     gtk_main();
 }
 
-//Criar tela admin -> stats
+// Criar tela admin -> stats
 
 void menu_admin_stats()
 {
@@ -117,7 +142,6 @@ void menu_admin()
     clear_all();
 
     menu_left_admin();
-    
 
     gtk_widget_show_all(window);
     okay("UI admin loaded successfully");
