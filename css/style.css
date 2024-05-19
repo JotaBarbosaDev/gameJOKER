@@ -16,6 +16,8 @@ LOGIN PAGE
     color: #ffffff;
 }
 
+
+
 #login_button {
     margin-left: 355px;
     margin-top: 400px;
@@ -26,6 +28,23 @@ LOGIN PAGE
 }
 
 #login_button>label {
+    color: white;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid #9e9e9e;
+}
+
+#register_button {
+    margin-left: 345px;
+    margin-top: 470px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#register_button>label {
     color: white;
     background-color: rgba(39, 39, 39, 255);
     padding: 15px 30px;
@@ -82,7 +101,7 @@ ADMIN PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#users_see_admin > label {
+#users_see_admin>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 40px;
@@ -101,7 +120,7 @@ ADMIN PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#perguntas_admin > label {
+#perguntas_admin>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 37px;
@@ -120,7 +139,7 @@ ADMIN PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#estatisticas_admin > label {
+#estatisticas_admin>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -149,7 +168,7 @@ ADMIN USERS PAGE
 //
 */
 /*USERS*/
-#users_ver_users{
+#users_ver_users {
     margin-left: 380px;
     margin-top: 100px;
     font-size: 20px;
@@ -160,7 +179,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#users_ver_users > label{
+#users_ver_users>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -168,7 +187,7 @@ ADMIN USERS PAGE
     border-radius: 5px
 }
 
-#users_create_users{
+#users_create_users {
     margin-left: 380px;
     margin-top: 190px;
     font-size: 20px;
@@ -179,7 +198,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#users_create_users > label{
+#users_create_users>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -187,7 +206,7 @@ ADMIN USERS PAGE
     border-radius: 5px
 }
 
-#users_edit_users{
+#users_edit_users {
     margin-left: 380px;
     margin-top: 390px;
     font-size: 20px;
@@ -198,7 +217,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#users_edit_users > label{
+#users_edit_users>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -206,7 +225,7 @@ ADMIN USERS PAGE
     border-radius: 5px;
 }
 
-#users_delete_users{
+#users_delete_users {
     margin-left: 380px;
     margin-top: 290px;
     font-size: 20px;
@@ -217,7 +236,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#users_delete_users > label{
+#users_delete_users>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -226,7 +245,7 @@ ADMIN USERS PAGE
 }
 
 /*QUESTS*/
-#ver_perguntas{
+#ver_perguntas {
     margin-left: 380px;
     margin-top: 100px;
     font-size: 20px;
@@ -237,7 +256,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#ver_perguntas > label{
+#ver_perguntas>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -245,7 +264,7 @@ ADMIN USERS PAGE
     border-radius: 5px
 }
 
-#quests_create_quest{
+#quests_create_quest {
     margin-left: 380px;
     margin-top: 190px;
     font-size: 20px;
@@ -256,7 +275,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#quests_create_quest > label{
+#quests_create_quest>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -264,7 +283,7 @@ ADMIN USERS PAGE
     border-radius: 5px
 }
 
-#quests_edit_quest{
+#quests_edit_quest {
     margin-left: 380px;
     margin-top: 390px;
     font-size: 20px;
@@ -275,7 +294,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#quests_edit_quest > label{
+#quests_edit_quest>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -283,7 +302,7 @@ ADMIN USERS PAGE
     border-radius: 5px;
 }
 
-#quests_delete_quest{
+#quests_delete_quest {
     margin-left: 380px;
     margin-top: 290px;
     font-size: 20px;
@@ -294,7 +313,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#quests_delete_quest > label{
+#quests_delete_quest>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 15px 30px;
@@ -303,7 +322,7 @@ ADMIN USERS PAGE
 }
 
 /* Leave screen */
-#leave_creation_button{
+#leave_creation_button {
     margin-left: 10px;
     margin-top: 10px;
     font-size: 20px;
@@ -314,7 +333,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#leave_creation_button > label{
+#leave_creation_button>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 5px 10px;
@@ -324,7 +343,7 @@ ADMIN USERS PAGE
 
 /* Create Quest Inputs */
 
-#pergunta_input{
+#pergunta_input {
     margin-left: 50px;
     margin-top: 50px;
     margin-right: 50px;
@@ -332,294 +351,294 @@ ADMIN USERS PAGE
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta_1_input{
+#resposta_1_input {
     margin-left: 50px;
     margin-top: 120px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta_2_input{
+#resposta_2_input {
     margin-left: 50px;
     margin-top: 170px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta_3_input{
+#resposta_3_input {
     margin-left: 625px;
     margin-top: 120px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta_4_input{
+#resposta_4_input {
     margin-left: 625px;
     margin-top: 170px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#perguntaCerta_label{
+#perguntaCerta_label {
     margin-left: 50px;
     margin-top: 250px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#respostaCerta_1{
+#respostaCerta_1 {
     margin-left: 50px;
     margin-top: 300px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#respostaCerta_2{
+#respostaCerta_2 {
     margin-left: 170px;
     margin-top: 300px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#respostaCerta_3{
+#respostaCerta_3 {
     margin-left: 290px;
     margin-top: 300px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#respostaCerta_4{
+#respostaCerta_4 {
     margin-left: 410px;
     margin-top: 300px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#dificulde_label{
+#dificulde_label {
     margin-left: 50px;
     margin-top: 370px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#dificuldadeEasy{
+#dificuldadeEasy {
     margin-left: 50px;
     margin-top: 420px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#dificuldadeMedium{
+#dificuldadeMedium {
     margin-left: 120px;
     margin-top: 420px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#dificuldadeHard{
+#dificuldadeHard {
     margin-left: 205px;
     margin-top: 420px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tempo_input{
+#tempo_input {
     margin-left: 50px;
     margin-top: 490px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_label{
+#tema_label {
     margin-left: 625px;
     margin-top: 250px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_0{
+#tema_0 {
     margin-left: 625px;
     margin-top: 300px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_1{
+#tema_1 {
     margin-left: 800px;
     margin-top: 300px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_2{
+#tema_2 {
     margin-left: 975px;
     margin-top: 300px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_3{
+#tema_3 {
     margin-left: 625px;
     margin-top: 350px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_4{
+#tema_4 {
     margin-left: 800px;
     margin-top: 350px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_5{
+#tema_5 {
     margin-left: 975px;
     margin-top: 350px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_6{
+#tema_6 {
     margin-left: 625px;
     margin-top: 400px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_7{
+#tema_7 {
     margin-left: 800px;
     margin-top: 400px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_8{
+#tema_8 {
     margin-left: 975px;
     margin-top: 400px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tipo_label{
+#tipo_label {
     margin-left: 625px;
     margin-top: 475px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#type_normal{
+#type_normal {
     margin-left: 625px;
     margin-top: 510px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#type_ff{
+#type_ff {
     margin-left: 725px;
     margin-top: 510px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#pergunta_create_button{
+#pergunta_create_button {
     margin-left: 530px;
     margin-top: 550px;
     font-size: 20px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:5px 10px;
+    padding: 5px 10px;
 }
 
 
 
 /*Ver perguntas */
 
-#id_ver{
+#id_ver {
     margin-left: 80px;
     margin-top: 10px;
     font-size: 40px;
@@ -627,10 +646,10 @@ ADMIN USERS PAGE
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#pergunta_ver{
+#pergunta_ver {
     margin-left: 200px;
     margin-top: 175px;
     margin-right: 50px;
@@ -638,50 +657,50 @@ ADMIN USERS PAGE
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta1_ver{
+#resposta1_ver {
     margin-left: 150px;
     margin-top: 235px;
     font-size: 25px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta2_ver{
+#resposta2_ver {
     margin-left: 150px;
     margin-top: 285px;
     font-size: 25px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta3_ver{
+#resposta3_ver {
     margin-left: 425px;
     margin-top: 235px;
     font-size: 25px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#resposta4_ver{
+#resposta4_ver {
     margin-left: 425px;
     margin-top: 285px;
     font-size: 25px;
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#dificuldade_ver{
+#dificuldade_ver {
     margin-left: 670px;
     margin-top: 10px;
     font-size: 40px;
@@ -689,10 +708,10 @@ ADMIN USERS PAGE
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#tema_ver{
+#tema_ver {
     margin-left: 370px;
     margin-top: 10px;
     font-size: 40px;
@@ -700,10 +719,10 @@ ADMIN USERS PAGE
     color: #ffffff;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
-    padding:0px 5px;
+    padding: 0px 5px;
 }
 
-#go_left_pergunta{
+#go_left_pergunta {
     margin-left: 10px;
     margin-top: 300px;
     font-size: 20px;
@@ -714,7 +733,7 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#go_left_pergunta > label{
+#go_left_pergunta>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 5px 10px;
@@ -722,7 +741,7 @@ ADMIN USERS PAGE
     border-radius: 5px;
 }
 
-#go_right_pergunta{
+#go_right_pergunta {
     margin-left: 750px;
     margin-top: 300px;
     font-size: 20px;
@@ -733,10 +752,147 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
 }
 
-#go_right_pergunta > label{
+#go_right_pergunta>label {
     color: #fff;
     border: 1px solid #9e9e9e;
     padding: 5px 10px;
     background-color: rgba(39, 39, 39, 255);
     border-radius: 5px;
+}
+
+/*GAME*/
+
+#start_game {
+    margin-left: 335px;
+    margin-top: 400px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#start_game>label {
+    color: white;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid #9e9e9e;
+}
+
+#estatisticas_game {
+    margin-left: 336px;
+    margin-top: 470px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#estatisticas_game>label {
+    color: white;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid #9e9e9e;
+}
+
+#logout_game {
+    margin-left: 720px;
+    margin-top: 5px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#logout_game>label {
+    color: white;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #9e9e9e;
+}
+
+#jocaTITLE2 {
+    font-size: 80px;
+    margin-left: 295px;
+    margin-top: 30px;
+    color: #ffffff;
+}
+
+#jocaPergunta {
+    margin-left: 200px;
+    margin-top: 175px;
+    margin-right: 50px;
+    font-size: 25px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 0px 5px;
+}
+
+#jocaResposta1Button {
+    margin-left: 150px;
+    margin-top: 235px;
+    font-size: 25px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 0px 5px;
+}
+
+#jocaResposta2Button {
+    margin-left: 150px;
+    margin-top: 285px;
+    font-size: 25px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 0px 5px;
+}
+
+#jocaResposta3Button {
+    margin-left: 425px;
+    margin-top: 235px;
+    font-size: 25px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 0px 5px;
+}
+
+#jocaResposta4Button {
+    margin-left: 425px;
+    margin-top: 285px;
+    font-size: 25px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 0px 5px;
+}
+
+#jocaVitoria{
+    margin-left: 320px;
+    margin-top: 270px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 55px;
+}
+
+#jocaDerrota{
+    margin-left: 320px;
+    margin-top: 290px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 55px;
+}
+
+#dif_indicator{
+    font-size: 40px;
+    margin-left: 750px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #ffffff;
 }

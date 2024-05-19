@@ -41,8 +41,25 @@ int get_last_id()
     return users[number_of_users - 1].id;
 }
 
+int get_user_by_username(char *username)
+{
+    for (int i = 0; i < number_of_users; i++)
+    {
+        if (strcmp(users[i].username, username) == 0)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 void register_user(char *username, char *password)
 {
+    if (get_user_by_username(username) == 1 || strlen(username) == 0 || strlen(password) == 0 || strlen(username) > 100 || strlen(password) > 100 || strcmp(username, "admin") == 0 || strcmp(password, "admin") == 0)
+    {
+        error("User already exists or your input is invalid");
+        return;
+    }
     User *u = (User *)malloc(sizeof(User));
     strcpy(u->username, username);
     u->password = djb2(password);
@@ -75,6 +92,8 @@ void register_user(char *username, char *password)
 
     users[number_of_users] = *u;
     number_of_users++;
+    free(u);
+    save_users();
     return;
 }
 

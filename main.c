@@ -86,17 +86,17 @@ int main(int argc, char *argv[])
     load_users();
     print_users();
 
-    Pergunta *per = create_pergunta("Qual é a capital de Portugal", "Lisboa", "Porto", "Coimbra", "Faro", 0, 0, 0, 0, 10.0, 0);
-    init_perguntas(per);
-    add_pergunta("Qual é a capital de Espanha", "Madrid", "Barcelona", "Sevilha", "Valencia", 0, 0, 1, 0, 10.0);
-    add_pergunta("Qual é a capital de França", "Paris", "Marselha", "Lyon", "Toulouse", 0, 0, 2, 0, 10.0);
-    add_pergunta("Qual é a capital de Inglaterra", "Londres", "Manchester", "Liverpool", "Birmingham", 0, 0, 2, 0, 10.0);
-    add_pergunta("Qual é a capital de Alemanha", "Berlim", "Munique", "Hamburgo", "Colónia", 0, 0, 0, 0, 10.0);
-    add_pergunta("Qual é a capital de Itália", "Roma", "Milão", "Nápoles", "Turim", 0, 0, 3, 0, 10.0);
-    add_pergunta("Qual é a capital de Rússia", "Moscou", "São Petersburgo", "Novosibirsk", "Ecaterimburgo", 0, 0, 5, 0, 10.0);
-    add_pergunta("Qual é a capital de China", "Pequim", "Xangai", "Cantão", "Shenzhen", 0, 0, 4, 0, 10.0);
-    add_pergunta("Qual é a capital de Japão", "Tóquio", "Osaka", "Nagoya", "Sapporo", 0, 0, 5, 0, 10.0);
-    save_perguntas();
+    // Pergunta *per = create_pergunta("Qual é a capital de Portugal", "Lisboa", "Porto", "Coimbra", "Faro", 0, 0, 0, 0, 10.0, 0);
+    // init_perguntas(per);
+    // add_pergunta("Qual é a capital de Espanha", "Madrid", "Barcelona", "Sevilha", "Valencia", 0, 0, 1, 0, 10.0);
+    // add_pergunta("Qual é a capital de França", "Paris", "Marselha", "Lyon", "Toulouse", 0, 0, 2, 0, 10.0);
+    // add_pergunta("Qual é a capital de Inglaterra", "Londres", "Manchester", "Liverpool", "Birmingham", 0, 0, 2, 0, 10.0);
+    // add_pergunta("Qual é a capital de Alemanha", "Berlim", "Munique", "Hamburgo", "Colónia", 0, 0, 0, 0, 10.0);
+    // add_pergunta("Qual é a capital de Itália", "Roma", "Milão", "Nápoles", "Turim", 0, 0, 3, 0, 10.0);
+    // add_pergunta("Qual é a capital de Rússia", "Moscou", "São Petersburgo", "Novosibirsk", "Ecaterimburgo", 0, 0, 5, 0, 10.0);
+    // add_pergunta("Qual é a capital de China", "Pequim", "Xangai", "Cantão", "Shenzhen", 0, 0, 4, 0, 10.0);
+    // add_pergunta("Qual é a capital de Japão", "Tóquio", "Osaka", "Nagoya", "Sapporo", 0, 0, 5, 0, 10.0);
+    // save_perguntas();
 
     load_perguntas();
 

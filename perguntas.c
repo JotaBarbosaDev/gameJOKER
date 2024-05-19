@@ -303,3 +303,95 @@ void save_perguntas()
 
     fclose(f);
 }
+
+int check_if_we_got_enought_perguntas_for_the_game()
+{
+}
+
+Pergunta **perguntas_faceis;
+int number_of_perguntas_faceis;
+Pergunta **perguntas_medias;
+int number_of_perguntas_medias;
+Pergunta **perguntas_dificeis;
+int number_of_perguntas_dificeis;
+
+void divide_perguntas_by_difficulty()
+{
+    Pergunta **perguntas = get_all_perguntas();
+    int NUMBER_OF_PERGUNTAS = get_number_of_perguntas();
+
+    for (int i = 0; i < NUMBER_OF_PERGUNTAS; i++)
+    {
+        if (perguntas[i]->dificuldade == 0)
+        {
+            number_of_perguntas_faceis++;
+            perguntas_faceis = realloc(perguntas_faceis, sizeof(Pergunta *) * number_of_perguntas_faceis);
+            perguntas_faceis[number_of_perguntas_faceis - 1] = perguntas[i];
+        }
+        else if (perguntas[i]->dificuldade == 1)
+        {
+            number_of_perguntas_medias++;
+            perguntas_medias = realloc(perguntas_medias, sizeof(Pergunta *) * number_of_perguntas_medias);
+            perguntas_medias[number_of_perguntas_medias - 1] = perguntas[i];
+        }
+        else if (perguntas[i]->dificuldade == 2)
+        {
+            number_of_perguntas_dificeis++;
+            perguntas_dificeis = realloc(perguntas_dificeis, sizeof(Pergunta *) * number_of_perguntas_dificeis);
+            perguntas_dificeis[number_of_perguntas_dificeis - 1] = perguntas[i];
+        }
+    }
+}
+
+Pergunta *get_random_pergunta2()
+{
+    if (jogo.current_dificuldade == 0)
+    {
+        int random = rand() % number_of_perguntas_faceis;
+        return perguntas_faceis[random];
+    }
+    else if (jogo.current_dificuldade == 1)
+    {
+        int random = rand() % number_of_perguntas_medias;
+        return perguntas_medias[random];
+    }
+    else if (jogo.current_dificuldade == 2)
+    {
+        int random = rand() % number_of_perguntas_dificeis;
+        return perguntas_dificeis[random];
+    }
+    else
+    {
+        error("Dificuldade not found");
+        return NULL;
+    }
+}
+
+int find_pergunta_in_already_shown(Pergunta *per)
+{
+    for (int i = 0; i < jogo.already_shown_len; i++)
+    {
+        if (jogo.already_shown[i] == per->id)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+Pergunta *get_random_pergunta()
+{
+    Pergunta *per = get_random_pergunta2();
+    while (find_pergunta_in_already_shown(per) == 1)
+    {
+        per = get_random_pergunta2();
+    }
+
+    for (int i = 0; i < jogo.already_shown_len; i++)
+    {
+        printf("ALREADY ID: %d\n", jogo.already_shown[i]);
+    }
+    printf("FOUND ID: %d\n", per->id);
+
+    return per;
+}

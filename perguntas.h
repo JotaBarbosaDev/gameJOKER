@@ -42,5 +42,7 @@ Pergunta **get_all_perguntas();
 int get_number_of_perguntas();
 void save_perguntas();
 void load_perguntas();
+Pergunta *get_random_pergunta();
+void divide_perguntas_by_difficulty();
 
 #endif

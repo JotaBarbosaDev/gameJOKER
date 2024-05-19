@@ -26,9 +26,14 @@ void login_func()
 
     if (strcmp(login_text, "admin") == 0 && strcmp(password_text, "admin") == 0)
     {
-        printf("Login efetuado com sucesso\n");
         menu_admin();
     }
+    else if (login_user((char *)login_text, (char *)password_text) == 1)
+    {
+        printf("Login efetuado com sucesso\n");
+        jogo_UI();
+    }
+
     else
     {
         // create new window with error message
@@ -42,6 +47,14 @@ void login_func()
         gtk_widget_show_all(error_window);
         printf("Login ou senha incorretos\n");
     }
+}
+
+void register_button()
+{
+    const gchar *login_text = gtk_entry_get_text(GTK_ENTRY(login));
+    const gchar *password_text = gtk_entry_get_text(GTK_ENTRY(password));
+
+    register_user((char *)login_text, (char *)password_text);
 }
 
 gboolean barra_left(GtkWidget *widget, cairo_t *cr, gpointer user_data)
@@ -64,10 +77,9 @@ void menu_admin_users()
     clear_all();
     menu_left_admin();
 
-    create_button("users_ver_users", "Ver Usuarios", NULL);
-    create_button("users_create_users", "Criar Usuario", NULL);
-    create_button("users_edit_users", "Editar Usuario", NULL);
-    create_button("users_delete_users", "Apagar Usuario", NULL);
+    // create_button("users_ver_users", "Ver Usuarios", tela_get_user);
+    // create_button("users_create_users", "Criar Usuario", tela_create_user);
+    // create_button("users_delete_users", "Apagar Usuario", tela_delete_user);
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");
@@ -171,6 +183,7 @@ void add_pergunta_func()
         return;
     }
 
+    okay("Pergunta adicionada com sucesso");
     add_pergunta(pergunta_add, resposta_1_add, resposta_2_add, resposta_3_add, resposta_4_add, current_resposta_certa, dificuldade_add, tema_add, tempo_add, ff);
 }
 
@@ -374,7 +387,7 @@ void tela_create_user()
     gtk_main();
 }
 
-void tela_edit_user()
+void tela_get_user()
 {
     clear_all();
 
@@ -537,6 +550,8 @@ void menu_principal()
     password = create_password_entry_placeholder("password_input");
 
     create_button("login_button", "Entrar", login_func);
+
+    create_button("register_button", "Registrar", register_button);
 
     gtk_widget_show_all(window);
     okay("UI menu loaded successfully");

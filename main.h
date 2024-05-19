@@ -16,7 +16,19 @@ GtkWidget *create_entry(const gchar *css_ID);
 GtkWidget *create_placeholder_entry(const gchar *css_ID, const gchar *placeholder);
 GtkWidget *create_password_entry_placeholder(const gchar *css_ID);
 
+typedef struct
+{
+    int current_pergunta;
+    int current_dificuldade;
+    int current_tema;
+    int *already_shown;
+    int already_shown_len;
+} JogoJoca;
+
 int main_UI(int argc, char *argv[]);
+int jogo_UI();
+extern GtkWidget *window;
+extern JogoJoca jogo;
 
 // MAIN
 #define okay(msg, ...) printf("\033[1;32m[ + ]\033[0m " msg "\n", ##__VA_ARGS__)
