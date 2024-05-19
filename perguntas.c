@@ -1,4 +1,5 @@
 #include "main.h"
+#include "perguntas.h"
 
 /*
 get_question
@@ -79,7 +80,7 @@ void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *res
     int last_id = temp_node->pergunta->id + 1;
 
     Pergunta *p = create_pergunta(pergunta, resposta_1, resposta_2, resposta_3, resposta_4, resposta_certa, dificuldade, last_id, tema, tempo, tipo);
-    printf("ID: %d\n", last_id);
+    // printf("ID: %d\n", last_id);
     Pergunta_node *new = malloc(sizeof(Pergunta_node));
     new->pergunta = p;
     new->next = NULL;

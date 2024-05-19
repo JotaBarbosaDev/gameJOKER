@@ -24,48 +24,4 @@ int main_UI(int argc, char *argv[]);
 #define info(msg, ...) printf("\033[1;34m[ i ]\033[0m " msg "\n", ##__VA_ARGS__)
 int getRandomNumber(int x);
 
-// Perguntas
-typedef struct
-{
-    char *pergunta;
-    char **respostas;
-    int resposta_certa;
-    int dificuldade; // 0-facil 1-medio 2-dificil
-    int id;
-    int tema;
-    float tempo;
-    int tipo; // 0-normal 1-imagens 2-50/50
-} Pergunta;
-
-typedef struct Pergunta_node
-{
-    Pergunta *pergunta;
-    struct Pergunta_node *next;
-} Pergunta_node;
-
-typedef struct
-{
-    int pergunta_len;
-    int respostas_len[4];
-} RW_Pergunta;
-
-extern char temas[9][20];
-extern char dificuldades[3][20];
-
-void init_perguntas(Pergunta *p);
-void free_pergunta(Pergunta *pergunta);
-Pergunta *create_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
-void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int tema, float tempo, int tipo);
-void add_pergunta_with_struct(Pergunta *p);
-void print_pergunta();
-void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo);
-void delete_pergunta(int id);
-Pergunta **get_all_perguntas();
-int get_number_of_perguntas();
-
-// @brief Hash function to hash a string https://theartincode.stanis.me/008-djb2/
-unsigned long djb2(const char *str);
-void save_perguntas();
-void load_perguntas();
-
 #endif

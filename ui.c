@@ -1,5 +1,7 @@
 #include <gtk/gtk.h>
 #include "main.h"
+#include "user.h"
+#include "perguntas.h"
 
 GtkWidget *window;
 GtkWidget *login;
@@ -13,6 +15,9 @@ void menu_admin();
 void menu_left_admin();
 void menu_admin_quests();
 void ver_perguntas();
+void tela_edit_user();
+void tela_create_user();
+void tela_delete_user();
 
 void login_func()
 {
@@ -350,6 +355,40 @@ void tela_create_pergunta()
     array_tipo[1] = but18;
 
     create_button("pergunta_create_button", "Criar Pergunta", add_pergunta_func);
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
+    gtk_main();
+}
+
+// Screen user
+void tela_create_user()
+{
+    clear_all();
+
+    create_button("user_create_button", "Criar Usuario", NULL);
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
+    gtk_main();
+}
+
+void tela_edit_user()
+{
+    clear_all();
+
+    create_button("user_edit_button", "Editar Usuario", NULL);
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
+    gtk_main();
+}
+
+void tela_delete_user()
+{
+    clear_all();
+
+    create_button("user_delete_button", "Apagar Usuario", NULL);
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");
