@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     }
 
     load_users();
-    // print_users();
+    print_users();
 
     Pergunta *per = create_pergunta("Qual é a capital de Portugal", "Lisboa", "Porto", "Coimbra", "Faro", 0, 0, 0, 0, 10.0, 0);
     init_perguntas(per);
