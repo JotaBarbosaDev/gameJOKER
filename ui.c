@@ -64,6 +64,7 @@ void menu_admin_users()
     clear_all();
     menu_left_admin();
 
+    create_button("users_ver_users", "Ver Usuarios", NULL);
     create_button("users_create_users", "Criar Usuario", NULL);
     create_button("users_edit_users", "Editar Usuario", NULL);
     create_button("users_delete_users", "Apagar Usuario", NULL);
@@ -476,7 +477,7 @@ void menu_admin_quests()
     clear_all();
     menu_left_admin();
 
-    create_button("ver_perguntas", "Ver Pergunta", ver_perguntas);
+    create_button("ver_perguntas", "Ver Perguntas", ver_perguntas);
     create_button("quests_create_quest", "Criar Pergunta", tela_create_pergunta);
     create_button("quests_edit_quest", "Editar Pergunta", NULL);
     create_button("quests_delete_quest", "Apagar Pergunta", NULL);
