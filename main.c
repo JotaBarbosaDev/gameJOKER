@@ -83,6 +83,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+
     load_users();
     print_users();
 
