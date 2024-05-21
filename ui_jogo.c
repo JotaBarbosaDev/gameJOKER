@@ -5,13 +5,13 @@
 Pergunta *cur_pergunta;
 JogoJoca jogo;
 char cur_joca_level[10];
+char *niveis[] = {"0", "100", "200", "500", "1000", "5000", "10000", "20000", "50000", "100000"};
 
 void game_start();
 
 void draw_joca_level()
 {
     // 10 patamares de 0,100,200,500,1000,5000,10000,20000,50000,100000
-    char *niveis[] = {"0", "100", "200", "500", "1000", "5000", "10000", "20000", "50000", "100000"};
 
     strcpy(cur_joca_level, niveis[jogo.joca_level]);
 
@@ -84,6 +84,22 @@ void check_resposta(GtkWidget *widget, gpointer data)
     }
 }
 
+void ending_screen()
+{
+    clear_all();
+    create_label("jocaEND2", "Parabéns, acabou o jogo!");
+    create_label("jocaEND3", "Obrigado por jogar!");
+    create_label("jocaEND4", "Pontuação final:");
+    char jocas[10];
+    sprintf(jocas, "%s", niveis[jogo.joca_level]);
+    create_label("jocaEND5", jocas);
+    create_button("jocaEND6", "Logout", menu_principal);
+    create_button("jocaEND7", "Recomeçar", jogo_UI);
+    create_button("jocaEND8", "Sair", exit);
+    gtk_widget_show_all(window);
+    gtk_main();
+}
+
 void game_start()
 {
     cur_pergunta = get_random_pergunta();
@@ -103,6 +119,7 @@ void game_start()
     if (jogo.already_shown_len == 10)
     {
         printf("Parabens, acabou o jogo no nivel %d\n", jogo.joca_level);
+        ending_screen();
         jogo.ending = 1;
         exit(0);
     }

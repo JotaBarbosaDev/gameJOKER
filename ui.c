@@ -516,6 +516,16 @@ void menu_admin_stats()
 
 void menu_principal()
 {
+    login_user_global = NULL;
+    jogo.joca_level = 0;
+    jogo.jocas_number = 3;
+    jogo.current_pergunta = 0;
+    jogo.current_dificuldade = 0;
+    jogo.current_tema = 0;
+    jogo.already_shown = NULL;
+    jogo.already_shown_len = 0;
+    jogo.ending = 0;
+
     clear_all();
 
     create_label("jocaTITLE", "JOCA");
