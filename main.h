@@ -23,10 +23,14 @@ typedef struct
     int current_tema;
     int *already_shown;
     int already_shown_len;
+    int ending;
+    int joca_level;
+    int jocas_number;
 } JogoJoca;
 
 int main_UI(int argc, char *argv[]);
 int jogo_UI();
+void menu_principal();
 extern GtkWidget *window;
 extern JogoJoca jogo;
 

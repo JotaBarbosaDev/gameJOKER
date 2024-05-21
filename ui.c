@@ -514,31 +514,6 @@ void menu_admin_stats()
     gtk_main();
 }
 
-void menu_left_admin()
-{
-    GtkWidget *drawing_area = gtk_drawing_area_new();
-    gtk_widget_set_size_request(drawing_area, 200, HEIGHT);
-    gtk_fixed_put(GTK_FIXED(fixed), drawing_area, 0, 0);
-
-    create_label("say_JOKER_admin", "Admin");
-    create_button("users_see_admin", "Usuários", menu_admin_users);
-    create_button("perguntas_admin", "Questões", menu_admin_quests);
-    create_button("estatisticas_admin", "Estatisticas", menu_admin_stats);
-
-    g_signal_connect(G_OBJECT(drawing_area), "draw", G_CALLBACK(barra_left), NULL);
-}
-
-void menu_admin()
-{
-    clear_all();
-
-    menu_left_admin();
-
-    gtk_widget_show_all(window);
-    okay("UI admin loaded successfully");
-    gtk_main();
-}
-
 void menu_principal()
 {
     clear_all();
@@ -555,6 +530,33 @@ void menu_principal()
 
     gtk_widget_show_all(window);
     okay("UI menu loaded successfully");
+    gtk_main();
+}
+
+void menu_left_admin()
+{
+    GtkWidget *drawing_area = gtk_drawing_area_new();
+    gtk_widget_set_size_request(drawing_area, 200, HEIGHT);
+    gtk_fixed_put(GTK_FIXED(fixed), drawing_area, 0, 0);
+
+    create_label("say_JOKER_admin", "Admin");
+    create_button("users_see_admin", "Usuários", menu_admin_users);
+    create_button("perguntas_admin", "Questões", menu_admin_quests);
+    create_button("estatisticas_admin", "Estatisticas", menu_admin_stats);
+
+    create_button("logout_game", "Logout", menu_principal);
+
+    g_signal_connect(G_OBJECT(drawing_area), "draw", G_CALLBACK(barra_left), NULL);
+}
+
+void menu_admin()
+{
+    clear_all();
+
+    menu_left_admin();
+
+    gtk_widget_show_all(window);
+    okay("UI admin loaded successfully");
     gtk_main();
 }
 
