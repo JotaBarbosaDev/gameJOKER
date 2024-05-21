@@ -17,7 +17,7 @@ binary search
 insertion sort    //usar os 2 para ordenar as jogos por jogadores e encontrar jogadores com binary search
 
 trees             //usar para ordernar jogos por pontuacao e encontrar jogos com mais ou menos q x pontos
-binary tree search
+binary tree search     //fzr representacao grafica de jogos sistema de pontos:D
 
 hash tables      //encontrar / salvar jogadores
 
