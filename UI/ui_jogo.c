@@ -1,6 +1,7 @@
-#include "main.h"
-#include "perguntas.h"
-#include "user.h"
+#include "../main.h"
+#include "../perguntas/perguntas.h"
+#include "../user/user.h"
+#include "ui.h"
 
 Pergunta *cur_pergunta;
 JogoJoca jogo;
@@ -8,6 +9,23 @@ char cur_joca_level[10];
 char *niveis[] = {"0", "100", "200", "500", "1000", "5000", "10000", "20000", "50000", "100000"};
 
 void game_start();
+
+void set_pontuation(int win)
+{
+    if (win)
+    {
+        jogo.pontuacao += 100 * jogo.multiplicador;
+        jogo.multiplicador += 0.5;
+    }
+    else
+    {
+        if (jogo.pontuacao < 200)
+            jogo.pontuacao = 0;
+        else
+            jogo.pontuacao -= 200;
+        jogo.multiplicador = 1.0;
+    }
+}
 
 void draw_joca_level()
 {
@@ -39,6 +57,16 @@ void draw_joca_level()
     char jocas[10];
     sprintf(jocas, "%d", jogo.jocas_number);
     create_label("current_jocas", jocas);
+
+    create_label("Multiplicador", "Multiplicador:");
+    char multiplicador[10];
+    sprintf(multiplicador, "%.1f", jogo.multiplicador);
+    create_label("current_multiplicador", multiplicador);
+
+    create_label("Pontuacao", "Pontuação:");
+    char pontuacao[10];
+    sprintf(pontuacao, "%d", jogo.pontuacao);
+    create_label("current_pontuacao", pontuacao);
 }
 
 void show_victory_or_lose_screen(int victory)
@@ -62,12 +90,14 @@ void check_resposta(GtkWidget *widget, gpointer data)
     long int resposta = (long int)data;
     if (resposta == cur_pergunta->resposta_certa)
     {
+        set_pontuation(1);
         if (jogo.joca_level < 10)
             jogo.joca_level++;
         show_victory_or_lose_screen(1);
     }
     else
     {
+        set_pontuation(0);
         for (int i = 0; i < 3; i++)
         {
             if (jogo.jocas_number > 0)
@@ -111,10 +141,12 @@ void game_start()
     if (jogo.already_shown_len == 3)
     {
         jogo.current_dificuldade = 1;
+        jogo.multiplicador += 1;
     }
     if (jogo.already_shown_len == 7)
     {
         jogo.current_dificuldade = 2;
+        jogo.multiplicador += 2.5;
     }
     if (jogo.already_shown_len == 10)
     {
@@ -159,6 +191,8 @@ int jogo_UI()
     jogo.ending = 0;
     jogo.joca_level = 0;
     jogo.jocas_number = 9;
+    jogo.pontuacao = 0;
+    jogo.multiplicador = 1.0;
 
     create_button("start_game", "Iniciar Jogo", game_start);
     create_button("estatisticas_game", "Estatisticas", NULL);

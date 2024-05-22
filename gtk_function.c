@@ -1,5 +1,6 @@
 #include <gtk/gtk.h>
 #include "main.h"
+#include "UI/ui.h"
 
 void import_css()
 {

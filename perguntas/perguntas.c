@@ -1,4 +1,5 @@
-#include "main.h"
+#include "../main.h"
+#include "../UI/ui.h"
 #include "perguntas.h"
 
 /*

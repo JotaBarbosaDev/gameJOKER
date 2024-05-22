@@ -1077,3 +1077,38 @@ ADMIN USERS PAGE
     margin-top: 0px;
     color: #ffffff;
 }
+
+
+#Multiplicador {
+    font-size: 15px;
+    margin-left: 700px;
+    margin-top: 540px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#current_multiplicador {
+    font-size: 15px;
+    margin-left: 800px;
+    margin-top: 540px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+#Pontuacao {
+    font-size: 15px;
+    margin-left: 700px;
+    margin-top: 560px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+#current_pontuacao {
+    font-size: 15px;
+    margin-left: 780px;
+    margin-top: 560px;
+    font-weight: bold;
+    color: #ffffff;
+}

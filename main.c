@@ -1,6 +1,7 @@
 #include "main.h"
-#include "user.h"
-#include "perguntas.h"
+#include "user/user.h"
+#include "perguntas/perguntas.h"
+#include "UI/ui.h"
 #include <stdio.h>
 
 // todo:
