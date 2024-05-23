@@ -87,38 +87,7 @@ int main(int argc, char *argv[])
     load_users();
     print_users();
 
-    // Pergunta *per = create_pergunta("Qual é a capital de Portugal", "Lisboa", "Porto", "Coimbra", "Faro", 0, 0, 0, 0, 10.0, 0);
-    // init_perguntas(per);
-    // add_pergunta("Qual é a capital de Espanha", "Madrid", "Barcelona", "Sevilha", "Valencia", 0, 0, 1, 0, 10.0);
-    // add_pergunta("Qual é a capital de França", "Paris", "Marselha", "Lyon", "Toulouse", 0, 0, 2, 0, 10.0);
-    // add_pergunta("Qual é a capital de Inglaterra", "Londres", "Manchester", "Liverpool", "Birmingham", 0, 0, 2, 0, 10.0);
-    // add_pergunta("Qual é a capital de Alemanha", "Berlim", "Munique", "Hamburgo", "Colónia", 0, 0, 0, 0, 10.0);
-    // add_pergunta("Qual é a capital de Itália", "Roma", "Milão", "Nápoles", "Turim", 0, 0, 3, 0, 10.0);
-    // add_pergunta("Qual é a capital de Rússia", "Moscou", "São Petersburgo", "Novosibirsk", "Ecaterimburgo", 0, 0, 5, 0, 10.0);
-    // add_pergunta("Qual é a capital de China", "Pequim", "Xangai", "Cantão", "Shenzhen", 0, 0, 4, 0, 10.0);
-    // add_pergunta("Qual é a capital de Japão", "Tóquio", "Osaka", "Nagoya", "Sapporo", 0, 0, 5, 0, 10.0);
-    // save_perguntas();
-
     load_perguntas();
-    
-
-    // Pergunta **perguntas_get = get_all_perguntas();
-    // int number_perguntas = get_number_of_perguntas();
-    // for (int i = 0; i < number_perguntas; i++)
-    // {
-    //     printf("Pergunta -> %s\n\n", perguntas_get[i]->pergunta);
-    //     printf("Resposta 1 -> %s\n", perguntas_get[i]->respostas[0]);
-    //     printf("Resposta 2 -> %s\n", perguntas_get[i]->respostas[1]);
-    //     printf("Resposta 3 -> %s\n", perguntas_get[i]->respostas[2]);
-    //     printf("Resposta 4 -> %s\n", perguntas_get[i]->respostas[3]);
-    //     printf("Resposta certa -> %d\n", perguntas_get[i]->resposta_certa);
-    //     printf("Dificuldade -> %d\n", perguntas_get[i]->dificuldade);
-    //     printf("ID -> %d\n", perguntas_get[i]->id);
-    //     printf("Tema -> %d\n", perguntas_get[i]->tema);
-    //     printf("Tempo -> %f\n", perguntas_get[i]->tempo);
-    //     printf("Tipo -> %d\n", perguntas_get[i]->tipo);
-    //     printf("\n\n");
-    // }
 
     printf("START\n");
     info("Starting Joca");

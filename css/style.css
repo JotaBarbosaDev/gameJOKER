@@ -321,17 +321,6 @@ ADMIN USERS PAGE
     border-radius: 5px;
 }
 
-#quests_delete_quest {
-    margin-left: 380px;
-    margin-top: 290px;
-    font-size: 20px;
-    border: none;
-    padding: 0px;
-    text-decoration: none;
-    color: #fff;
-    background-color: rgba(39, 39, 39, 255);
-}
-
 #quests_delete_quest>label {
     color: #fff;
     border: 1px solid #9e9e9e;
@@ -1149,4 +1138,15 @@ ADMIN USERS PAGE
     padding: 5px 10px;
     background-color: rgba(39, 39, 39, 255);
     border-radius: 5px;
+}
+
+
+#delete_pergunta {
+    margin-left: 350px;
+    margin-top: 550px;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #9e9e9e;
+    background-color: rgba(39, 39, 39, 255);
+    padding: 5px 10px;
 }

@@ -130,8 +130,7 @@ void menu_admin_quests()
 
     create_button("ver_perguntas", "Ver Perguntas", ver_perguntas);
     create_button("quests_create_quest", "Criar Pergunta", tela_create_pergunta);
-    create_button("quests_edit_quest", "Editar Pergunta", tela_edit_pergunta);
-    create_button("quests_delete_quest", "Apagar Pergunta", NULL);
+    create_button("quests_edit_quest", "Editar/Apagar Pergunta", tela_edit_pergunta);
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");

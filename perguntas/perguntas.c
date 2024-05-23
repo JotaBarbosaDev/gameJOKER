@@ -20,6 +20,22 @@ void init_perguntas(Pergunta *p)
     return;
 }
 
+void free_all_linked_list()
+{
+    Pergunta_node *temp_node = pergunta_head;
+    Pergunta_node *next_node;
+    while (temp_node->next != NULL)
+    {
+        next_node = temp_node->next;
+        free_pergunta(temp_node->pergunta);
+        free(temp_node);
+        temp_node = next_node;
+    }
+    free_pergunta(temp_node->pergunta);
+    free(temp_node);
+    okay("Perguntas free'd");
+}
+
 void free_pergunta(Pergunta *pergunta)
 {
     for (int i = 0; i < 4; i++)
@@ -163,6 +179,9 @@ void delete_pergunta(int id) // FALTA DAR FREE
     }
     free_pergunta(temp_node->pergunta); // free a pergunta
     free(temp_node);                    // free ao nodo da pergunta
+    save_perguntas();
+    free_all_linked_list();
+    load_perguntas();
 }
 
 Pergunta **get_all_perguntas()
@@ -213,7 +232,8 @@ void print_pergunta()
 
 void load_perguntas()
 {
-    okay("Loading perguntas\n");
+    loaded = 0;
+    okay("Loading perguntas");
     // abrir,verificar se existe,ler,guardar na lista
     FILE *f = fopen("perguntas.bin", "rb");
 
@@ -223,7 +243,7 @@ void load_perguntas()
         return;
     }
 
-    okay("File opened\n");
+    okay("File opened");
     Pergunta *p = malloc(sizeof(Pergunta));
 
     if (p == NULL)
@@ -263,6 +283,7 @@ void load_perguntas()
     loaded = 1;
     free(p);
     fclose(f);
+    okay("Perguntas loaded");
 }
 
 void write_to_file(FILE *f, Pergunta_node *temp_node, RW_Pergunta rw_pergunta)
@@ -310,10 +331,6 @@ void save_perguntas()
     write_to_file(f, temp_node, rw_pergunta);
     okay("Perguntas saved");
     fclose(f);
-}
-
-int check_if_we_got_enought_perguntas_for_the_game()
-{
 }
 
 Pergunta **perguntas_faceis;

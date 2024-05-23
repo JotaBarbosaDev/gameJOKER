@@ -136,6 +136,13 @@ void go_right_edit()
     set_all_camps_of_pergunta_id();
 }
 
+void delete_pergunta_func()
+{
+    delete_pergunta(current_pergunta_id);
+    okay("Pergunta deletada com sucesso");
+    clear_all_camps();
+}
+
 void tela_edit_pergunta()
 {
     current_resposta_certa = -1;
@@ -231,6 +238,7 @@ void tela_edit_pergunta()
 
     create_button("go_left_edit", "<", go_left_edit);
     create_button("go_right_edit", ">", go_right_edit);
+    create_button("delete_pergunta", "Deletar Pergunta", delete_pergunta_func);
     set_all_camps_of_pergunta_id();
 
     gtk_widget_show_all(window);
