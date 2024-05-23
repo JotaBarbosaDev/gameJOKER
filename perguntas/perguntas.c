@@ -9,6 +9,7 @@ load_perguntas
 */
 
 Pergunta_node *pergunta_head;
+int loaded = 0;
 
 void init_perguntas(Pergunta *p)
 {
@@ -106,6 +107,7 @@ void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *re
         {
             free_pergunta(temp_node->pergunta);
             temp_node->pergunta = p;
+            save_perguntas();
             return 0;
         }
 
@@ -116,6 +118,7 @@ void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *re
     {
         free_pergunta(temp_node->pergunta);
         temp_node->pergunta = p;
+        save_perguntas();
         return 0;
     }
 
@@ -257,7 +260,7 @@ void load_perguntas()
             add_pergunta_with_struct(create_pergunta(p->pergunta, p->respostas[0], p->respostas[1], p->respostas[2], p->respostas[3], p->resposta_certa, p->dificuldade, p->id, p->tema, p->tempo, p->tipo));
         }
     }
-
+    loaded = 1;
     free(p);
     fclose(f);
 }
@@ -284,6 +287,10 @@ void write_to_file(FILE *f, Pergunta_node *temp_node, RW_Pergunta rw_pergunta)
 
 void save_perguntas()
 {
+    if (loaded == 0)
+    {
+        return;
+    }
     FILE *f = fopen("perguntas.bin", "wb");
 
     if (f == NULL)
@@ -301,7 +308,7 @@ void save_perguntas()
     }
 
     write_to_file(f, temp_node, rw_pergunta);
-
+    okay("Perguntas saved");
     fclose(f);
 }
 
@@ -395,4 +402,36 @@ Pergunta *get_random_pergunta()
     printf("FOUND ID: %d\n", per->id);
 
     return per;
+}
+
+Pergunta *get_pergunta_by_id(int id)
+{
+    Pergunta_node *temp_node = pergunta_head;
+
+    while (temp_node != NULL)
+    {
+        if (temp_node->pergunta->id == id)
+        {
+            return temp_node->pergunta;
+        }
+
+        temp_node = temp_node->next;
+    }
+
+    if (temp_node->pergunta->id == id)
+        return temp_node->pergunta;
+
+    return NULL; // Question with the given ID not found
+}
+
+int get_last_pergunta_id()
+{
+    Pergunta_node *temp_node = pergunta_head;
+
+    while (temp_node->next != NULL)
+    {
+        temp_node = temp_node->next;
+    }
+
+    return temp_node->pergunta->id;
 }

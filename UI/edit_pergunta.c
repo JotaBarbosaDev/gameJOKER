@@ -8,70 +8,9 @@
 
 // Criar tela admin -> quests
 
-char *pergunta_add;
-char *resposta_1_add;
-char *resposta_2_add;
-char *resposta_3_add;
-char *resposta_4_add;
-unsigned long int current_resposta_certa;
-unsigned long int dificuldade_add;
-unsigned long int tema_add;
-float tempo_add;
-unsigned long int tipo;
-unsigned long int ff;
+int current_pergunta_id = 0;
 
-GtkWidget *pergunta;
-GtkWidget *resposta_1;
-GtkWidget *resposta_2;
-GtkWidget *resposta_3;
-GtkWidget *resposta_4;
-GtkWidget *tempo;
-
-GtkWidget *array_dificuldade[3];
-GtkWidget *array_resposta[4];
-GtkWidget *array_tema[9];
-GtkWidget *array_tipo[2];
-
-void clear_all_camps()
-{
-    gtk_entry_set_text(GTK_ENTRY(pergunta), "");
-    gtk_entry_set_text(GTK_ENTRY(resposta_1), "");
-    gtk_entry_set_text(GTK_ENTRY(resposta_2), "");
-    gtk_entry_set_text(GTK_ENTRY(resposta_3), "");
-    gtk_entry_set_text(GTK_ENTRY(resposta_4), "");
-    gtk_entry_set_text(GTK_ENTRY(tempo), "");
-
-    current_resposta_certa = -1;
-    dificuldade_add = -1;
-    tema_add = -1;
-    tempo_add = -1;
-    tipo = -1;
-    ff = -1;
-
-    GdkRGBA color2;
-    gdk_rgba_parse(&color2, "#FFFFFF"); // Change the color code to the desired color
-    for (int i = 0; i < 4; i++)
-    {
-        gtk_widget_override_color(array_resposta[i], GTK_STATE_FLAG_NORMAL, &color2);
-    }
-
-    for (int i = 0; i < 3; i++)
-    {
-        gtk_widget_override_color(array_dificuldade[i], GTK_STATE_FLAG_NORMAL, &color2);
-    }
-
-    for (int i = 0; i < 9; i++)
-    {
-        gtk_widget_override_color(array_tema[i], GTK_STATE_FLAG_NORMAL, &color2);
-    }
-
-    for (int i = 0; i < 2; i++)
-    {
-        gtk_widget_override_color(array_tipo[i], GTK_STATE_FLAG_NORMAL, &color2);
-    }
-}
-
-void add_pergunta_func()
+void edit_pergunta_func()
 {
     const gchar *temp1 = gtk_entry_get_text(GTK_ENTRY(pergunta));
     pergunta_add = malloc(strlen(temp1) + 1);
@@ -147,97 +86,57 @@ void add_pergunta_func()
         return;
     }
 
-    okay("Pergunta adicionada com sucesso");
-    add_pergunta(pergunta_add, resposta_1_add, resposta_2_add, resposta_3_add, resposta_4_add, current_resposta_certa, dificuldade_add, tema_add, tempo_add, ff);
+    okay("Pergunta editada com sucesso");
+    edit_pergunta(pergunta_add, resposta_1_add, resposta_2_add, resposta_3_add, resposta_4_add, current_resposta_certa, dificuldade_add, current_pergunta_id, tema_add, tempo_add, ff);
     clear_all_camps();
 }
 
-void set_resposta(GtkWidget *widget, gpointer resposta)
+void set_all_camps_of_pergunta_id()
 {
-    current_resposta_certa = (intptr_t)resposta;
+    Pergunta *p = get_pergunta_by_id(current_pergunta_id);
 
-    GdkRGBA color2;
-    gdk_rgba_parse(&color2, "#FFFFFF"); // Change the color code to the desired color
-    for (int i = 0; i < 4; i++)
-    {
-        gtk_widget_override_color(array_resposta[i], GTK_STATE_FLAG_NORMAL, &color2);
-    }
+    gtk_entry_set_text(GTK_ENTRY(pergunta), p->pergunta);
+    gtk_entry_set_text(GTK_ENTRY(resposta_1), p->respostas[0]);
+    gtk_entry_set_text(GTK_ENTRY(resposta_2), p->respostas[1]);
+    gtk_entry_set_text(GTK_ENTRY(resposta_3), p->respostas[2]);
+    gtk_entry_set_text(GTK_ENTRY(resposta_4), p->respostas[3]);
+    gtk_entry_set_text(GTK_ENTRY(tempo), g_strdup_printf("%f", p->tempo));
 
-    if (ff == 1)
-    {
-        GdkRGBA color3;
-        gdk_rgba_parse(&color3, "#FF0000");
-        gtk_widget_override_color(array_resposta[2], GTK_STATE_FLAG_NORMAL, &color3);
-        gtk_widget_override_color(array_resposta[3], GTK_STATE_FLAG_NORMAL, &color3);
-    }
+    current_resposta_certa = p->resposta_certa;
+    dificuldade_add = p->dificuldade;
+    tema_add = p->tema;
+    tempo_add = p->tempo;
+    ff = p->tipo;
 
-    GdkRGBA color;
-    gdk_rgba_parse(&color, "#00FF00"); // Change the color code to the desired color
-    gtk_widget_override_color(array_resposta[current_resposta_certa], GTK_STATE_FLAG_NORMAL, &color);
+    set_dificuldade(NULL, (gpointer)dificuldade_add, NULL);
+    set_tema(NULL, (gpointer)tema_add, NULL);
+    set_tipo(NULL, (gpointer)ff, NULL);
+    set_resposta(NULL, (gpointer)current_resposta_certa);
 }
 
-void set_dificuldade(GtkWidget *widget, gpointer dificuldade, gpointer user_data)
+void go_left_edit()
 {
-    dificuldade_add = (intptr_t)dificuldade;
-
-    GdkRGBA color2;
-    gdk_rgba_parse(&color2, "#FFFFFF"); // Change the color code to the desired color
-    for (int i = 0; i < 3; i++)
+    if (current_pergunta_id == 0)
     {
-        gtk_widget_override_color(array_dificuldade[i], GTK_STATE_FLAG_NORMAL, &color2);
+        error("Não há mais perguntas para editar");
+        return;
     }
-
-    GdkRGBA color;
-    gdk_rgba_parse(&color, "#00FF00"); // Change the color code to the desired color
-    gtk_widget_override_color(array_dificuldade[dificuldade_add], GTK_STATE_FLAG_NORMAL, &color);
+    current_pergunta_id--;
+    set_all_camps_of_pergunta_id();
 }
 
-void set_tema(GtkWidget *widget, gpointer tema, gpointer user_data)
+void go_right_edit()
 {
-    tema_add = (intptr_t)tema;
-
-    GdkRGBA color2;
-    gdk_rgba_parse(&color2, "#FFFFFF"); // Change the color code to the desired color
-    for (int i = 0; i < 9; i++)
+    if (current_pergunta_id == get_number_of_perguntas() - 1)
     {
-        gtk_widget_override_color(array_tema[i], GTK_STATE_FLAG_NORMAL, &color2);
+        error("Não há mais perguntas para editar");
+        return;
     }
-
-    GdkRGBA color;
-    gdk_rgba_parse(&color, "#00FF00"); // Change the color code to the desired color
-    gtk_widget_override_color(array_tema[tema_add], GTK_STATE_FLAG_NORMAL, &color);
+    current_pergunta_id++;
+    set_all_camps_of_pergunta_id();
 }
 
-void set_tipo(GtkWidget *widget, gpointer tipo, gpointer user_data)
-{
-    ff = (intptr_t)tipo;
-
-    GdkRGBA color2;
-    gdk_rgba_parse(&color2, "#FFFFFF"); // Change the color code to the desired color
-    for (int i = 0; i < 2; i++)
-    {
-        gtk_widget_override_color(array_tipo[i], GTK_STATE_FLAG_NORMAL, &color2);
-    }
-
-    GdkRGBA color3;
-    gdk_rgba_parse(&color3, "#FF0000");
-    if (ff == 1)
-    {
-        gtk_widget_override_color(array_resposta[2], GTK_STATE_FLAG_NORMAL, &color3);
-        gtk_widget_override_color(array_resposta[3], GTK_STATE_FLAG_NORMAL, &color3);
-    }
-    else
-    {
-        gtk_widget_override_color(array_resposta[2], GTK_STATE_FLAG_NORMAL, &color2);
-        gtk_widget_override_color(array_resposta[3], GTK_STATE_FLAG_NORMAL, &color2);
-    }
-
-    GdkRGBA color;
-    gdk_rgba_parse(&color, "#00FF00"); // Change the color code to the desired color
-    gtk_widget_override_color(array_tipo[ff], GTK_STATE_FLAG_NORMAL, &color);
-}
-
-void tela_create_pergunta()
+void tela_edit_pergunta()
 {
     current_resposta_certa = -1;
     dificuldade_add = -1;
@@ -328,7 +227,11 @@ void tela_create_pergunta()
     array_tipo[0] = but17;
     array_tipo[1] = but18;
 
-    create_button("pergunta_create_button", "Criar Pergunta", add_pergunta_func);
+    create_button("pergunta_create_button", "Editar Pergunta", edit_pergunta_func);
+
+    create_button("go_left_edit", "<", go_left_edit);
+    create_button("go_right_edit", ">", go_right_edit);
+    set_all_camps_of_pergunta_id();
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");

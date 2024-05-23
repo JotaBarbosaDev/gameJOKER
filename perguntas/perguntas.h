@@ -44,5 +44,7 @@ void save_perguntas();
 void load_perguntas();
 Pergunta *get_random_pergunta();
 void divide_perguntas_by_difficulty();
+Pergunta *get_pergunta_by_id(int id);
+int get_last_pergunta_id();
 
 #endif

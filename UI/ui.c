@@ -12,6 +12,22 @@ GtkWidget *fixed;
 #define WIDTH 800
 #define HEIGHT 600
 
+void create_window_login_error(GtkWidget *parent)
+{
+    GtkWidget *window;
+
+    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_default_size(GTK_WINDOW(window), 200, 100);
+    gtk_window_set_title(GTK_WINDOW(window), "Error");
+    gtk_window_set_transient_for(GTK_WINDOW(window), GTK_WINDOW(parent));
+    gtk_window_set_modal(GTK_WINDOW(window), TRUE);
+
+    GtkWidget *label = gtk_label_new("Login ou senha incorretos");
+    gtk_container_add(GTK_CONTAINER(window), label);
+
+    gtk_widget_show_all(window);
+}
+
 void login_func()
 {
     const gchar *login_text = gtk_entry_get_text(GTK_ENTRY(login));
@@ -30,14 +46,8 @@ void login_func()
     else
     {
         // create new window with error message
-        GtkWidget *error_window;
-        GtkWidget *error_label;
-        error_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-        gtk_window_set_default_size(GTK_WINDOW(error_window), 200, 100);
-        gtk_window_set_title(GTK_WINDOW(error_window), "Error");
-        error_label = gtk_label_new("Login ou senha incorretos");
-        gtk_container_add(GTK_CONTAINER(error_window), error_label);
-        gtk_widget_show_all(error_window);
+        create_window_login_error(window);
+        gtk_widget_show_all(window);
         printf("Login ou senha incorretos\n");
     }
 }
@@ -120,7 +130,7 @@ void menu_admin_quests()
 
     create_button("ver_perguntas", "Ver Perguntas", ver_perguntas);
     create_button("quests_create_quest", "Criar Pergunta", tela_create_pergunta);
-    create_button("quests_edit_quest", "Editar Pergunta", NULL);
+    create_button("quests_edit_quest", "Editar Pergunta", tela_edit_pergunta);
     create_button("quests_delete_quest", "Apagar Pergunta", NULL);
 
     gtk_widget_show_all(window);

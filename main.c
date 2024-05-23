@@ -100,6 +100,7 @@ int main(int argc, char *argv[])
     // save_perguntas();
 
     load_perguntas();
+    
 
     // Pergunta **perguntas_get = get_all_perguntas();
     // int number_perguntas = get_number_of_perguntas();
