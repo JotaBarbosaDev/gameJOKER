@@ -116,6 +116,7 @@ void check_resposta(GtkWidget *widget, gpointer data)
 
 void ending_screen()
 {
+    // add jogo com stack
     clear_all();
     create_label("jocaEND2", "Parabéns, acabou o jogo!");
     create_label("jocaEND3", "Obrigado por jogar!");
@@ -132,6 +133,19 @@ void ending_screen()
 
 void game_start()
 {
+
+    /*
+    50/50
+    1,2,3->facil
+
+    4,5,6,7,8,9,10,11,12,13,14,15,16,17,18->50/50
+
+    19,20,21,22->media
+
+    23,24,25,26,27,28,29,30,31,32,33,34,35,36,37->50/50
+
+    38,39,40->dificil
+    */
     cur_pergunta = get_random_pergunta();
 
     jogo.already_shown = realloc(jogo.already_shown, sizeof(int) * (jogo.already_shown_len + 1));

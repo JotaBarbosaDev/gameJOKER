@@ -21,10 +21,6 @@ trees             //usar para ordernar jogos por pontuacao e encontrar jogos com
 binary tree search     //fzr representacao grafica de jogos sistema de pontos:D
 
 hash tables      //encontrar / salvar jogadores
-
-
-
-falta jogo.c, onde mantemos as informacoes do jogo tipo tempo, perguntas, respostas, pontuacao, numero de jocas, etc
 */
 
 char temas[9][20] = {"Geografia", "Historia", "Ciencia", "Desporto", "Arte", "Tecnologia", "Matematica", "Literatura", "Geral"};
