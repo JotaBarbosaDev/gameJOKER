@@ -53,6 +53,23 @@ void pergunta_certa()
     show_victory_or_lose_screen(1);
 }
 
+void pergunta_certa_ff()
+{
+    jogo.ff_certas++;
+    if (jogo.ff_certas == 6)
+    {
+        jogo.jocas_number++;
+        jogo.ff_certas = 0;
+    }
+    printf("FF CERTAS %d\n", jogo.ff_certas);
+    show_victory_or_lose_screen(1);
+}
+
+void pergunta_errada_ff()
+{
+    show_victory_or_lose_screen(0);
+}
+
 void pergunta_errada()
 {
     set_pontuation(0);
@@ -73,13 +90,24 @@ void pergunta_errada()
 
 void check_resposta(GtkWidget *widget, gpointer data)
 {
+
     long int resposta = (long int)data;
     if (resposta == cur_pergunta->resposta_certa)
     {
+        if (jogo.ff == 1)
+        {
+            pergunta_certa_ff();
+            return;
+        }
         pergunta_certa();
     }
     else
     {
+        if (jogo.ff == 1)
+        {
+            pergunta_errada_ff();
+            return;
+        }
         pergunta_errada();
     }
 }
@@ -190,6 +218,7 @@ void game_start()
 
     if (jogo.already_shown_len == 3)
     {
+        jogo.ff_certas = 0;
         jogo.ff = 1;
     }
     else if (jogo.already_shown_len == 18)
@@ -200,6 +229,7 @@ void game_start()
     }
     else if (jogo.already_shown_len == 22)
     {
+        jogo.ff_certas = 0;
         jogo.ff = 1;
     }
     else if (jogo.already_shown_len == 37)
@@ -208,7 +238,7 @@ void game_start()
         jogo.current_dificuldade = 2; // passa para dificil
         jogo.multiplicador += 2.5;
     }
-    else if (jogo.already_shown_len == 40)
+    else if (jogo.already_shown_len == 41)
     {
         printf("Parabens, acabou o jogo no nivel %d\n", jogo.joca_level);
         ending_screen();
