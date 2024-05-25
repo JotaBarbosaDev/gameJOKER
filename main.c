@@ -71,6 +71,7 @@ int test_hash()
         error("Hash function3 not working");
         return -1;
     }
+    return 0;
 }
 
 int main(int argc, char *argv[])

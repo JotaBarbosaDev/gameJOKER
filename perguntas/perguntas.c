@@ -87,7 +87,7 @@ Pergunta *create_pergunta(char *pergunta, char *resposta_1, char *resposta_2, ch
     return p;
 }
 
-void *add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int tema, float tempo, int tipo)
+void add_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int tema, float tempo, int tipo)
 {
 
     Pergunta_node *temp_node = pergunta_head;
@@ -111,7 +111,7 @@ void add_pergunta_with_struct(Pergunta *p)
     add_pergunta(p->pergunta, p->respostas[0], p->respostas[1], p->respostas[2], p->respostas[3], p->resposta_certa, p->dificuldade, p->tema, p->tempo, p->tipo);
 }
 
-void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo)
+void edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *resposta_3, char *resposta_4, int resposta_certa, int dificuldade, int id, int tema, float tempo, int tipo)
 {
     Pergunta *p = create_pergunta(pergunta, resposta_1, resposta_2, resposta_3, resposta_4, resposta_certa, dificuldade, id, tema, tempo, tipo);
 
@@ -124,7 +124,7 @@ void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *re
             free_pergunta(temp_node->pergunta);
             temp_node->pergunta = p;
             save_perguntas();
-            return 0;
+            return;
         }
 
         temp_node = temp_node->next;
@@ -135,11 +135,11 @@ void *edit_pergunta(char *pergunta, char *resposta_1, char *resposta_2, char *re
         free_pergunta(temp_node->pergunta);
         temp_node->pergunta = p;
         save_perguntas();
-        return 0;
+        return;
     }
 
     error("Pergunta.id not found edit_pergunta");
-    return 0;
+    return;
 }
 
 void delete_pergunta(int id) // FALTA DAR FREE
