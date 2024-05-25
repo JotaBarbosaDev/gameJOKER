@@ -7,6 +7,8 @@ Pergunta *cur_pergunta;
 JogoJoca jogo;
 char cur_joca_level[10];
 char *niveis[] = {"0", "100", "200", "500", "1000", "5000", "10000", "20000", "50000", "100000"};
+GtkWidget *tempo_label;
+float cur_tempo;
 
 void game_start();
 
@@ -25,6 +27,80 @@ void set_pontuation(int win)
             jogo.pontuacao -= 200;
         jogo.multiplicador = 1.0;
     }
+}
+
+void show_victory_or_lose_screen(int victory)
+{
+    clear_all();
+    if (victory)
+    {
+        create_label("jocaVitoria", "Certo!");
+    }
+    else
+    {
+        create_label("jocaDerrota", "Errado!");
+    }
+    g_timeout_add_seconds(1, (GSourceFunc)game_start, NULL);
+    gtk_widget_show_all(window);
+    gtk_main();
+}
+
+void pergunta_certa()
+{
+    set_pontuation(1);
+    if (jogo.joca_level < 10)
+        jogo.joca_level++;
+    show_victory_or_lose_screen(1);
+}
+
+void pergunta_errada()
+{
+    set_pontuation(0);
+    for (int i = 0; i < 3; i++)
+    {
+        if (jogo.jocas_number > 0)
+        {
+            jogo.jocas_number--;
+        }
+        else
+        {
+            if (jogo.joca_level > 0)
+                jogo.joca_level--;
+        }
+    }
+    show_victory_or_lose_screen(0);
+}
+
+void check_resposta(GtkWidget *widget, gpointer data)
+{
+    long int resposta = (long int)data;
+    if (resposta == cur_pergunta->resposta_certa)
+    {
+        pergunta_certa();
+    }
+    else
+    {
+        pergunta_errada();
+    }
+}
+
+void show_seconds_label(int show_time)
+{
+    char tempo[10];
+    sprintf(tempo, "%.1f", cur_tempo - show_time);
+    gtk_label_set_text(GTK_LABEL(tempo_label), tempo);
+}
+
+void count_tempo_for_pergunta()
+{
+    cur_tempo = cur_pergunta->tempo;
+    show_seconds_label(cur_tempo);
+
+    for (long int i = 0; i < cur_tempo; i++)
+    {
+        g_timeout_add_seconds(i, (GSourceFunc)show_seconds_label, (gpointer)i);
+    }
+    g_timeout_add_seconds(cur_tempo, (GSourceFunc)pergunta_errada, NULL);
 }
 
 void draw_joca_level()
@@ -67,51 +143,11 @@ void draw_joca_level()
     char pontuacao[10];
     sprintf(pontuacao, "%d", jogo.pontuacao);
     create_label("current_pontuacao", pontuacao);
-}
 
-void show_victory_or_lose_screen(int victory)
-{
-    clear_all();
-    if (victory)
-    {
-        create_label("jocaVitoria", "Certo!");
-    }
-    else
-    {
-        create_label("jocaDerrota", "Errado!");
-    }
-    g_timeout_add_seconds(1, (GSourceFunc)game_start, NULL);
-    gtk_widget_show_all(window);
-    gtk_main();
-}
-
-void check_resposta(GtkWidget *widget, gpointer data)
-{
-    long int resposta = (long int)data;
-    if (resposta == cur_pergunta->resposta_certa)
-    {
-        set_pontuation(1);
-        if (jogo.joca_level < 10)
-            jogo.joca_level++;
-        show_victory_or_lose_screen(1);
-    }
-    else
-    {
-        set_pontuation(0);
-        for (int i = 0; i < 3; i++)
-        {
-            if (jogo.jocas_number > 0)
-            {
-                jogo.jocas_number--;
-            }
-            else
-            {
-                if (jogo.joca_level > 0)
-                    jogo.joca_level--;
-            }
-        }
-        show_victory_or_lose_screen(0);
-    }
+    GtkWidget *label11 = create_label("joca_tempo", "Tempo:");
+    // create a thread
+    tempo_label = create_label("current_tempo", "0");
+    count_tempo_for_pergunta();
 }
 
 void ending_screen()
@@ -154,15 +190,25 @@ void game_start()
 
     if (jogo.already_shown_len == 3)
     {
-        jogo.current_dificuldade = 1;
+        jogo.ff = 1;
+    }
+    else if (jogo.already_shown_len == 18)
+    {
+        jogo.ff = 0;
+        jogo.current_dificuldade = 1; // passa para medio
         jogo.multiplicador += 1;
     }
-    if (jogo.already_shown_len == 7)
+    else if (jogo.already_shown_len == 22)
     {
-        jogo.current_dificuldade = 2;
+        jogo.ff = 1;
+    }
+    else if (jogo.already_shown_len == 37)
+    {
+        jogo.ff = 0;
+        jogo.current_dificuldade = 2; // passa para dificil
         jogo.multiplicador += 2.5;
     }
-    if (jogo.already_shown_len == 10)
+    else if (jogo.already_shown_len == 40)
     {
         printf("Parabens, acabou o jogo no nivel %d\n", jogo.joca_level);
         ending_screen();
@@ -195,6 +241,7 @@ void game_start()
 void jogo_UI()
 {
     divide_perguntas_by_difficulty();
+    // print_all_pergutas_by_difficulty_and_50_50();
     clear_all();
     create_label("jocaTITLE", "JOCA");
 
@@ -207,6 +254,7 @@ void jogo_UI()
     jogo.jocas_number = 9;
     jogo.pontuacao = 0;
     jogo.multiplicador = 1.0;
+    jogo.ff = 0;
 
     create_button("start_game", "Iniciar Jogo", game_start);
     create_button("estatisticas_game", "Estatisticas", NULL);

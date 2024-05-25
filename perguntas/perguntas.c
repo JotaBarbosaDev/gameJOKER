@@ -339,6 +339,8 @@ Pergunta **perguntas_medias;
 int number_of_perguntas_medias;
 Pergunta **perguntas_dificeis;
 int number_of_perguntas_dificeis;
+Pergunta **perguntas_50_50;
+int number_of_perguntas_50_50;
 
 void divide_perguntas_by_difficulty()
 {
@@ -347,6 +349,13 @@ void divide_perguntas_by_difficulty()
 
     for (int i = 0; i < NUMBER_OF_PERGUNTAS; i++)
     {
+        if (perguntas[i]->tipo == 1)
+        {
+            number_of_perguntas_50_50++;
+            perguntas_50_50 = realloc(perguntas_50_50, sizeof(Pergunta *) * number_of_perguntas_50_50);
+            perguntas_50_50[number_of_perguntas_50_50 - 1] = perguntas[i];
+            continue;
+        }
         if (perguntas[i]->dificuldade == 0)
         {
             number_of_perguntas_faceis++;
@@ -370,7 +379,14 @@ void divide_perguntas_by_difficulty()
 
 Pergunta *get_random_pergunta2()
 {
-    if (jogo.current_dificuldade == 0)
+    srand(time(NULL));
+
+    if (jogo.ff == 1)
+    {
+        int random = rand() % number_of_perguntas_50_50;
+        return perguntas_50_50[random];
+    }
+    else if (jogo.current_dificuldade == 0)
     {
         int random = rand() % number_of_perguntas_faceis;
         return perguntas_faceis[random];
@@ -387,7 +403,7 @@ Pergunta *get_random_pergunta2()
     }
     else
     {
-        error("Dificuldade not found");
+        error("Dificuldade or 50/50 not found");
         return NULL;
     }
 }
@@ -451,4 +467,63 @@ int get_last_pergunta_id()
     }
 
     return temp_node->pergunta->id;
+}
+
+void print_all_pergutas_by_difficulty_and_50_50()
+{
+    printf("\n\n\n\033[1;34mPERGUNTAS FACEIS\033[0m\n");
+    for (int i = 0; i < number_of_perguntas_faceis; i++)
+    {
+        printf("Pergunta: %s\n", perguntas_faceis[i]->pergunta);
+        printf("Respostas: %s %s %s %s\n", perguntas_faceis[i]->respostas[0], perguntas_faceis[i]->respostas[1], perguntas_faceis[i]->respostas[2], perguntas_faceis[i]->respostas[3]);
+        printf("Resposta certa: %d\n", perguntas_faceis[i]->resposta_certa);
+        printf("Dificuldade: %d\n", perguntas_faceis[i]->dificuldade);
+        printf("ID: %d\n", perguntas_faceis[i]->id);
+        printf("Tema: %d\n", perguntas_faceis[i]->tema);
+        printf("Tempo: %f\n", perguntas_faceis[i]->tempo);
+        printf("Tipo: %d\n", perguntas_faceis[i]->tipo);
+        printf("\n\n");
+    }
+
+    printf("\n\n\n\033[1;34mPERGUNTAS MEDIAS\033[0m\n");
+    for (int i = 0; i < number_of_perguntas_medias; i++)
+    {
+        printf("Pergunta: %s\n", perguntas_medias[i]->pergunta);
+        printf("Respostas: %s %s %s %s\n", perguntas_medias[i]->respostas[0], perguntas_medias[i]->respostas[1], perguntas_medias[i]->respostas[2], perguntas_medias[i]->respostas[3]);
+        printf("Resposta certa: %d\n", perguntas_medias[i]->resposta_certa);
+        printf("Dificuldade: %d\n", perguntas_medias[i]->dificuldade);
+        printf("ID: %d\n", perguntas_medias[i]->id);
+        printf("Tema: %d\n", perguntas_medias[i]->tema);
+        printf("Tempo: %f\n", perguntas_medias[i]->tempo);
+        printf("Tipo: %d\n", perguntas_medias[i]->tipo);
+        printf("\n\n");
+    }
+
+    printf("\n\n\n\033[1;34mPERGUNTAS DIFICIES\033[0m\n");
+    for (int i = 0; i < number_of_perguntas_dificeis; i++)
+    {
+        printf("Pergunta: %s\n", perguntas_dificeis[i]->pergunta);
+        printf("Respostas: %s %s %s %s\n", perguntas_dificeis[i]->respostas[0], perguntas_dificeis[i]->respostas[1], perguntas_dificeis[i]->respostas[2], perguntas_dificeis[i]->respostas[3]);
+        printf("Resposta certa: %d\n", perguntas_dificeis[i]->resposta_certa);
+        printf("Dificuldade: %d\n", perguntas_dificeis[i]->dificuldade);
+        printf("ID: %d\n", perguntas_dificeis[i]->id);
+        printf("Tema: %d\n", perguntas_dificeis[i]->tema);
+        printf("Tempo: %f\n", perguntas_dificeis[i]->tempo);
+        printf("Tipo: %d\n", perguntas_dificeis[i]->tipo);
+        printf("\n\n");
+    }
+
+    printf("\n\n\n\033[1;34mPERGUNTAS 50/50\033[0m\n");
+    for (int i = 0; i < number_of_perguntas_50_50; i++)
+    {
+        printf("Pergunta: %s\n", perguntas_50_50[i]->pergunta);
+        printf("Respostas: %s %s %s %s\n", perguntas_50_50[i]->respostas[0], perguntas_50_50[i]->respostas[1], perguntas_50_50[i]->respostas[2], perguntas_50_50[i]->respostas[3]);
+        printf("Resposta certa: %d\n", perguntas_50_50[i]->resposta_certa);
+        printf("Dificuldade: %d\n", perguntas_50_50[i]->dificuldade);
+        printf("ID: %d\n", perguntas_50_50[i]->id);
+        printf("Tema: %d\n", perguntas_50_50[i]->tema);
+        printf("Tempo: %f\n", perguntas_50_50[i]->tempo);
+        printf("Tipo: %d\n", perguntas_50_50[i]->tipo);
+        printf("\n\n");
+    }
 }
