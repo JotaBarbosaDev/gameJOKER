@@ -42,6 +42,7 @@ typedef struct
     int jocas_number;
     int pontuacao;
     float multiplicador;
+    int ff;
 } JogoJoca;
 
 int main_UI(int argc, char *argv[]);

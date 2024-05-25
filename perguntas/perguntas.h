@@ -46,5 +46,6 @@ Pergunta *get_random_pergunta();
 void divide_perguntas_by_difficulty();
 Pergunta *get_pergunta_by_id(int id);
 int get_last_pergunta_id();
+void print_all_pergutas_by_difficulty_and_50_50();
 
 #endif

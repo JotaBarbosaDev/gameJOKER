@@ -1150,3 +1150,19 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
     padding: 5px 10px;
 }
+
+#joca_tempo {
+    font-size: 15px;
+    margin-left: 700px;
+    margin-top: 580px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#current_tempo {
+    font-size: 15px;
+    margin-left: 760px;
+    margin-top: 580px;
+    font-weight: bold;
+    color: #ffffff;
+}
