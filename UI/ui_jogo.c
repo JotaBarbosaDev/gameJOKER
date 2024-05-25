@@ -192,7 +192,7 @@ void game_start()
     gtk_main();
 }
 
-int jogo_UI()
+void jogo_UI()
 {
     divide_perguntas_by_difficulty();
     clear_all();

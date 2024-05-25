@@ -45,7 +45,7 @@ typedef struct
 } JogoJoca;
 
 int main_UI(int argc, char *argv[]);
-int jogo_UI();
+void jogo_UI();
 void menu_principal();
 extern GtkWidget *window;
 extern JogoJoca jogo;
