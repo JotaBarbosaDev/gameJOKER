@@ -175,7 +175,7 @@ void draw_joca_level()
     GtkWidget *label11 = create_label("joca_tempo", "Tempo:");
     // create a thread
     tempo_label = create_label("current_tempo", "0");
-    count_tempo_for_pergunta();
+    // count_tempo_for_pergunta();
 }
 
 void ending_screen()
