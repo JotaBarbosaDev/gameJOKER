@@ -187,7 +187,7 @@ void menu_left_admin()
     gtk_fixed_put(GTK_FIXED(fixed), drawing_area, 0, 0);
 
     create_label("say_JOKER_admin", "Admin");
-    create_button("users_see_admin", "Usuários", menu_admin_users);
+    create_button("users_see_admin", "Usuários", start_user_UI);
     create_button("perguntas_admin", "Questões", menu_admin_quests);
     create_button("estatisticas_admin", "Estatisticas", menu_admin_stats);
 

@@ -5,6 +5,7 @@
 
 void start_user_UI()
 {
+    clear_all();
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");
