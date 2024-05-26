@@ -10,7 +10,29 @@ char *niveis[] = {"0", "100", "200", "500", "1000", "5000", "10000", "20000", "5
 GtkWidget *tempo_label;
 float cur_tempo;
 
+typedef struct timeout_struct
+{
+    guint timeout;
+    GSource *source;
+    int exists;
+} timeout_struct;
+
+timeout_struct timeout_arr[21];
+#define timeout_arr_len 21
+
 void game_start();
+
+void free_timeout_arr()
+{
+    for (int i = 0; i < timeout_arr_len; i++)
+    {
+        if (timeout_arr[i].exists == 1)
+        {
+            g_source_remove(timeout_arr[i].timeout);
+            timeout_arr[i].exists = 0;
+        }
+    }
+}
 
 void set_pontuation(int win)
 {
@@ -90,6 +112,7 @@ void pergunta_errada()
 
 void check_resposta(GtkWidget *widget, gpointer data)
 {
+    free_timeout_arr();
 
     long int resposta = (long int)data;
     if (resposta == cur_pergunta->resposta_certa)
@@ -124,11 +147,21 @@ void count_tempo_for_pergunta()
     cur_tempo = cur_pergunta->tempo;
     show_seconds_label(cur_tempo);
 
+    for (int i = 0; i < timeout_arr_len; i++)
+    {
+        timeout_arr[i].exists = 0;
+    }
+
     for (long int i = 0; i < cur_tempo; i++)
     {
-        g_timeout_add_seconds(i, (GSourceFunc)show_seconds_label, (gpointer)i);
+        timeout_arr[i].timeout = (g_timeout_add_seconds(i, (GSourceFunc)show_seconds_label, (gpointer)i));
+        timeout_arr[i].source = g_main_context_find_source_by_id(NULL, timeout_arr[i].timeout);
+        timeout_arr[i].exists = 1;
     }
-    g_timeout_add_seconds(cur_tempo, (GSourceFunc)pergunta_errada, NULL);
+
+    timeout_arr[timeout_arr_len - 1].timeout = (g_timeout_add_seconds(cur_tempo, (GSourceFunc)pergunta_errada, NULL));
+    timeout_arr[timeout_arr_len - 1].source = g_main_context_find_source_by_id(NULL, timeout_arr[timeout_arr_len - 1].timeout);
+    timeout_arr[timeout_arr_len - 1].exists = 1;
 }
 
 void draw_joca_level()
@@ -175,7 +208,7 @@ void draw_joca_level()
     GtkWidget *label11 = create_label("joca_tempo", "Tempo:");
     // create a thread
     tempo_label = create_label("current_tempo", "0");
-    // count_tempo_for_pergunta();
+    count_tempo_for_pergunta();
 }
 
 void ending_screen()
