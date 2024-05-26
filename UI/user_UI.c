@@ -26,6 +26,8 @@ void start_user_UI()
 
     create_button("go_left_user", "<", NULL);
     create_button("go_right_user", ">", NULL);
+
+    create_button("leave_creation_button", "<", menu_admin_quests);
     
 
 
