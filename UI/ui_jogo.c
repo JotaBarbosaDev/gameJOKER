@@ -271,7 +271,7 @@ void game_start()
 void jogo_UI()
 {
     divide_perguntas_by_difficulty();
-    // print_all_pergutas_by_difficulty_and_50_50();
+    print_all_pergutas_by_difficulty_and_50_50();
     clear_all();
     create_label("jocaTITLE", "JOCA");
 

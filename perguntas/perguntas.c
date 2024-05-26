@@ -379,26 +379,24 @@ void divide_perguntas_by_difficulty()
 
 Pergunta *get_random_pergunta2()
 {
-    srand(time(NULL));
-
     if (jogo.ff == 1)
     {
-        int random = rand() % number_of_perguntas_50_50;
+        int random = g_random_int_range(0, number_of_perguntas_50_50);
         return perguntas_50_50[random];
     }
     else if (jogo.current_dificuldade == 0)
     {
-        int random = rand() % number_of_perguntas_faceis;
+        int random = g_random_int_range(0, number_of_perguntas_faceis);
         return perguntas_faceis[random];
     }
     else if (jogo.current_dificuldade == 1)
     {
-        int random = rand() % number_of_perguntas_medias;
+        int random = g_random_int_range(0, number_of_perguntas_medias);
         return perguntas_medias[random];
     }
     else if (jogo.current_dificuldade == 2)
     {
-        int random = rand() % number_of_perguntas_dificeis;
+        int random = g_random_int_range(0, number_of_perguntas_dificeis);
         return perguntas_dificeis[random];
     }
     else
@@ -471,7 +469,7 @@ int get_last_pergunta_id()
 
 void print_all_pergutas_by_difficulty_and_50_50()
 {
-    printf("\n\n\n\033[1;34mPERGUNTAS FACEIS\033[0m\n");
+    printf("\n\n\n\033[1;34mPERGUNTAS FACEIS nº -> %d\033[0m\n", number_of_perguntas_faceis);
     for (int i = 0; i < number_of_perguntas_faceis; i++)
     {
         printf("Pergunta: %s\n", perguntas_faceis[i]->pergunta);
@@ -485,7 +483,7 @@ void print_all_pergutas_by_difficulty_and_50_50()
         printf("\n\n");
     }
 
-    printf("\n\n\n\033[1;34mPERGUNTAS MEDIAS\033[0m\n");
+    printf("\n\n\n\033[1;34mPERGUNTAS MEDIAS nº -> %d\033[0m\n", number_of_perguntas_medias);
     for (int i = 0; i < number_of_perguntas_medias; i++)
     {
         printf("Pergunta: %s\n", perguntas_medias[i]->pergunta);
@@ -499,7 +497,7 @@ void print_all_pergutas_by_difficulty_and_50_50()
         printf("\n\n");
     }
 
-    printf("\n\n\n\033[1;34mPERGUNTAS DIFICIES\033[0m\n");
+    printf("\n\n\n\033[1;34mPERGUNTAS DIFICIES nº -> %d\033[0m\n", number_of_perguntas_dificeis);
     for (int i = 0; i < number_of_perguntas_dificeis; i++)
     {
         printf("Pergunta: %s\n", perguntas_dificeis[i]->pergunta);
@@ -513,7 +511,7 @@ void print_all_pergutas_by_difficulty_and_50_50()
         printf("\n\n");
     }
 
-    printf("\n\n\n\033[1;34mPERGUNTAS 50/50\033[0m\n");
+    printf("\n\n\n\033[1;34mPERGUNTAS 50/50 nº -> %d\033[0m\n", number_of_perguntas_50_50);
     for (int i = 0; i < number_of_perguntas_50_50; i++)
     {
         printf("Pergunta: %s\n", perguntas_50_50[i]->pergunta);
