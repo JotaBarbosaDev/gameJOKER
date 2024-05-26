@@ -224,3 +224,4 @@ void free_all_users()
 {
     free(users);
 }
+

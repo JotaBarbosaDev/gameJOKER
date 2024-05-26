@@ -10,6 +10,9 @@ void tela_create_pergunta();
 // edit_pergunta.c
 void tela_edit_pergunta();
 
+// user_UI.c
+void start_user_UI();
+
 void menu_admin();
 void menu_left_admin();
 void menu_admin_quests();
@@ -45,6 +48,8 @@ typedef struct
     int ff;
     int ff_certas;
 } JogoJoca;
+
+extern JogoJoca save_jogos[2048];
 
 int main_UI(int argc, char *argv[]);
 void jogo_UI();

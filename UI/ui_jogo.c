@@ -9,6 +9,7 @@ char cur_joca_level[10];
 char *niveis[] = {"0", "100", "200", "500", "1000", "5000", "10000", "20000", "50000", "100000"};
 GtkWidget *tempo_label;
 float cur_tempo;
+JogoJoca save_jogos[2048];
 
 typedef struct timeout_struct
 {
