@@ -1336,3 +1336,166 @@ ADMIN USERS PAGE
     background-color: rgba(39, 39, 39, 255);
     border-radius: 5px;
 }
+
+
+
+#show_id_user_ui{
+    font-size: 20px;
+    margin-left: 110px;
+    margin-top: 27px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+
+}
+
+#show_username_user_ui{
+    font-size: 20px;
+    margin-left: 140px;
+    margin-top: 67px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_numero_de_vitorias_user_ui{
+    font-size: 20px;
+    margin-left: 160px;
+    margin-top: 107px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_patamar_maximo_user_ui{
+    font-size: 20px;
+    margin-left: 250px;
+    margin-top: 147px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_tempo_total_user_ui{
+    font-size: 20px;
+    margin-left: 215px;
+    margin-top: 187px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_numero_de_perguntas_user_ui{
+    font-size: 20px;
+    margin-left: 305px;
+    margin-top: 227px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_numero_de_jogos_jogados_user_ui{
+    font-size: 20px;
+    margin-left: 220px;
+    margin-top: 267px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_numero_de_jogos_ganhos_user_ui{
+    font-size: 20px;
+    margin-left: 220px;
+    margin-top: 307px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_numero_de_jogos_perdidos_user_ui{
+    font-size: 20px;
+    margin-left: 230px;
+    margin-top: 347px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_numero_de_jogos_cancelados_por_falta_de_tempo_user_ui{
+    font-size: 20px;
+    margin-left: 440px;
+    margin-top: 387px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_faceis_certas_user_ui{
+    font-size: 20px;
+    margin-left: 210px;
+    margin-top: 427px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_faceis_erradas_user_ui{
+    font-size: 20px;
+    margin-left: 220px;
+    margin-top: 467px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_medios_certas_user_ui{
+    font-size: 20px;
+    margin-left: 215px;
+    margin-top: 507px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_medios_erradas_user_ui{
+    font-size: 20px;
+    margin-left: 230px;
+    margin-top: 547px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_dificeis_certas_user_ui{
+    font-size: 20px;
+    margin-left: 220px;
+    margin-top: 587px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+#show_dificeis_erradas_user_ui{
+    font-size: 20px;
+    margin-left: 230px;
+    margin-top: 627px;
+    font-weight: bold;
+    color: blue;
+    background-color: #fff;
+    padding: 3px 5px;
+}
