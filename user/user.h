@@ -10,11 +10,11 @@ typedef struct
     int id;
     int numero_de_vitorias;
     int patamar_maximo;
-    int tempo_total;
+    int jocas_ganhos;
     int numero_de_perguntas;
+    int pontuacao_maxima;
+    int pontuacao_total;
     int numero_de_jogos_jogados;
-    int numero_de_jogos_ganhos;
-    int numero_de_jogos_perdidos;
     int numero_de_jogos_cancelados_por_falta_de_tempo;
     int faceis_certas;
     int faceis_erradas;

@@ -40,6 +40,7 @@ void set_pontuation(int win)
     if (win)
     {
         jogo.pontuacao += 100 * jogo.multiplicador;
+        login_user_global->pontuacao_total += 100 * jogo.multiplicador;
         jogo.multiplicador += 0.5;
     }
     else
@@ -63,6 +64,7 @@ void show_victory_or_lose_screen(int victory)
     {
         create_label("jocaDerrota", "Errado!");
     }
+    save_users();
     g_timeout_add_seconds(1, (GSourceFunc)game_start, NULL);
     gtk_widget_show_all(window);
     gtk_main();
@@ -81,6 +83,7 @@ void pergunta_certa_ff()
     jogo.ff_certas++;
     if (jogo.ff_certas == 6)
     {
+        login_user_global->jocas_ganhos++;
         jogo.jocas_number++;
         jogo.ff_certas = 0;
     }
@@ -111,6 +114,12 @@ void pergunta_errada()
     show_victory_or_lose_screen(0);
 }
 
+void perder_por_tempo()
+{
+    login_user_global->numero_de_jogos_cancelados_por_falta_de_tempo++;
+    pergunta_errada(0);
+}
+
 void check_resposta(GtkWidget *widget, gpointer data)
 {
     free_timeout_arr();
@@ -123,6 +132,18 @@ void check_resposta(GtkWidget *widget, gpointer data)
             pergunta_certa_ff();
             return;
         }
+        if (cur_pergunta->dificuldade == 0)
+        {
+            login_user_global->faceis_certas++;
+        }
+        else if (cur_pergunta->dificuldade == 1)
+        {
+            login_user_global->medios_certas++;
+        }
+        else
+        {
+            login_user_global->dificeis_certas++;
+        }
         pergunta_certa();
     }
     else
@@ -131,6 +152,18 @@ void check_resposta(GtkWidget *widget, gpointer data)
         {
             pergunta_errada_ff();
             return;
+        }
+        if (cur_pergunta->dificuldade == 0)
+        {
+            login_user_global->faceis_erradas++;
+        }
+        else if (cur_pergunta->dificuldade == 1)
+        {
+            login_user_global->medios_erradas++;
+        }
+        else
+        {
+            login_user_global->dificeis_erradas++;
         }
         pergunta_errada();
     }
@@ -160,7 +193,7 @@ void count_tempo_for_pergunta()
         timeout_arr[i].exists = 1;
     }
 
-    timeout_arr[timeout_arr_len - 1].timeout = (g_timeout_add_seconds(cur_tempo, (GSourceFunc)pergunta_errada, NULL));
+    timeout_arr[timeout_arr_len - 1].timeout = (g_timeout_add_seconds(cur_tempo, (GSourceFunc)perder_por_tempo, NULL));
     timeout_arr[timeout_arr_len - 1].source = g_main_context_find_source_by_id(NULL, timeout_arr[timeout_arr_len - 1].timeout);
     timeout_arr[timeout_arr_len - 1].exists = 1;
 }
@@ -214,6 +247,11 @@ void draw_joca_level()
 
 void ending_screen()
 {
+    if (jogo.pontuacao > login_user_global->pontuacao_maxima)
+    {
+        login_user_global->pontuacao_maxima = jogo.pontuacao;
+    }
+
     // add jogo com stack
     clear_all();
     create_label("jocaEND2", "Parabéns, acabou o jogo!");
@@ -244,11 +282,6 @@ void game_start()
 
     38,39,40->dificil
     */
-    cur_pergunta = get_random_pergunta();
-
-    jogo.already_shown = realloc(jogo.already_shown, sizeof(int) * (jogo.already_shown_len + 1));
-    jogo.already_shown[jogo.already_shown_len] = cur_pergunta->id;
-    jogo.already_shown_len++;
 
     if (jogo.already_shown_len == 3)
     {
@@ -280,6 +313,14 @@ void game_start()
         exit(0);
     }
 
+    cur_pergunta = get_random_pergunta();
+
+    login_user_global->numero_de_perguntas++;
+
+    jogo.already_shown = realloc(jogo.already_shown, sizeof(int) * (jogo.already_shown_len + 1));
+    jogo.already_shown[jogo.already_shown_len] = cur_pergunta->id;
+    jogo.already_shown_len++;
+
     clear_all();
     create_label("jocaTITLE2", "JOCA");
     create_label("dif_indicator", dificuldades[cur_pergunta->dificuldade]);
@@ -308,6 +349,8 @@ void jogo_UI()
     print_all_pergutas_by_difficulty_and_50_50();
     clear_all();
     create_label("jocaTITLE", "JOCA");
+
+    login_user_global->numero_de_jogos_jogados++;
 
     jogo.already_shown_len = 0;
     jogo.current_pergunta = 0;

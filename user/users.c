@@ -66,11 +66,11 @@ void register_user(char *username, char *password)
     u->id = get_last_id() + 1;
     u->numero_de_vitorias = 0;
     u->patamar_maximo = 0;
-    u->tempo_total = 0;
+    u->jocas_ganhos = 0;
     u->numero_de_perguntas = 0;
+    u->pontuacao_maxima = 0;
+    u->pontuacao_total = 0;
     u->numero_de_jogos_jogados = 0;
-    u->numero_de_jogos_ganhos = 0;
-    u->numero_de_jogos_perdidos = 0;
     u->numero_de_jogos_cancelados_por_falta_de_tempo = 0;
     u->faceis_certas = 0;
     u->faceis_erradas = 0;
@@ -204,11 +204,11 @@ void print_users()
         printf("ID -> %d\n", users[i].id);
         printf("Numero de vitorias -> %d\n", users[i].numero_de_vitorias);
         printf("Patamar maximo -> %d\n", users[i].patamar_maximo);
-        printf("Tempo total -> %d\n", users[i].tempo_total);
+        printf("Jocas ganhos -> %d\n", users[i].jocas_ganhos);
         printf("Numero de perguntas -> %d\n", users[i].numero_de_perguntas);
+        printf("Pontuação Maxima -> %d\n", users[i].pontuacao_maxima);
+        printf("Pontuaçao total -> %d\n", users[i].pontuacao_total);
         printf("Numero de jogos jogados -> %d\n", users[i].numero_de_jogos_jogados);
-        printf("Numero de jogos ganhos -> %d\n", users[i].numero_de_jogos_ganhos);
-        printf("Numero de jogos perdidos -> %d\n", users[i].numero_de_jogos_perdidos);
         printf("Numero de jogos cancelados por falta de tempo -> %d\n", users[i].numero_de_jogos_cancelados_por_falta_de_tempo);
         printf("Faceis certas -> %d\n", users[i].faceis_certas);
         printf("Faceis erradas -> %d\n", users[i].faceis_erradas);
@@ -224,4 +224,3 @@ void free_all_users()
 {
     free(users);
 }
-
