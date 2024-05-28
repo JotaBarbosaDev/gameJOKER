@@ -91,7 +91,6 @@ int main(int argc, char *argv[])
     load_users();
     print_users();
 
-    return 0;
     load_perguntas();
 
     printf("START\n");
