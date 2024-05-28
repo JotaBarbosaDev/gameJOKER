@@ -81,6 +81,8 @@ extern GtkWidget *array_resposta[4];
 extern GtkWidget *array_tema[9];
 extern GtkWidget *array_tipo[2];
 
+extern char *niveis[];
+
 void set_tipo(GtkWidget *widget, gpointer tipo, gpointer user_data);
 void set_dificuldade(GtkWidget *widget, gpointer dificuldade, gpointer user_data);
 void set_tema(GtkWidget *widget, gpointer tema, gpointer user_data);

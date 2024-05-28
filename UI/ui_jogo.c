@@ -252,11 +252,21 @@ void ending_screen()
         login_user_global->pontuacao_maxima = jogo.pontuacao;
     }
 
+    if (jogo.joca_level > login_user_global->patamar_maximo)
+    {
+        login_user_global->patamar_maximo = jogo.joca_level;
+    }
+
     // add jogo com stack
     clear_all();
     create_label("jocaEND2", "Parabéns, acabou o jogo!");
     create_label("jocaEND3", "Obrigado por jogar!");
-    create_label("jocaEND4", "Pontuação final:");
+    create_label("jocaEND4", "Nivel final:");
+    create_label("jocaEND9", "Pontuação final:");
+    char pontuacao[10];
+    sprintf(pontuacao, "%d", jogo.pontuacao);
+    create_label("jocaEND10", pontuacao);
+
     char jocas[10];
     sprintf(jocas, "%s", niveis[jogo.joca_level]);
     create_label("jocaEND5", jocas);
@@ -309,8 +319,6 @@ void game_start()
     {
         printf("Parabens, acabou o jogo no nivel %d\n", jogo.joca_level);
         ending_screen();
-        jogo.ending = 1;
-        exit(0);
     }
 
     cur_pergunta = get_random_pergunta();

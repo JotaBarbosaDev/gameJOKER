@@ -1039,6 +1039,21 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
+#jocaEND9 {
+    font-size: 40px;
+    margin-left: 140px;
+    margin-top: 390px;
+    color: #ffffff;
+}
+
+#jocaEND10 {
+    font-size: 40px;
+    margin-left: 460px;
+    margin-top: 390px;
+    color: #ffffff;
+}
+
+
 #jocaEND5 {
     font-size: 40px;
     margin-left: 460px;
@@ -1171,7 +1186,7 @@ ADMIN USERS PAGE
 
 
 
-#id_user_ui{
+#id_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 30px;
@@ -1179,7 +1194,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#username_user_ui{
+#username_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 70px;
@@ -1187,7 +1202,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#numero_de_vitorias_user_ui{
+#numero_de_vitorias_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 110px;
@@ -1195,7 +1210,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#patamar_maximo_user_ui{
+#patamar_maximo_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 150px;
@@ -1203,7 +1218,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#tempo_total_user_ui{
+#tempo_total_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 190px;
@@ -1211,7 +1226,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#numero_de_perguntas_user_ui{
+#numero_de_perguntas_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 230px;
@@ -1219,7 +1234,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#numero_de_jogos_jogados_user_ui{
+#numero_de_jogos_jogados_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 270px;
@@ -1227,7 +1242,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#numero_de_jogos_ganhos_user_ui{
+#numero_de_jogos_ganhos_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 310px;
@@ -1235,7 +1250,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#numero_de_jogos_perdidos_user_ui{
+#numero_de_jogos_perdidos_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 350px;
@@ -1243,7 +1258,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#numero_de_jogos_cancelados_por_falta_de_tempo_user_ui{
+#numero_de_jogos_cancelados_por_falta_de_tempo_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 390px;
@@ -1251,7 +1266,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#faceis_certas_user_ui{
+#faceis_certas_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 430px;
@@ -1259,7 +1274,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#faceis_erradas_user_ui{
+#faceis_erradas_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 470px;
@@ -1267,7 +1282,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#medios_certas_user_ui{
+#medios_certas_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 510px;
@@ -1275,7 +1290,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#medios_erradas_user_ui{
+#medios_erradas_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 550px;
@@ -1283,7 +1298,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#dificeis_certas_user_ui{
+#dificeis_certas_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 590px;
@@ -1291,7 +1306,7 @@ ADMIN USERS PAGE
     color: #ffffff;
 }
 
-#dificeis_erradas_user_ui{
+#dificeis_erradas_user_ui {
     font-size: 20px;
     margin-left: 70px;
     margin-top: 630px;
@@ -1339,7 +1354,7 @@ ADMIN USERS PAGE
 
 
 
-#show_id_user_ui{
+#show_id_user_ui {
     font-size: 20px;
     margin-left: 110px;
     margin-top: 27px;
@@ -1350,7 +1365,7 @@ ADMIN USERS PAGE
 
 }
 
-#show_username_user_ui{
+#show_username_user_ui {
     font-size: 20px;
     margin-left: 140px;
     margin-top: 67px;
@@ -1360,7 +1375,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_numero_de_vitorias_user_ui{
+#show_numero_de_vitorias_user_ui {
     font-size: 20px;
     margin-left: 160px;
     margin-top: 107px;
@@ -1370,7 +1385,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_patamar_maximo_user_ui{
+#show_patamar_maximo_user_ui {
     font-size: 20px;
     margin-left: 250px;
     margin-top: 147px;
@@ -1380,7 +1395,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_tempo_total_user_ui{
+#show_tempo_total_user_ui {
     font-size: 20px;
     margin-left: 215px;
     margin-top: 187px;
@@ -1390,7 +1405,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_numero_de_perguntas_user_ui{
+#show_numero_de_perguntas_user_ui {
     font-size: 20px;
     margin-left: 305px;
     margin-top: 227px;
@@ -1400,7 +1415,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_numero_de_jogos_jogados_user_ui{
+#show_numero_de_jogos_jogados_user_ui {
     font-size: 20px;
     margin-left: 220px;
     margin-top: 267px;
@@ -1410,7 +1425,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_numero_de_jogos_ganhos_user_ui{
+#show_numero_de_jogos_ganhos_user_ui {
     font-size: 20px;
     margin-left: 220px;
     margin-top: 307px;
@@ -1420,7 +1435,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_numero_de_jogos_perdidos_user_ui{
+#show_numero_de_jogos_perdidos_user_ui {
     font-size: 20px;
     margin-left: 230px;
     margin-top: 347px;
@@ -1430,7 +1445,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_numero_de_jogos_cancelados_por_falta_de_tempo_user_ui{
+#show_numero_de_jogos_cancelados_por_falta_de_tempo_user_ui {
     font-size: 20px;
     margin-left: 440px;
     margin-top: 387px;
@@ -1440,7 +1455,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_faceis_certas_user_ui{
+#show_faceis_certas_user_ui {
     font-size: 20px;
     margin-left: 210px;
     margin-top: 427px;
@@ -1450,7 +1465,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_faceis_erradas_user_ui{
+#show_faceis_erradas_user_ui {
     font-size: 20px;
     margin-left: 220px;
     margin-top: 467px;
@@ -1460,7 +1475,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_medios_certas_user_ui{
+#show_medios_certas_user_ui {
     font-size: 20px;
     margin-left: 215px;
     margin-top: 507px;
@@ -1470,7 +1485,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_medios_erradas_user_ui{
+#show_medios_erradas_user_ui {
     font-size: 20px;
     margin-left: 230px;
     margin-top: 547px;
@@ -1480,7 +1495,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_dificeis_certas_user_ui{
+#show_dificeis_certas_user_ui {
     font-size: 20px;
     margin-left: 220px;
     margin-top: 587px;
@@ -1490,7 +1505,7 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#show_dificeis_erradas_user_ui{
+#show_dificeis_erradas_user_ui {
     font-size: 20px;
     margin-left: 230px;
     margin-top: 627px;
