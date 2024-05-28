@@ -21,6 +21,13 @@ trees             //usar para ordernar jogos por pontuacao e encontrar jogos com
 binary tree search     //fzr representacao grafica de jogos sistema de pontos:D
 
 hash tables      //encontrar / salvar jogadores
+
+
+
+
+//maiisisisis
+fix no mac das merdas
+resize em tudo q é merda
 */
 
 char temas[9][20] = {"Geografia", "Historia", "Ciencia", "Desporto", "Arte", "Tecnologia", "Matematica", "Literatura", "Geral"};
