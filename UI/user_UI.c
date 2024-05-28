@@ -7,7 +7,7 @@ void start_user_UI()
 {
     clear_all();
 
-    User *user = get_users_by_id(5);
+    User *user = get_users_by_id(19);
 
     create_label("id_user_ui", "ID:");
     const gchar *id = g_strdup_printf("%d", user->id);
