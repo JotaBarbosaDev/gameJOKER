@@ -40,7 +40,6 @@ void set_pontuation(int win)
     if (win)
     {
         jogo.pontuacao += 100 * jogo.multiplicador;
-        login_user_global->pontuacao_total += 100 * jogo.multiplicador;
         jogo.multiplicador += 0.5;
     }
     else
@@ -64,7 +63,6 @@ void show_victory_or_lose_screen(int victory)
     {
         create_label("jocaDerrota", "Errado!");
     }
-    save_users();
     g_timeout_add_seconds(1, (GSourceFunc)game_start, NULL);
     gtk_widget_show_all(window);
     gtk_main();
@@ -257,6 +255,15 @@ void ending_screen()
         login_user_global->patamar_maximo = jogo.joca_level;
     }
 
+    if (jogo.joca_level == 10)
+    {
+        login_user_global->numero_de_vitorias++;
+    }
+
+    login_user_global->pontuacao_total += jogo.pontuacao;
+
+    save_users();
+
     // add jogo com stack
     clear_all();
     create_label("jocaEND2", "Parabéns, acabou o jogo!");
@@ -315,7 +322,7 @@ void game_start()
         jogo.current_dificuldade = 2; // passa para dificil
         jogo.multiplicador += 2.5;
     }
-    else if (jogo.already_shown_len == 41)
+    else if (jogo.already_shown_len == 40)
     {
         printf("Parabens, acabou o jogo no nivel %d\n", jogo.joca_level);
         ending_screen();

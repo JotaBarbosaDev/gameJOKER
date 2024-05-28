@@ -83,7 +83,6 @@ int main(int argc, char *argv[])
 
     load_users();
     print_users();
-
     load_perguntas();
 
     printf("START\n");
