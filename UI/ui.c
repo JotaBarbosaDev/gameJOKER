@@ -63,12 +63,18 @@ void register_button()
 gboolean barra_left(GtkWidget *widget, cairo_t *cr, gpointer user_data)
 {
     // Set the color and size of the shape
-
     cairo_set_source_rgb(cr, 0.122, 0.267, 0.573); // to git 0-1, 0-1, 0-1 colors
     cairo_set_line_width(cr, 150);
 
     // Draw a rectangle shape
     cairo_rectangle(cr, 0, 0, 150, HEIGHT);
+    cairo_stroke(cr);
+
+    // Add a right border
+    cairo_set_source_rgb(cr, 0.992, 0.859, 0.322);
+    cairo_set_line_width(cr, 3);
+    cairo_move_to(cr, 199, 0);
+    cairo_line_to(cr, 199, HEIGHT);
     cairo_stroke(cr);
 
     return FALSE;
