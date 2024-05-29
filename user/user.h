@@ -37,5 +37,8 @@ User *get_users_by_id(int id);
 void print_users();
 void free_all_users();
 void delete_user_by_id(int id);
+int get_last_id();
+int does_user_exist(int id);
+int get_number_of_users();
 
 #endif
