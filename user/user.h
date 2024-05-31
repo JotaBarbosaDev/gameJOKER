@@ -22,6 +22,10 @@ typedef struct
     int medios_erradas;
     int dificeis_certas;
     int dificeis_erradas;
+    unsigned int last_game_date[5];
+    unsigned int born_date[3];
+    char full_name[100];
+    char nacionalidade[2];
 } User;
 
 extern User *login_user_global;

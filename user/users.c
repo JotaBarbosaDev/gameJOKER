@@ -216,6 +216,10 @@ void print_users()
         printf("Medios erradas -> %d\n", users[i].medios_erradas);
         printf("Dificeis certas -> %d\n", users[i].dificeis_certas);
         printf("Dificeis erradas -> %d\n", users[i].dificeis_erradas);
+        printf("Last game date -> %u/%u/%u %u:%u\n", users[i].last_game_date[0], users[i].last_game_date[1], users[i].last_game_date[2], users[i].last_game_date[3], users[i].last_game_date[4]);
+        printf("Born date -> %u/%u/%u\n", users[i].born_date[0], users[i].born_date[1], users[i].born_date[2]);
+        printf("Full name -> %s\n", users[i].full_name);
+        printf("Nacionalidade -> %s\n", users[i].nacionalidade);
         printf("\n\n");
     }
 }
