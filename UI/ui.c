@@ -9,9 +9,6 @@ GtkWidget *login;
 GtkWidget *password;
 GtkWidget *fixed;
 
-#define WIDTH 800
-#define HEIGHT 600
-
 void create_window_login_error(GtkWidget *parent)
 {
     GtkWidget *window;
@@ -134,55 +131,6 @@ gboolean barra_left(GtkWidget *widget, cairo_t *cr, gpointer user_data)
     return FALSE;
 }
 
-// Criar tela admin -> users
-void menu_admin_users()
-{
-    clear_all();
-    menu_left_admin();
-
-    // create_button("users_ver_users", "Ver Usuarios", tela_get_user);
-    // create_button("users_create_users", "Criar Usuario", tela_create_user);
-    // create_button("users_delete_users", "Apagar Usuario", tela_delete_user);
-
-    gtk_widget_show_all(window);
-    okay("Menu admin user loaded successfully");
-    gtk_main();
-}
-
-// Screen user
-void tela_create_user()
-{
-    clear_all();
-
-    create_button("user_create_button", "Criar Usuario", NULL);
-
-    gtk_widget_show_all(window);
-    okay("Menu admin user loaded successfully");
-    gtk_main();
-}
-
-void tela_get_user()
-{
-    clear_all();
-
-    create_button("user_edit_button", "Editar Usuario", NULL);
-
-    gtk_widget_show_all(window);
-    okay("Menu admin user loaded successfully");
-    gtk_main();
-}
-
-void tela_delete_user()
-{
-    clear_all();
-
-    create_button("user_delete_button", "Apagar Usuario", NULL);
-
-    gtk_widget_show_all(window);
-    okay("Menu admin user loaded successfully");
-    gtk_main();
-}
-
 void menu_admin_quests()
 {
     clear_all();
@@ -213,6 +161,7 @@ void menu_admin_stats()
 
 void menu_principal()
 {
+
     login_user_global = NULL;
     jogo.joca_level = 0;
     jogo.jocas_number = 3;

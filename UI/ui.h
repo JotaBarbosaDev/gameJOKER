@@ -4,6 +4,9 @@
 #ifndef UI_H
 #define UI_H
 
+#define WIDTH 800
+#define HEIGHT 600
+
 // create_pergunta.c
 void tela_create_pergunta();
 
@@ -93,5 +96,6 @@ void set_dificuldade(GtkWidget *widget, gpointer dificuldade, gpointer user_data
 void set_tema(GtkWidget *widget, gpointer tema, gpointer user_data);
 void set_resposta(GtkWidget *widget, gpointer resposta);
 void clear_all_camps();
+void force_window_size();
 
 #endif

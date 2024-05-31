@@ -11,7 +11,7 @@ LOGIN PAGE
 //
 */
 #jocaTITLE {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 15px;
     font-size: 120px;
     font-weight: 900;
@@ -19,7 +19,7 @@ LOGIN PAGE
     margin-top: 90px;
     color: #fddb52;
     text-shadow: 2px 0 #6c5700, -2px 0 #6c5700, 0 2px #6c5700, 0 -2px #6c5700,
-               1px 1px #6c5700, -1px -1px #6c5700, 1px -1px #6c5700, -1px 1px #6c5700;
+        1px 1px #6c5700, -1px -1px #6c5700, 1px -1px #6c5700, -1px 1px #6c5700;
 }
 
 
@@ -90,7 +90,7 @@ ADMIN PAGE
 }
 
 #say_JOKER_admin {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 5px;
     font-size: 40px;
     font-weight: 900;
@@ -98,7 +98,7 @@ ADMIN PAGE
     margin-top: 50px;
     color: #fddb52;
     text-shadow: 2px 0 #6c5700, -2px 0 #6c5700, 0 2px #6c5700, 0 -2px #6c5700,
-               1px 1px #6c5700, -1px -1px #6c5700, 1px -1px #6c5700, -1px 1px #6c5700;
+        1px 1px #6c5700, -1px -1px #6c5700, 1px -1px #6c5700, -1px 1px #6c5700;
 }
 
 #users_see_admin {
@@ -1200,56 +1200,105 @@ ADMIN USERS PAGE
 #id_user_ui {
     font-size: 20px;
     margin-left: 70px;
-    margin-top: 30px;
+    margin-top: 20px;
     font-weight: bold;
     color: #ffffff;
 }
 
-#username_user_ui {
+#show_id_user_ui {
+    font-size: 20px;
+    margin-left: 110px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding: 3px 5px;
+}
+
+#show_username_user_ui {
+    font-size: 20px;
+    margin-left: 350px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#show_nacionalidade_user_ui {
+    font-size: 20px;
+    margin-left: 690px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#show_born_date_user_ui{
+    font-size: 20px;
+    margin-left: 650px;
+    margin-top: 45px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#full_name_user_ui{
     font-size: 20px;
     margin-left: 70px;
-    margin-top: 70px;
-    font-weight: bold;
+    margin-top: 110px;
+    color: #ffffff;
+}
+
+#show_full_name_user_ui{
+    font-size: 20px;
+    margin-left: 235px;
+    margin-top: 110px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+#last_game_date_user_ui{
+    font-size: 20px;
+    margin-left: 70px;
+    margin-top: 180px;
     color: #ffffff;
 }
 
 #numero_de_vitorias_user_ui {
     font-size: 20px;
     margin-left: 70px;
-    margin-top: 110px;
-    font-weight: bold;
+    margin-top: 250px;
     color: #ffffff;
 }
 
 #patamar_maximo_user_ui {
     font-size: 20px;
     margin-left: 70px;
-    margin-top: 150px;
-    font-weight: bold;
+    margin-top: 320px;
     color: #ffffff;
 }
 
 #tempo_total_user_ui {
     font-size: 20px;
     margin-left: 70px;
-    margin-top: 190px;
-    font-weight: bold;
+    margin-top: 390px;
     color: #ffffff;
 }
 
 #numero_de_perguntas_user_ui {
     font-size: 20px;
     margin-left: 70px;
-    margin-top: 230px;
-    font-weight: bold;
+    margin-top: 460px;
     color: #ffffff;
 }
 
 #numero_de_jogos_jogados_user_ui {
     font-size: 20px;
     margin-left: 70px;
-    margin-top: 270px;
-    font-weight: bold;
+    margin-top: 530px;
+    color: #ffffff;
+}
+
+#numero_de_jogos_cancelados_por_falta_de_tempo_user_ui {
+    font-size: 20px;
+    margin-left: 70px;
+    margin-top: 600px;
     color: #ffffff;
 }
 
@@ -1257,7 +1306,6 @@ ADMIN USERS PAGE
     font-size: 20px;
     margin-left: 70px;
     margin-top: 310px;
-    font-weight: bold;
     color: #ffffff;
 }
 
@@ -1265,63 +1313,62 @@ ADMIN USERS PAGE
     font-size: 20px;
     margin-left: 70px;
     margin-top: 350px;
-    font-weight: bold;
     color: #ffffff;
 }
 
-#numero_de_jogos_cancelados_por_falta_de_tempo_user_ui {
+#numero_de_jogos_ganhos_user_ui{
     font-size: 20px;
-    margin-left: 70px;
-    margin-top: 390px;
-    font-weight: bold;
+    margin-left: 550px;
+    margin-top: 110px;
+    color: #ffffff;
+}
+
+#numero_de_jogos_perdidos_user_ui{
+    font-size: 20px;
+    margin-left: 550px;
+    margin-top: 180px;
     color: #ffffff;
 }
 
 #faceis_certas_user_ui {
     font-size: 20px;
-    margin-left: 70px;
-    margin-top: 430px;
-    font-weight: bold;
+    margin-left: 550px;
+    margin-top: 250px;
     color: #ffffff;
 }
 
 #faceis_erradas_user_ui {
     font-size: 20px;
-    margin-left: 70px;
-    margin-top: 470px;
-    font-weight: bold;
+    margin-left: 550px;
+    margin-top: 320px;
     color: #ffffff;
 }
 
 #medios_certas_user_ui {
     font-size: 20px;
-    margin-left: 70px;
-    margin-top: 510px;
-    font-weight: bold;
+    margin-left: 550px;
+    margin-top: 390px;
     color: #ffffff;
 }
 
 #medios_erradas_user_ui {
     font-size: 20px;
-    margin-left: 70px;
-    margin-top: 550px;
-    font-weight: bold;
+    margin-left: 550px;
+    margin-top: 460px;
     color: #ffffff;
 }
 
 #dificeis_certas_user_ui {
     font-size: 20px;
-    margin-left: 70px;
-    margin-top: 590px;
-    font-weight: bold;
+    margin-left: 550px;
+    margin-top: 530px;
     color: #ffffff;
 }
 
 #dificeis_erradas_user_ui {
     font-size: 20px;
-    margin-left: 70px;
-    margin-top: 630px;
-    font-weight: bold;
+    margin-left: 550px;
+    margin-top: 600px;
     color: #ffffff;
 }
 
@@ -1365,28 +1412,10 @@ ADMIN USERS PAGE
 
 
 
-#show_id_user_ui {
-    font-size: 20px;
-    margin-left: 110px;
-    margin-top: 27px;
-    font-weight: bold;
-    color: blue;
-    background-color: #fff;
-    padding: 3px 5px;
 
-}
 
-#show_username_user_ui {
-    font-size: 20px;
-    margin-left: 140px;
-    margin-top: 67px;
-    font-weight: bold;
-    color: blue;
-    background-color: #fff;
-    padding: 3px 5px;
-}
 
-#show_numero_de_vitorias_user_ui {
+/* #show_numero_de_vitorias_user_ui {
     font-size: 20px;
     margin-left: 160px;
     margin-top: 107px;
@@ -1394,7 +1423,7 @@ ADMIN USERS PAGE
     color: blue;
     background-color: #fff;
     padding: 3px 5px;
-}
+} */
 
 #show_patamar_maximo_user_ui {
     font-size: 20px;
@@ -1526,49 +1555,62 @@ ADMIN USERS PAGE
     padding: 3px 5px;
 }
 
-#list_header{
+#list_header {
     font-weight: 900;
     font-size: 20px;
 }
 
-#register_full_name{
+#register_full_name {
     margin-left: 300px;
     margin-top: 50px;
     padding: 5px 20px;
     color: #fff;
 }
 
-#register_nacionalidade{
+#register_nacionalidade {
     margin-left: 300px;
     margin-top: 100px;
     padding: 5px 20px;
     color: #fff;
 }
 
-#register_username{
+#register_username {
     margin-left: 300px;
     margin-top: 150px;
     padding: 5px 20px;
     color: #fff;
 }
 
-#register_password{
+#register_password {
     margin-left: 300px;
     margin-top: 200px;
     padding: 5px 20px;
     color: #fff;
 }
 
-#open_calendar{
+#open_calendar {
     margin-left: 320px;
     margin-top: 250px;
     padding: 5px 20px;
     color: #fff;
 }
 
-#register_button1{
+#register_button1 {
     margin-left: 315px;
     margin-top: 470px;
     padding: 5px 50px;
     color: #fff;
+}
+
+#afinal_era_esta_label {
+    margin-left: 330px;
+    margin-top: 370px;
+    font-size: 30px;
+}
+
+#afinal_era_esta {
+    margin-left: 330px;
+    margin-top: 400px;
+    font-size: 30px;
+    font-weight: 900;
 }

@@ -63,8 +63,11 @@ void show_victory_or_lose_screen(int victory)
     else
     {
         create_label("jocaDerrota", "Errado!");
+
+        create_label("afinal_era_esta_label", "A resposta certa era:");
+        create_label("afinal_era_esta", cur_pergunta->respostas[cur_pergunta->resposta_certa]);
     }
-    g_timeout_add_seconds(1, (GSourceFunc)game_start, NULL);
+    g_timeout_add_seconds(2.5, (GSourceFunc)game_start, NULL);
     gtk_widget_show_all(window);
     gtk_main();
 }

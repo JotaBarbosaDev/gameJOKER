@@ -107,7 +107,6 @@ User *alloc_mem_for_sort()
 {
     int number_of_users = get_number_of_users();
     User *users = get_all_users();
-
     User *unsorted_users = malloc(sizeof(User) * number_of_users);
 
     for (int i = 0; i < number_of_users; i++)

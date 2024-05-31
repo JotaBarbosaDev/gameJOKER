@@ -28,8 +28,15 @@ void import_css()
     okay("CSS loaded successfully");
 }
 
+void force_window_size()
+{
+    info("Forcing window size");
+    gtk_window_resize(GTK_WINDOW(window), WIDTH, HEIGHT);
+}
+
 void clear_all()
 {
+    force_window_size();
     GList *children, *iter;
     children = gtk_container_get_children(GTK_CONTAINER(fixed));
     for (iter = children; iter != NULL; iter = g_list_next(iter))
