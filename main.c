@@ -79,8 +79,6 @@ int test_hash()
 
 int main(int argc, char *argv[])
 {
-
-    return 0;
     if (test_hash() == -1)
     {
         return -1;
@@ -88,6 +86,14 @@ int main(int argc, char *argv[])
 
     load_users();
     print_users();
+
+    User *sorted_user = alloc_mem_for_sort();
+    sorted_user = sort_users_by_name(sorted_user);
+
+    for (int i = 0; i < get_number_of_users(); i++)
+    {
+        printf("User %d -> %s\n", i, sorted_user[i].username);
+    }
 
     load_perguntas();
 

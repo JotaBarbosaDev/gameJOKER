@@ -21,6 +21,9 @@ void tela_edit_user();
 void tela_create_user();
 void tela_delete_user();
 
+// estatisticas_UI.c
+void show_last_10_games();
+
 // UI
 extern GtkWidget *fixed;
 
@@ -32,7 +35,8 @@ GtkWidget *create_password_entry(const gchar *css_ID);
 GtkWidget *create_entry(const gchar *css_ID);
 GtkWidget *create_placeholder_entry(const gchar *css_ID, const gchar *placeholder);
 GtkWidget *create_password_entry_placeholder(const gchar *css_ID);
-
+GtkWidget *create_list();
+void add_array_of_elements_to_list_horizontal(GtkWidget *list, const gchar *text[], int len, guint padding, const gchar *css_ID, guint width, guint height);
 typedef struct
 {
     int current_pergunta;

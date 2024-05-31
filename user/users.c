@@ -224,3 +224,8 @@ void free_all_users()
 {
     free(users);
 }
+
+int get_number_of_users()
+{
+    return number_of_users;
+}

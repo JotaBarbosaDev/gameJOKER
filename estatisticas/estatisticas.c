@@ -97,3 +97,44 @@ void printf_stack()
         printf("\n\n\n");
     }
 }
+
+JogoJoca *get_stack()
+{
+    return main_stack;
+}
+
+User *alloc_mem_for_sort()
+{
+    int number_of_users = get_number_of_users();
+    User *users = get_all_users();
+
+    User *unsorted_users = malloc(sizeof(User) * number_of_users);
+
+    for (int i = 0; i < number_of_users; i++)
+    {
+        unsorted_users[i] = users[i];
+    }
+
+    return unsorted_users;
+}
+
+// insertion sort
+User *sort_users_by_name(User *unsorted_users)
+{
+    int number_of_users = get_number_of_users();
+
+    for (int i = 1; i < number_of_users; i++)
+    {
+        User key = unsorted_users[i];
+        int j = i - 1;
+
+        while (j >= 0 && strcmp(unsorted_users[j].username, key.username) > 0)
+        {
+            unsorted_users[j + 1] = unsorted_users[j];
+            j = j - 1;
+        }
+        unsorted_users[j + 1] = key;
+    }
+
+    return unsorted_users;
+}

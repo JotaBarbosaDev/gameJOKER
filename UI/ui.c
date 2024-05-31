@@ -181,6 +181,13 @@ void menu_principal()
 
     create_button("register_button", "Registrar", register_button);
 
+    GtkWidget *calendar = gtk_calendar_new();
+    gtk_fixed_put(GTK_FIXED(fixed), calendar, 0, 0);
+    // Get the current date
+    guint year, month, day;
+    gtk_calendar_get_date(GTK_CALENDAR(calendar), &year, &month, &day);
+    printf("Current date: %02d/%02d/%04d\n", day, month + 1, year);
+
     gtk_widget_show_all(window);
     okay("UI menu loaded successfully");
     gtk_main();
@@ -195,7 +202,7 @@ void menu_left_admin()
     create_label("say_JOKER_admin", "Admin");
     create_button("users_see_admin", "Usuários", start_user_UI);
     create_button("perguntas_admin", "Questões", menu_admin_quests);
-    create_button("estatisticas_admin", "Estatisticas", menu_admin_stats);
+    create_button("estatisticas_admin", "Estatisticas", show_last_10_games);
 
     create_button("logout_game", "Logout", menu_principal);
 
@@ -215,7 +222,6 @@ void menu_admin()
 
 int main_UI(int argc, char *argv[])
 {
-
     gtk_init(&argc, &argv);
 
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);

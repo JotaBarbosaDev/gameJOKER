@@ -108,3 +108,25 @@ GtkWidget *create_placeholder_entry(const gchar *css_ID, const gchar *placeholde
     okay("Placeholder entry created successfully");
     return entry;
 }
+
+GtkWidget *create_list()
+{
+    GtkWidget *list;
+    list = gtk_list_box_new();
+    gtk_fixed_put(GTK_FIXED(fixed), list, 0, 0);
+    return list;
+}
+
+void add_array_of_elements_to_list_horizontal(GtkWidget *list, const gchar *text[], int len, guint padding, const gchar *css_ID, guint width, guint height)
+{
+    GtkWidget *box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    for (int i = 0; i < len; i++)
+    {
+        GtkWidget *label = gtk_label_new(text[i]);
+        gtk_widget_set_name(label, css_ID);
+        if (width != 0)
+            gtk_widget_set_size_request(label, width, height);
+        gtk_box_pack_start(GTK_BOX(box), label, FALSE, FALSE, padding);
+    }
+    gtk_container_add(GTK_CONTAINER(list), box);
+}

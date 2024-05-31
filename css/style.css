@@ -1525,3 +1525,8 @@ ADMIN USERS PAGE
     background-color: #fff;
     padding: 3px 5px;
 }
+
+#list_header{
+    font-weight: 900;
+    font-size: 20px;
+}
