@@ -235,7 +235,7 @@ void load_perguntas()
     loaded = 0;
     okay("Loading perguntas");
     // abrir,verificar se existe,ler,guardar na lista
-    FILE *f = fopen("perguntas.bin", "rb");
+    FILE *f = fopen("BIN/perguntas.bin", "rb");
 
     if (f == NULL)
     {
@@ -312,7 +312,7 @@ void save_perguntas()
     {
         return;
     }
-    FILE *f = fopen("perguntas.bin", "wb");
+    FILE *f = fopen("BIN/perguntas.bin", "wb");
 
     if (f == NULL)
     {

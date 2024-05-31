@@ -2,6 +2,7 @@
 #include "user/user.h"
 #include "perguntas/perguntas.h"
 #include "UI/ui.h"
+#include "estatisticas/estatisticas.h"
 #include <stdio.h>
 
 // todo:
@@ -78,6 +79,8 @@ int test_hash()
 
 int main(int argc, char *argv[])
 {
+
+    return 0;
     if (test_hash() == -1)
     {
         return -1;
@@ -87,6 +90,9 @@ int main(int argc, char *argv[])
     print_users();
 
     load_perguntas();
+
+    read_stack();
+    printf_stack();
 
     printf("START\n");
     info("Starting Joca");

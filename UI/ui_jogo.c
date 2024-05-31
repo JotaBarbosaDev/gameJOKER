@@ -1,6 +1,7 @@
 #include "../main.h"
 #include "../perguntas/perguntas.h"
 #include "../user/user.h"
+#include "../estatisticas/estatisticas.h"
 #include "ui.h"
 
 Pergunta *cur_pergunta;
@@ -245,6 +246,10 @@ void draw_joca_level()
 
 void ending_screen()
 {
+    jogo.ending = 1;
+    jogo.player_id = login_user_global->id;
+    add_jogo_to_stack(jogo);
+
     if (jogo.pontuacao > login_user_global->pontuacao_maxima)
     {
         login_user_global->pontuacao_maxima = jogo.pontuacao;

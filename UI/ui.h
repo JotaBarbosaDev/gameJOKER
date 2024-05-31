@@ -47,6 +47,7 @@ typedef struct
     float multiplicador;
     int ff;
     int ff_certas;
+    int player_id;
 } JogoJoca;
 
 extern JogoJoca save_jogos[2048];

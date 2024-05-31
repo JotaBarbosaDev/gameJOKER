@@ -115,7 +115,7 @@ int login_user(char *username, char *password)
 
 void save_users()
 {
-    FILE *f = fopen("users.bin", "wb");
+    FILE *f = fopen("BIN/users.bin", "wb");
     if (f == NULL)
     {
         error("Error opening file");
@@ -130,7 +130,7 @@ void save_users()
 
 void load_users()
 {
-    FILE *f = fopen("users.bin", "rb");
+    FILE *f = fopen("BIN/users.bin", "rb");
     if (f == NULL)
     {
         error("Error opening file");
