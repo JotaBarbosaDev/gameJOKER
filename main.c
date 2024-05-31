@@ -33,11 +33,6 @@ resize em tudo q é merda
 char temas[9][20] = {"Geografia", "Historia", "Ciencia", "Desporto", "Arte", "Tecnologia", "Matematica", "Literatura", "Geral"};
 char dificuldades[3][20] = {"Facil", "Medio", "Dificil"};
 
-int getRandomNumber(int x)
-{
-    return rand() % (x + 1);
-}
-
 int test_hash()
 {
     unsigned long simple_hash = djb2("ola");
