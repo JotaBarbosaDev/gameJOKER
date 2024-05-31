@@ -52,12 +52,66 @@ void login_func()
     }
 }
 
+GtkWidget *username_register;
+GtkWidget *nacionalidade_register;
+GtkWidget *password_register;
+GtkWidget *full_name_register;
+GtkWidget *open_calendar_register;
+GtkWidget *calendar;
+
+void register_final_button()
+{
+    const gchar *username = gtk_entry_get_text(GTK_ENTRY(username_register));
+    const gchar *password = gtk_entry_get_text(GTK_ENTRY(password_register));
+    const gchar *nacionalidade = gtk_entry_get_text(GTK_ENTRY(nacionalidade_register));
+    const gchar *full_name = gtk_entry_get_text(GTK_ENTRY(full_name_register));
+
+    if (strlen(username) == 0 || strlen(password) == 0 || strlen(nacionalidade) == 0 || strlen(full_name) == 0)
+    {
+        error("Invalid input");
+        return;
+    }
+
+    guint year, month, day;
+    gtk_calendar_get_date(GTK_CALENDAR(calendar), &year, &month, &day);
+    unsigned int born_date[3];
+    born_date[0] = day;
+    born_date[1] = month + 1;
+    born_date[2] = year;
+
+    register_user((char *)username, (char *)password, (char *)full_name, (char *)nacionalidade, born_date);
+    menu_principal();
+}
+
+void show_calendar()
+{
+    calendar = gtk_calendar_new();
+    gtk_fixed_put(GTK_FIXED(fixed), calendar, 290, 300);
+    gtk_widget_show_all(window);
+}
+
 void register_button()
 {
-    const gchar *login_text = gtk_entry_get_text(GTK_ENTRY(login));
-    const gchar *password_text = gtk_entry_get_text(GTK_ENTRY(password));
+    clear_all();
 
-    register_user((char *)login_text, (char *)password_text);
+    create_label("register_label", "Registrar");
+
+    username_register = create_placeholder_entry("register_username", "Username");
+
+    password_register = create_password_entry_placeholder("register_password");
+
+    nacionalidade_register = create_placeholder_entry("register_nacionalidade", "Nacionalidade");
+
+    full_name_register = create_placeholder_entry("register_full_name", "Nome Completo");
+
+    create_button("register_button1", "Registrar", register_final_button);
+
+    open_calendar_register = create_button("open_calendar", "Abrir Calendário", show_calendar);
+
+    create_button("back_button", "Voltar", menu_principal);
+
+    gtk_widget_show_all(window);
+    gtk_main();
 }
 
 gboolean barra_left(GtkWidget *widget, cairo_t *cr, gpointer user_data)
@@ -180,13 +234,6 @@ void menu_principal()
     create_button("login_button", "Entrar", login_func);
 
     create_button("register_button", "Registrar", register_button);
-
-    GtkWidget *calendar = gtk_calendar_new();
-    gtk_fixed_put(GTK_FIXED(fixed), calendar, 0, 0);
-    // Get the current date
-    guint year, month, day;
-    gtk_calendar_get_date(GTK_CALENDAR(calendar), &year, &month, &day);
-    printf("Current date: %02d/%02d/%04d\n", day, month + 1, year);
 
     gtk_widget_show_all(window);
     okay("UI menu loaded successfully");

@@ -32,7 +32,7 @@ extern User *login_user_global;
 
 // @brief Hash function to hash a string https://theartincode.stanis.me/008-djb2/
 unsigned long djb2(const char *str);
-void register_user(char *username, char *password);
+void register_user(char *username, char *password, char *full_name, char *nacionalidade, unsigned int born_date[3]);
 int login_user(char *username, char *password);
 void save_users();
 void load_users();

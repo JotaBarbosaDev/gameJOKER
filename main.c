@@ -4,10 +4,9 @@
 #include "UI/ui.h"
 #include "estatisticas/estatisticas.h"
 #include <stdio.h>
-
 // todo:
 /*
--perguntas em listas ligadas
+-perguntas em listas ligadasq
 -em ficheiro bin deve guardar perguntas/jogadores/jogos
 
 

@@ -53,7 +53,7 @@ int get_user_by_username(char *username)
     return 0;
 }
 
-void register_user(char *username, char *password)
+void register_user(char *username, char *password, char *full_name, char *nacionalidade, unsigned int born_date[3])
 {
     if (get_user_by_username(username) == 1 || strlen(username) == 0 || strlen(password) == 0 || strlen(username) > 100 || strlen(password) > 100 || strcmp(username, "admin") == 0 || strcmp(password, "admin") == 0)
     {
@@ -78,6 +78,24 @@ void register_user(char *username, char *password)
     u->medios_erradas = 0;
     u->dificeis_certas = 0;
     u->dificeis_erradas = 0;
+    u->last_game_date[0] = 0;
+    u->last_game_date[1] = 0;
+    u->last_game_date[2] = 0;
+    u->last_game_date[3] = 0;
+    u->last_game_date[4] = 0;
+    u->born_date[0] = born_date[0];
+    u->born_date[1] = born_date[1];
+    u->born_date[2] = born_date[2];
+    strcpy(u->full_name, full_name);
+    strcpy(u->nacionalidade, nacionalidade);
+
+    for (int i = 0; i < 2; i++)
+    {
+        if (u->nacionalidade[i] >= 97 && u->nacionalidade[i] <= 122)
+        {
+            u->nacionalidade[i] = u->nacionalidade[i] - 32;
+        }
+    }
 
     okay("User created");
 
