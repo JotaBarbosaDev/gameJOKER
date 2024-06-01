@@ -50,6 +50,7 @@ typedef struct
     int ending;
     int joca_level;
     int jocas_number;
+    int jocas_ganhos;
     int pontuacao;
     float multiplicador;
     int ff;

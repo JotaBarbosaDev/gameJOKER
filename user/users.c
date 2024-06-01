@@ -88,6 +88,7 @@ void register_user(char *username, char *password, char *full_name, char *nacion
     u->born_date[2] = born_date[2];
     strcpy(u->full_name, full_name);
     strcpy(u->nacionalidade, nacionalidade);
+    u->got_4_jokers = 0;
 
     for (int i = 0; i < 2; i++)
     {
@@ -238,6 +239,7 @@ void print_users()
         printf("Born date -> %u/%u/%u\n", users[i].born_date[0], users[i].born_date[1], users[i].born_date[2]);
         printf("Full name -> %s\n", users[i].full_name);
         printf("Nacionalidade -> %s\n", users[i].nacionalidade);
+        printf("Got 4 jokers -> %d\n", users[i].got_4_jokers);
         printf("\n\n");
     }
 }

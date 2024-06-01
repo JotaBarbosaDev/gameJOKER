@@ -137,3 +137,84 @@ User *sort_users_by_name(User *unsorted_users)
 
     return unsorted_users;
 }
+
+int check_two_dates(int date1[5], int date2[5])
+{
+    if (date1[0] > date2[0])
+    {
+        return 1;
+    }
+    else if (date1[0] < date2[0])
+    {
+        return -1;
+    }
+    else
+    {
+        if (date1[1] > date2[1])
+        {
+            return 1;
+        }
+        else if (date1[1] < date2[1])
+        {
+            return -1;
+        }
+        else
+        {
+            if (date1[2] > date2[2])
+            {
+                return 1;
+            }
+            else if (date1[2] < date2[2])
+            {
+                return -1;
+            }
+            else
+            {
+                if (date1[3] > date2[3])
+                {
+                    return 1;
+                }
+                else if (date1[3] < date2[3])
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (date1[4] > date2[4])
+                    {
+                        return 1;
+                    }
+                    else if (date1[4] < date2[4])
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+User *sort_by_last_played_game()
+{
+    User *unsorted_users = alloc_mem_for_sort();
+    int number_of_users = get_number_of_users();
+
+    for (int i = 1; i < number_of_users; i++)
+    {
+        User key = unsorted_users[i];
+        int j = i - 1;
+
+        while (j >= 0 && check_two_dates(key.last_game_date, unsorted_users[j].last_game_date) == 1)
+        {
+            unsorted_users[j + 1] = unsorted_users[j];
+            j = j - 1;
+        }
+        unsorted_users[j + 1] = key;
+    }
+
+    return unsorted_users;
+}

@@ -139,7 +139,6 @@ void start_user_UI()
     create_label("id_user_ui", "ID:");
 
     create_label("full_name_user_ui", "Nome completo:");
-    create_label("born_date_user_ui", "Data de nascimento:");
     create_label("last_game_date_user_ui", "Ultimo jogo:");
 
     create_label("numero_de_vitorias_user_ui", "Vitórias:");

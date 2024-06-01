@@ -11,6 +11,7 @@ typedef struct
     int numero_de_vitorias;
     int patamar_maximo;
     int jocas_ganhos;
+    int got_4_jokers;
     int numero_de_perguntas;
     int pontuacao_maxima;
     int pontuacao_total;

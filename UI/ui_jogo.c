@@ -75,7 +75,7 @@ void show_victory_or_lose_screen(int victory)
 void pergunta_certa()
 {
     set_pontuation(1);
-    if (jogo.joca_level < 10)
+    if (jogo.joca_level < 9)
         jogo.joca_level++;
     show_victory_or_lose_screen(1);
 }
@@ -86,6 +86,7 @@ void pergunta_certa_ff()
     if (jogo.ff_certas == 6)
     {
         login_user_global->jocas_ganhos++;
+        jogo.jocas_ganhos++;
         jogo.jocas_number++;
         jogo.ff_certas = 0;
     }
@@ -253,6 +254,22 @@ void ending_screen()
     jogo.player_id = login_user_global->id;
     add_jogo_to_stack(jogo);
 
+    login_user_global->numero_de_jogos_jogados++;
+
+    // get current date
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    login_user_global->last_game_date[0] = tm.tm_year + 1900;
+    login_user_global->last_game_date[1] = tm.tm_mon + 1;
+    login_user_global->last_game_date[2] = tm.tm_mday;
+    login_user_global->last_game_date[3] = tm.tm_hour;
+    login_user_global->last_game_date[4] = tm.tm_min;
+
+    if (jogo.jocas_ganhos == 4)
+    {
+        login_user_global->got_4_jokers++;
+    }
+
     if (jogo.pontuacao > login_user_global->pontuacao_maxima)
     {
         login_user_global->pontuacao_maxima = jogo.pontuacao;
@@ -263,7 +280,7 @@ void ending_screen()
         login_user_global->patamar_maximo = jogo.joca_level;
     }
 
-    if (jogo.joca_level == 10)
+    if (jogo.joca_level == 9)
     {
         login_user_global->numero_de_vitorias++;
     }
@@ -352,17 +369,129 @@ void game_start()
 
     GtkWidget *but0 = create_button("jocaResposta1Button", cur_pergunta->respostas[0], NULL);
     GtkWidget *but1 = create_button("jocaResposta2Button", cur_pergunta->respostas[1], NULL);
-    GtkWidget *but2 = create_button("jocaResposta3Button", cur_pergunta->respostas[2], NULL);
-    GtkWidget *but3 = create_button("jocaResposta4Button", cur_pergunta->respostas[3], NULL);
 
+    if (strcmp(cur_pergunta->respostas[2], "NULL") != 0)
+    {
+        GtkWidget *but2 = create_button("jocaResposta3Button", cur_pergunta->respostas[2], NULL);
+        g_signal_connect(but2, "clicked", G_CALLBACK(check_resposta), (gpointer)2);
+    }
+
+    if (strcmp(cur_pergunta->respostas[3], "NULL") != 0)
+    {
+        GtkWidget *but3 = create_button("jocaResposta4Button", cur_pergunta->respostas[3], NULL);
+        g_signal_connect(but3, "clicked", G_CALLBACK(check_resposta), (gpointer)3);
+    }
     g_signal_connect(but0, "clicked", G_CALLBACK(check_resposta), (gpointer)0);
     g_signal_connect(but1, "clicked", G_CALLBACK(check_resposta), (gpointer)1);
-    g_signal_connect(but2, "clicked", G_CALLBACK(check_resposta), (gpointer)2);
-    g_signal_connect(but3, "clicked", G_CALLBACK(check_resposta), (gpointer)3);
 
     draw_joca_level();
 
     gtk_widget_show_all(window);
+    gtk_main();
+}
+
+void estatisticas_game()
+{
+    clear_all();
+    User *user = login_user_global;
+
+    const gchar *id = g_strdup_printf("%d", user->id);
+    create_label("show_id_user_ui", id);
+
+    create_label("show_username_user_ui", user->username);
+
+    const gchar *vitorias = g_strdup_printf("%d", user->numero_de_vitorias);
+    create_label("show_numero_de_vitorias_user_ui", vitorias);
+
+    create_label("show_patamar_maximo_user_ui", niveis[user->patamar_maximo]);
+
+    const gchar *jocas_ganhos = g_strdup_printf("%d", user->jocas_ganhos);
+    create_label("show_tempo_total_user_ui", jocas_ganhos);
+
+    const gchar *perguntas = g_strdup_printf("%d", user->numero_de_perguntas);
+    create_label("show_numero_de_perguntas_user_ui", perguntas);
+
+    const gchar *jogos_jogados = g_strdup_printf("%d", user->numero_de_jogos_jogados);
+    create_label("show_numero_de_jogos_jogados_user_ui", jogos_jogados);
+
+    const gchar *pontuacao_maxima = g_strdup_printf("%d", user->pontuacao_maxima);
+    create_label("show_numero_de_jogos_ganhos_user_ui", pontuacao_maxima);
+
+    const gchar *pontuacao_total = g_strdup_printf("%d", user->pontuacao_total);
+    create_label("show_numero_de_jogos_perdidos_user_ui", pontuacao_total);
+
+    const gchar *jogos_cancelados = g_strdup_printf("%d", user->numero_de_jogos_cancelados_por_falta_de_tempo);
+    create_label("show_numero_de_jogos_cancelados_por_falta_de_tempo_user_ui", jogos_cancelados);
+
+    const gchar *faceis_certas = g_strdup_printf("%d", user->faceis_certas);
+    create_label("show_faceis_certas_user_ui", faceis_certas);
+
+    const gchar *faceis_erradas = g_strdup_printf("%d", user->faceis_erradas);
+    create_label("show_faceis_erradas_user_ui", faceis_erradas);
+
+    const gchar *medios_certas = g_strdup_printf("%d", user->medios_certas);
+    create_label("show_medios_certas_user_ui", medios_certas);
+
+    const gchar *medios_erradas = g_strdup_printf("%d", user->medios_erradas);
+    create_label("show_medios_erradas_user_ui", medios_erradas);
+
+    const gchar *dificeis_certas = g_strdup_printf("%d", user->dificeis_certas);
+    create_label("show_dificeis_certas_user_ui", dificeis_certas);
+
+    const gchar *dificeis_erradas = g_strdup_printf("%d", user->dificeis_erradas);
+    create_label("show_dificeis_erradas_user_ui", dificeis_erradas);
+
+    // daqui
+    const gchar *last_game_date;
+    if (user->last_game_date[1] > 10)
+    {
+        last_game_date = g_strdup_printf("%d/%d/%d %d:%d", user->last_game_date[0], user->last_game_date[1], user->last_game_date[2], user->last_game_date[3], user->last_game_date[4]);
+    }
+    else
+    {
+        last_game_date = g_strdup_printf("%d/0%d/%d %d:%d", user->last_game_date[0], user->last_game_date[1], user->last_game_date[2], user->last_game_date[3], user->last_game_date[4]);
+    }
+    create_label("show_last_game_date_user_ui", last_game_date);
+
+    const gchar *born_date;
+    if (user->born_date[1] > 10)
+    {
+        born_date = g_strdup_printf("%d/%d/%d", user->born_date[0], user->born_date[1], user->born_date[2]);
+    }
+    else
+    {
+        born_date = g_strdup_printf("%d/0%d/%d", user->born_date[0], user->born_date[1], user->born_date[2]);
+    }
+    create_label("show_born_date_user_ui", born_date);
+
+    create_label("show_nacionalidade_user_ui", user->nacionalidade);
+    create_label("show_full_name_user_ui", user->full_name);
+
+    // labels
+    create_label("id_user_ui", "ID:");
+
+    create_label("full_name_user_ui", "Nome completo:");
+    create_label("last_game_date_user_ui", "Ultimo jogo:");
+
+    create_label("numero_de_vitorias_user_ui", "Vitórias:");
+    create_label("patamar_maximo_user_ui", "Patamar maximo:");
+    create_label("tempo_total_user_ui", "Jocas ganhos:");
+    create_label("numero_de_perguntas_user_ui", "Perguntas respondidas:");
+    create_label("numero_de_jogos_jogados_user_ui", "Jogos jogados:");
+    create_label("numero_de_jogos_ganhos_user_ui", "Pontuação Maxima:");
+    create_label("numero_de_jogos_perdidos_user_ui", "Pontuação Total:");
+    create_label("numero_de_jogos_cancelados_por_falta_de_tempo_user_ui", "Perguntas erradas por falta de tempo:");
+    create_label("faceis_certas_user_ui", "Faceis certas:");
+    create_label("faceis_erradas_user_ui", "Faceis erradas:");
+    create_label("medios_certas_user_ui", "Medios certas:");
+    create_label("medios_erradas_user_ui", "Medios erradas:");
+    create_label("dificeis_certas_user_ui", "Dificeis certas:");
+    create_label("dificeis_erradas_user_ui", "Dificeis erradas:");
+
+    create_button("leave_creation_button", "<", jogo_UI);
+
+    gtk_widget_show_all(window);
+    okay("Menu admin user loaded successfully");
     gtk_main();
 }
 
@@ -372,8 +501,6 @@ void jogo_UI()
     print_all_pergutas_by_difficulty_and_50_50();
     clear_all();
     create_label("jocaTITLE", "JOCA");
-
-    login_user_global->numero_de_jogos_jogados++;
 
     jogo.already_shown_len = 0;
     jogo.current_pergunta = 0;
@@ -385,9 +512,10 @@ void jogo_UI()
     jogo.pontuacao = 0;
     jogo.multiplicador = 1.0;
     jogo.ff = 0;
+    jogo.jocas_ganhos = 0;
 
     create_button("start_game", "Iniciar Jogo", game_start);
-    create_button("estatisticas_game", "Estatisticas", NULL);
+    create_button("estatisticas_game", "Estatisticas", estatisticas_game);
     create_button("logout_game", "Logout", menu_principal);
 
     gtk_widget_show_all(window);
