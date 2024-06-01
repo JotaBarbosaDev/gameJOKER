@@ -190,6 +190,11 @@ void menu_principal()
     gtk_main();
 }
 
+void serach_user_minha_nossa()
+{
+    ssearch_user_ui(1);
+}
+
 void menu_admin_estatistica()
 {
     clear_all();
@@ -199,6 +204,7 @@ void menu_admin_estatistica()
     create_button("last_players_played", "Ultimos jogadores que jogaram", last_players_played_by_date);
     create_button("last_patamar", "Chegou ao ultimo patamares", got_to_last_patamar);
     create_button("jokers_extra", "Ganhou todos os Jokers", got_all_jokers);
+    create_button("procurar_jogador", "Procurar Jogador", serach_user_minha_nossa);
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");

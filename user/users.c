@@ -212,6 +212,9 @@ void delete_user_by_id(int id)
             users = realloc(users, sizeof(User) * number_of_users);
         }
     }
+    save_users();
+    free_all_users();
+    load_users();
 }
 
 void print_users()

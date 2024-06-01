@@ -37,6 +37,20 @@ void go_left_user()
     start_user_UI();
 }
 
+void delete_user_UI_but()
+{
+    User *user = &sorted_array[user_index];
+
+    if (!does_user_exist(user->id))
+    {
+        error("User does not exist");
+        return;
+    }
+
+    delete_user_by_id(user->id);
+    start_user_UI();
+}
+
 void start_user_UI()
 {
 
@@ -60,6 +74,10 @@ void start_user_UI()
     if (!does_user_exist(user->id))
     {
         error("User does not exist");
+        user_index = 0;
+        free(sorted_array);
+        sorted_array = NULL;
+        menu_admin_estatistica();
         return;
     }
 
@@ -155,6 +173,8 @@ void start_user_UI()
     create_label("medios_erradas_user_ui", "Medios erradas:");
     create_label("dificeis_certas_user_ui", "Dificeis certas:");
     create_label("dificeis_erradas_user_ui", "Dificeis erradas:");
+
+    create_button("delete_user_button", "Delete", delete_user_UI_but);
 
     create_button("go_left_user", "<", go_left_user);
     create_button("go_right_user", ">", go_right_user);

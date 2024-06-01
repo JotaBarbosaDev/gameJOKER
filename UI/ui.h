@@ -102,5 +102,6 @@ void set_tema(GtkWidget *widget, gpointer tema, gpointer user_data);
 void set_resposta(GtkWidget *widget, gpointer resposta);
 void clear_all_camps();
 void force_window_size();
+void ssearch_user_ui(int clear);
 
 #endif

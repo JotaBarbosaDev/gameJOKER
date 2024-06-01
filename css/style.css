@@ -1480,6 +1480,17 @@ ADMIN USERS PAGE
     font-weight: 900;
 }
 
+#delete_user_button {
+    margin-left: 340px;
+    margin-top: 60px;
+    font-size: 20px;
+    border: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(39, 39, 39, 255);
+}
+
 #go_left_user {
     margin-left: 10px;
     margin-top: 300px;
@@ -1583,22 +1594,41 @@ ADMIN USERS PAGE
     font-weight: 900;
 }
 
-#last_10_games{
+#last_10_games {
     margin-left: 330px;
     margin-top: 100px;
 }
 
-#last_players_played{
+#last_players_played {
     margin-left: 330px;
     margin-top: 200px;
 }
 
-#last_patamar{
+#last_patamar {
     margin-left: 330px;
     margin-top: 300px;
 }
 
-#jokers_extra{
+#jokers_extra {
     margin-left: 330px;
     margin-top: 400px;
+}
+
+#procurar_jogador {
+    margin-left: 330px;
+    margin-top: 500px;
+}
+
+#search_input {
+    margin-left: 300px;
+    margin-top: 50px;
+    padding: 5px 20px;
+    color: #fff;
+}
+
+#search_button {
+    margin-left: 350px;
+    margin-top: 120px;
+    padding: 5px 20px;
+    color: #fff;
 }

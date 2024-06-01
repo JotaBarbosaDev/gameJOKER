@@ -218,3 +218,21 @@ User *sort_by_last_played_game()
 
     return unsorted_users;
 }
+
+User *search_binary_by_username(User *users, int l, int r, char *x)
+{
+    if (r >= l)
+    {
+        int mid = l + (r - l) / 2;
+
+        if (strcmp(users[mid].username, x) == 0)
+            return &users[mid];
+
+        if (strcmp(users[mid].username, x) > 0)
+            return search_binary_by_username(users, l, mid - 1, x);
+
+        return search_binary_by_username(users, mid + 1, r, x);
+    }
+
+    return NULL;
+}

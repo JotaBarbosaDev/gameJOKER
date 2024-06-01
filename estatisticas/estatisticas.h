@@ -13,5 +13,6 @@ JogoJoca *get_stack();
 User *alloc_mem_for_sort();
 User *sort_users_by_name(User *unsorted_users);
 User *sort_by_last_played_game();
+User *search_binary_by_username(User *users, int l, int r, char *x);
 
 #endif
