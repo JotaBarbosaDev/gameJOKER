@@ -12,6 +12,9 @@ void tela_create_pergunta();
 
 // edit_pergunta.c
 void tela_edit_pergunta();
+void last_players_played_by_date();
+void got_to_last_patamar();
+void got_all_jokers();
 
 // user_UI.c
 void start_user_UI();
@@ -39,6 +42,7 @@ GtkWidget *create_entry(const gchar *css_ID);
 GtkWidget *create_placeholder_entry(const gchar *css_ID, const gchar *placeholder);
 GtkWidget *create_password_entry_placeholder(const gchar *css_ID);
 GtkWidget *create_list();
+void menu_admin_estatistica();
 void add_array_of_elements_to_list_horizontal(GtkWidget *list, const gchar *text[], int len, guint padding, const gchar *css_ID, guint width, guint height);
 typedef struct
 {
