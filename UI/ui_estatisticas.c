@@ -290,3 +290,54 @@ void ssearch_user_ui(int clear)
     gtk_widget_show_all(window);
     gtk_main();
 }
+
+GtkWidget *pontuacao_input;
+
+void search_binary_tree()
+{
+    const gchar *pontuacao = gtk_entry_get_text(GTK_ENTRY(pontuacao_input));
+
+    if (strlen(pontuacao) == 0)
+    {
+        error("Invalid input");
+        return;
+    }
+
+    int pontuacao_int = atoi(pontuacao);
+
+    JogoJoca *jogo = get_closest_jogo_from_tree(pontuacao_int);
+
+    if (jogo == NULL)
+    {
+        error("Jogo not found");
+        return;
+    }
+
+    const gchar *pont_show = g_strdup_printf("%d", jogo->pontuacao);
+
+    // show all stats from jogo
+
+    clear_all();
+
+    create_label("label_arvore_found", "O jogo mais proximo encontrado foi:");
+    create_label("show_pontuacao", pont_show);
+
+    pontuacao_input = create_entry("search_input_bin_tree");
+
+    GtkWidget *search_button = create_button("search_button_bin_tree", "Search", search_binary_tree);
+
+    gtk_widget_show_all(window);
+    gtk_main();
+}
+
+void show_tree_stats()
+{
+    clear_all();
+
+    pontuacao_input = create_entry("search_input_bin_tree");
+
+    GtkWidget *search_button = create_button("search_button_bin_tree", "Search", search_binary_tree);
+
+    gtk_widget_show_all(window);
+    gtk_main();
+}

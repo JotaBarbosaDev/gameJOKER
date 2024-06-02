@@ -249,6 +249,8 @@ void draw_joca_level()
 
 void ending_screen()
 {
+    insert_tree_based_on_game_points(jogo);
+
     jogo.ending = 1;
     jogo.player_id = login_user_global->id;
     add_jogo_to_stack(jogo);
@@ -383,7 +385,6 @@ void game_start()
 
     GtkWidget *but0 = create_button("jocaResposta1Button", cur_pergunta->respostas[0], NULL);
     GtkWidget *but1 = create_button("jocaResposta2Button", cur_pergunta->respostas[1], NULL);
-    
 
     if (strcmp(cur_pergunta->respostas[2], "NULL") != 0)
     {

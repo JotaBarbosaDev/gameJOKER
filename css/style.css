@@ -24,7 +24,7 @@ LOGIN PAGE
 
 
 
-#login_button{
+#login_button {
     margin-left: 323px;
     margin-top: 400px;
     border: none;
@@ -33,16 +33,19 @@ LOGIN PAGE
     font-size: 16px;
 }
 
-#back_button{
+#back_button {
     margin-left: 5px;
     margin-top: 3px;
     border: none;
     padding: 0px;
     text-decoration: none;
     font-size: 16px;
-} 
+}
 
-#login_button>label, #back_button>label, #open_calendar>label, #register_button1>label {
+#login_button>label,
+#back_button>label,
+#open_calendar>label,
+#register_button1>label {
     color: white;
     background-color: #90ABE4;
     padding: 5px 26px;
@@ -903,7 +906,7 @@ ADMIN USERS PAGE
     font-size: 70px;
     color: green;
     text-shadow: 2px 0 #0b3f17, -2px 0 #0b3f17, 0 2px #0b3f17, 0 -2px #0b3f17,
-    1px 1px #0b3f17, -1px -1px #0b3f17, 1px -1px #0b3f17, -1px 1px #0b3f17;
+        1px 1px #0b3f17, -1px -1px #0b3f17, 1px -1px #0b3f17, -1px 1px #0b3f17;
 }
 
 #jocaDerrota {
@@ -915,7 +918,7 @@ ADMIN USERS PAGE
     font-size: 70px;
     color: red;
     text-shadow: 2px 0 #0b3f17, -2px 0 #0b3f17, 0 2px #0b3f17, 0 -2px #0b3f17,
-    1px 1px #0b3f17, -1px -1px #0b3f17, 1px -1px #0b3f17, -1px 1px #0b3f17;
+        1px 1px #0b3f17, -1px -1px #0b3f17, 1px -1px #0b3f17, -1px 1px #0b3f17;
 }
 
 #dif_indicator_facil {
@@ -1647,7 +1650,7 @@ ADMIN USERS PAGE
     border: none;
 }
 
-#last_10_games >label{
+#last_10_games>label {
     color: white;
     background-color: #90ABE4;
     padding: 10px 78px;
@@ -1670,6 +1673,7 @@ ADMIN USERS PAGE
     border-radius: 5px;
 
 }
+
 #last_patamar {
     margin-left: 330px;
     margin-top: 290px;
@@ -1718,6 +1722,22 @@ ADMIN USERS PAGE
 
 }
 
+#see_tree_stats {
+    margin-left: 330px;
+    margin-top: 590px;
+    font-size: 20px;
+    padding: 0px;
+    border: none;
+}
+
+#see_tree_stats>label {
+    color: white;
+    background-color: #90ABE4;
+    padding: 10px 50px;
+    border-radius: 5px;
+
+}
+
 #search_input {
     color: white;
     background-color: #90ABE4;
@@ -1729,5 +1749,36 @@ ADMIN USERS PAGE
     margin-left: 350px;
     margin-top: 120px;
     padding: 5px 20px;
+    color: #fff;
+}
+
+
+#search_input_bin_tree {
+    margin-left: 320px;
+    margin-top: 70px;
+    color: white;
+    background-color: #90ABE4;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+#search_button_bin_tree {
+    margin-left: 370px;
+    margin-top: 120px;
+    padding: 5px 20px;
+    color: #fff;
+}
+
+#label_arvore_found {
+    margin-left: 200px;
+    margin-top: 200px;
+    font-size: 20px;
+    color: #fff;
+}
+
+#show_pontuacao {
+    margin-left: 200px;
+    margin-top: 250px;
+    font-size: 20px;
     color: #fff;
 }

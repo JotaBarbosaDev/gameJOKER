@@ -96,6 +96,9 @@ int main(int argc, char *argv[])
 
     load_perguntas();
 
+    read_all_of_the_tree_from_bin_file();
+    print_tree(tree_root);
+
     read_stack();
     printf_stack();
 
