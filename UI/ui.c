@@ -84,7 +84,7 @@ void register_final_button()
 void show_calendar()
 {
     calendar = gtk_calendar_new();
-    gtk_fixed_put(GTK_FIXED(fixed), calendar, 290, 300);
+    gtk_fixed_put(GTK_FIXED(fixed), calendar, 302, 300);
     gtk_widget_show_all(window);
 }
 
@@ -92,7 +92,7 @@ void register_button()
 {
     clear_all();
 
-    create_label("register_label", "Registrar");
+    // create_label("register_label", "Registrar");
 
     username_register = create_placeholder_entry("register_username", "Username");
 
@@ -104,7 +104,7 @@ void register_button()
 
     create_button("register_button1", "Registrar", register_final_button);
 
-    open_calendar_register = create_button("open_calendar", "Abrir Calendário", show_calendar);
+    open_calendar_register = create_button("open_calendar", "Data de Nascimento", show_calendar);
 
     create_button("back_button", "Voltar", menu_principal);
 
@@ -139,7 +139,7 @@ void menu_admin_quests()
 
     create_button("ver_perguntas", "Ver Perguntas", ver_perguntas);
     create_button("quests_create_quest", "Criar Pergunta", tela_create_pergunta);
-    create_button("quests_edit_quest", "Editar/Apagar Pergunta", tela_edit_pergunta);
+    create_button("quests_edit_quest", "Editar e Apagar", tela_edit_pergunta);
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");
@@ -177,7 +177,7 @@ void menu_principal()
 
     create_label("jocaTITLE", "JOCA");
 
-    login = create_placeholder_entry("login_input", "Login");
+    login = create_placeholder_entry("login_input", "Username");
 
     password = create_password_entry_placeholder("password_input");
 
@@ -219,10 +219,10 @@ void menu_left_admin()
 
     create_label("say_JOKER_admin", "Admin");
     create_button("users_see_admin", "Usuários", start_user_UI);
-    create_button("perguntas_admin", "Questões", menu_admin_quests);
+    create_button("perguntas_admin", "Perguntas", menu_admin_quests);
     create_button("estatisticas_admin", "Estatisticas", menu_admin_estatistica);
 
-    create_button("logout_game", "Logout", menu_principal);
+    create_button("logout_game", "Terminar Sessão", menu_principal);
 
     g_signal_connect(G_OBJECT(drawing_area), "draw", G_CALLBACK(barra_left), NULL);
 }

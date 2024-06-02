@@ -242,7 +242,7 @@ void draw_joca_level()
     sprintf(pontuacao, "%d", jogo.pontuacao);
     create_label("current_pontuacao", pontuacao);
 
-    GtkWidget *label11 = create_label("joca_tempo", "Tempo:");
+    // GtkWidget *label11 = create_label("joca_tempo", "Tempo:");
     // create a thread
     tempo_label = create_label("current_tempo", "0");
     count_tempo_for_pergunta();
@@ -302,7 +302,7 @@ void ending_screen()
     char jocas[10];
     sprintf(jocas, "%s", niveis[jogo.joca_level]);
     create_label("jocaEND5", jocas);
-    create_button("jocaEND6", "Logout", menu_principal);
+    create_button("jocaEND6", "Terminar Sessão", menu_principal);
     create_button("jocaEND7", "Recomeçar", jogo_UI);
     create_button("jocaEND8", "Sair", exit);
     gtk_widget_show_all(window);
@@ -349,7 +349,7 @@ void game_start()
     }
     else if (jogo.already_shown_len == 40)
     {
-        printf("Parabens, acabou o jogo no nivel %d\n", jogo.joca_level);
+        printf("Parabéns, acabou o jogo no nível %d\n", jogo.joca_level);
         ending_screen();
     }
 
@@ -363,7 +363,22 @@ void game_start()
 
     clear_all();
     create_label("jocaTITLE2", "JOCA");
-    create_label("dif_indicator", dificuldades[cur_pergunta->dificuldade]);
+    
+    const char* cor_diff = "dif_indicator";
+    if (cur_pergunta->dificuldade == 0)
+    {
+        cor_diff = "dif_indicator_facil";
+    }
+    else if (cur_pergunta->dificuldade == 1)
+    {
+        cor_diff = "dif_indicator_medio";
+    }
+    else
+    {
+        cor_diff = "dif_indicator_dificil";
+    }
+
+    create_label(cor_diff, dificuldades[cur_pergunta->dificuldade]);
 
     create_label("jocaPergunta", cur_pergunta->pergunta);
 
@@ -516,7 +531,7 @@ void jogo_UI()
 
     create_button("start_game", "Iniciar Jogo", game_start);
     create_button("estatisticas_game", "Estatisticas", estatisticas_game);
-    create_button("logout_game", "Logout", menu_principal);
+    create_button("logout_game", "Terminar Sessão", menu_principal);
 
     gtk_widget_show_all(window);
     gtk_main();
