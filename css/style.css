@@ -863,7 +863,7 @@ ADMIN USERS PAGE
     margin-top: 285px;
     font-size: 25px;
     color: #6c6c6c;
-    border: 1px solid #9e9e9e;
+    border: 1px solid #fff;
     background-color: rgba(39, 39, 39, 255);
     padding: 0px 5px;
 }
@@ -873,7 +873,7 @@ ADMIN USERS PAGE
     margin-top: 335px;
     font-size: 25px;
     color: #6c6c6c;
-    border: 1px solid #9e9e9e;
+    border: 1px solid #fff;
     background-color: rgba(39, 39, 39, 255);
     padding: 0px 5px;
 }
@@ -883,7 +883,7 @@ ADMIN USERS PAGE
     margin-top: 285px;
     font-size: 25px;
     color: #6c6c6c;
-    border: 1px solid #9e9e9e;
+    border: 1px solid #fff;
     padding: 0px 5px;
 }
 
@@ -892,7 +892,7 @@ ADMIN USERS PAGE
     margin-top: 335px;
     font-size: 25px;
     color: #6c6c6c;
-    border: 1px solid #9e9e9e;
+    border: 1px solid #fff;
     background-color: rgba(39, 39, 39, 255);
     padding: 0px 5px;
 }
@@ -1244,18 +1244,18 @@ ADMIN USERS PAGE
 
 #id_user_ui {
     font-size: 20px;
-    margin-left: 70px;
+    margin-left: 130px;
     margin-top: 20px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fddb52;
 }
 
 #show_id_user_ui {
     font-size: 20px;
-    margin-left: 110px;
-    margin-top: 20px;
+    margin-left: 160px;
+    margin-top: 17px;
     font-weight: bold;
-    color: #fff;
+    color: #fddb52;
     padding: 3px 5px;
 }
 
@@ -1264,7 +1264,7 @@ ADMIN USERS PAGE
     margin-left: 350px;
     margin-top: 20px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fddb52;
 }
 
 #show_nacionalidade_user_ui {
@@ -1272,7 +1272,7 @@ ADMIN USERS PAGE
     margin-left: 690px;
     margin-top: 20px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fddb52;
 }
 
 #show_born_date_user_ui {
@@ -1644,7 +1644,7 @@ ADMIN USERS PAGE
 
 #last_10_games {
     margin-left: 330px;
-    margin-top: 90px;
+    margin-top: 35px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1659,7 +1659,7 @@ ADMIN USERS PAGE
 
 #last_players_played {
     margin-left: 330px;
-    margin-top: 190px;
+    margin-top: 135px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1676,7 +1676,7 @@ ADMIN USERS PAGE
 
 #last_patamar {
     margin-left: 330px;
-    margin-top: 290px;
+    margin-top: 235px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1690,9 +1690,38 @@ ADMIN USERS PAGE
 
 }
 
+#leave_creation_button{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 0px;
+    border: none;
+}
+
+#leave_creation_button>label {
+    color: white;
+    background-color: #90ABE4;
+    padding: 10px 24px;
+    border-radius: 5px;
+}
+
+#delete_user_button{
+    font-size: 20px;
+    padding: 0px;
+    border: none;
+    margin-left: 10px;
+}
+
+#delete_user_button>label {
+    color: white;
+    background-color: #cb5353;
+    padding: 10px 24px;
+    border-radius: 5px;
+}
+
 #jokers_extra {
     margin-left: 330px;
-    margin-top: 390px;
+    margin-top: 335px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1708,7 +1737,7 @@ ADMIN USERS PAGE
 
 #procurar_jogador {
     margin-left: 330px;
-    margin-top: 490px;
+    margin-top: 435px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1724,7 +1753,7 @@ ADMIN USERS PAGE
 
 #see_tree_stats {
     margin-left: 330px;
-    margin-top: 590px;
+    margin-top: 535px;
     font-size: 20px;
     padding: 0px;
     border: none;

@@ -179,7 +179,7 @@ void start_user_UI()
     create_button("go_left_user", "<", go_left_user);
     create_button("go_right_user", ">", go_right_user);
 
-    create_button("leave_creation_button", "<", menu_admin_quests);
+    create_button("leave_creation_button", "Voltar", menu_admin_quests);
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");

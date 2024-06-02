@@ -410,7 +410,7 @@ void game_start()
         g_signal_connect(but3, "clicked", G_CALLBACK(check_resposta), (gpointer)3);
     }
     g_signal_connect(but0, "clicked", G_CALLBACK(check_resposta), (gpointer)0);
-    g_signal_connect(but1, "clicked", G_CALLBACK(check_resposta), (gpointer)1);
+    g_signal_connect(but1, "clicked", G_CALLBACK(check_resposta), (gpointer)1);     
 
     draw_joca_level();
 
