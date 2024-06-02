@@ -858,40 +858,39 @@ ADMIN USERS PAGE
 }
 
 #jocaResposta1Button {
-    margin-left: 150px;
+    margin-left: 50px;
     margin-top: 235px;
     font-size: 25px;
-    color: #ffffff;
+    color: #000000;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
     padding: 0px 5px;
 }
 
 #jocaResposta3Button {
-    margin-left: 150px;
+    margin-left: 50px;
     margin-top: 285px;
     font-size: 25px;
-    color: #ffffff;
+    color: #000000;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
     padding: 0px 5px;
 }
 
 #jocaResposta2Button {
-    margin-left: 425px;
+    margin-left: 350px;
     margin-top: 235px;
     font-size: 25px;
-    color: #ffffff;
+    color: #000000;
     border: 1px solid #9e9e9e;
-    background-color: rgba(39, 39, 39, 255);
     padding: 0px 5px;
 }
 
 #jocaResposta4Button {
-    margin-left: 425px;
+    margin-left: 350px;
     margin-top: 285px;
     font-size: 25px;
-    color: #ffffff;
+    color: #000000;
     border: 1px solid #9e9e9e;
     background-color: rgba(39, 39, 39, 255);
     padding: 0px 5px;
