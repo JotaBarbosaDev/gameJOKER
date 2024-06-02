@@ -331,27 +331,39 @@ void game_start()
         jogo.ff_certas = 0;
         jogo.ff = 1;
     }
-    else if (jogo.already_shown_len == 18)
+    if (jogo.already_shown_len == 18)
     {
         jogo.ff = 0;
-        jogo.current_dificuldade = 1; // passa para medio
-        jogo.multiplicador += 1;
     }
-    else if (jogo.already_shown_len == 22)
+    if (jogo.already_shown_len == 22)
     {
         jogo.ff_certas = 0;
         jogo.ff = 1;
     }
-    else if (jogo.already_shown_len == 37)
+    if (jogo.already_shown_len == 37)
     {
         jogo.ff = 0;
-        jogo.current_dificuldade = 2; // passa para dificil
-        jogo.multiplicador += 2.5;
     }
-    else if (jogo.already_shown_len == 40)
+    if (jogo.already_shown_len == 42)
     {
         printf("Parabéns, acabou o jogo no nível %d\n", jogo.joca_level);
         ending_screen();
+    }
+
+    if (jogo.joca_level >= 0 && jogo.joca_level <= 2)
+    {
+        okay("SET PERGUNTAS FACIL");
+        jogo.current_dificuldade = 0;
+    }
+    else if (jogo.joca_level >= 3 && jogo.joca_level <= 6)
+    {
+        okay("SET PERGUNTAS MEDIAS");
+        jogo.current_dificuldade = 1;
+    }
+    else if (jogo.joca_level >= 7 && jogo.joca_level <= 9)
+    {
+        okay("SET PERGUNTAS DIFICIL");
+        jogo.current_dificuldade = 2;
     }
 
     cur_pergunta = get_random_pergunta();
