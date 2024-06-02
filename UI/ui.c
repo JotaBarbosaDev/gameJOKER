@@ -64,7 +64,7 @@ void register_final_button()
     const gchar *nacionalidade = gtk_entry_get_text(GTK_ENTRY(nacionalidade_register));
     const gchar *full_name = gtk_entry_get_text(GTK_ENTRY(full_name_register));
 
-    if (strlen(username) == 0 || strlen(password) == 0 || strlen(nacionalidade) == 0 || strlen(full_name) == 0)
+    if (strlen(username) == 0 || strlen(password) == 0 || strlen(nacionalidade) == 0 || strlen(full_name) == 0 || strlen(nacionalidade) > 2)
     {
         error("Invalid input");
         return;
@@ -72,10 +72,16 @@ void register_final_button()
 
     guint year, month, day;
     gtk_calendar_get_date(GTK_CALENDAR(calendar), &year, &month, &day);
-    unsigned int born_date[3];
+    unsigned int born_date[3] = {0, 0, 0};
     born_date[0] = day;
     born_date[1] = month + 1;
     born_date[2] = year;
+
+    if (born_date[0] == 0 || born_date[1] == 0 || born_date[2] == 0)
+    {
+        error("Invalid date");
+        return;
+    }
 
     register_user((char *)username, (char *)password, (char *)full_name, (char *)nacionalidade, born_date);
     menu_principal();

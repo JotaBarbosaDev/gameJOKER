@@ -129,7 +129,7 @@ void start_user_UI()
 
     // daqui
     const gchar *last_game_date;
-    if (user->last_game_date[1] > 10)
+    if (user->last_game_date[1] > 9)
     {
         last_game_date = g_strdup_printf("%d/%d/%d %d:%d", user->last_game_date[0], user->last_game_date[1], user->last_game_date[2], user->last_game_date[3], user->last_game_date[4]);
     }
@@ -140,7 +140,7 @@ void start_user_UI()
     create_label("show_last_game_date_user_ui", last_game_date);
 
     const gchar *born_date;
-    if (user->born_date[1] > 10)
+    if (user->born_date[1] > 9)
     {
         born_date = g_strdup_printf("%d/%d/%d", user->born_date[0], user->born_date[1], user->born_date[2]);
     }
