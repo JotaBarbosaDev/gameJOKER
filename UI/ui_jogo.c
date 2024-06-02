@@ -383,6 +383,7 @@ void game_start()
 
     GtkWidget *but0 = create_button("jocaResposta1Button", cur_pergunta->respostas[0], NULL);
     GtkWidget *but1 = create_button("jocaResposta2Button", cur_pergunta->respostas[1], NULL);
+    
 
     if (strcmp(cur_pergunta->respostas[2], "NULL") != 0)
     {
