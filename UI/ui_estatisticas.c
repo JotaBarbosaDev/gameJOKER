@@ -322,6 +322,8 @@ void search_binary_tree()
     create_label("label_arvore_found", "O jogo mais proximo encontrado foi:");
     create_label("show_pontuacao", pont_show);
 
+    create_button("button", "Back", menu_admin_estatistica);
+
     pontuacao_input = create_entry("search_input_bin_tree");
 
     GtkWidget *search_button = create_button("search_button_bin_tree", "Search", search_binary_tree);
@@ -337,6 +339,8 @@ void show_tree_stats()
     pontuacao_input = create_entry("search_input_bin_tree");
 
     GtkWidget *search_button = create_button("search_button_bin_tree", "Search", search_binary_tree);
+
+    create_button("button", "Back", menu_admin_estatistica);
 
     gtk_widget_show_all(window);
     gtk_main();
