@@ -211,7 +211,7 @@ void menu_admin_estatistica()
     create_button("last_patamar", "Chegou ao ultimo patamares", got_to_last_patamar);
     create_button("jokers_extra", "Ganhou todos os Jokers", got_all_jokers);
     create_button("procurar_jogador", "Procurar Jogador", serach_user_minha_nossa);
-    create_button("see_tree_stats", "Ver jogos em tree", show_tree_stats);
+    create_button("see_tree_stats", "Procurar jogos por pontuação", show_tree_stats);
 
     gtk_widget_show_all(window);
     okay("Menu admin user loaded successfully");
