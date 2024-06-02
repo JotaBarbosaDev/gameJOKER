@@ -207,19 +207,18 @@ void draw_joca_level()
 
     strcpy(cur_joca_level, niveis[jogo.joca_level]);
 
-    create_label("jocaLevel", "Prêmio:");
-    create_label("current_joca_level", cur_joca_level);
-
-    GtkWidget *label1 = create_label("jocaLevelNumber0", "0");
-    GtkWidget *label2 = create_label("jocaLevelNumber1", "100");
-    GtkWidget *label3 = create_label("jocaLevelNumber2", "200");
-    GtkWidget *label4 = create_label("jocaLevelNumber3", "500");
-    GtkWidget *label5 = create_label("jocaLevelNumber4", "1000");
-    GtkWidget *label6 = create_label("jocaLevelNumber5", "5000");
-    GtkWidget *label7 = create_label("jocaLevelNumber6", "10 000");
-    GtkWidget *label8 = create_label("jocaLevelNumber7", "20 000");
-    GtkWidget *label9 = create_label("jocaLevelNumber8", "50 000");
-    GtkWidget *label10 = create_label("jocaLevelNumber9", "100 000");
+    // create_label("jocaLevel", "Prêmio:");
+    // create_label("current_joca_level", cur_joca_level);
+    GtkWidget *label1 = create_label("jocaLevelNumber0", "0€");
+    GtkWidget *label2 = create_label("jocaLevelNumber1", "100€");
+    GtkWidget *label3 = create_label("jocaLevelNumber2", "200€");
+    GtkWidget *label4 = create_label("jocaLevelNumber3", "500€");
+    GtkWidget *label5 = create_label("jocaLevelNumber4", "1000€");
+    GtkWidget *label6 = create_label("jocaLevelNumber5", "5000€");
+    GtkWidget *label7 = create_label("jocaLevelNumber6", "10 000€");
+    GtkWidget *label8 = create_label("jocaLevelNumber7", "20 000€");
+    GtkWidget *label9 = create_label("jocaLevelNumber8", "50 000€");
+    GtkWidget *label10 = create_label("jocaLevelNumber9", "100 000€");
 
     GtkWidget *arr[] = {label1, label2, label3, label4, label5, label6, label7, label8, label9, label10};
 
@@ -227,17 +226,17 @@ void draw_joca_level()
     gdk_rgba_parse(&color, "#00FF00");
     gtk_widget_override_color(arr[jogo.joca_level], GTK_STATE_FLAG_NORMAL, &color);
 
-    create_label("NumeroJocas", "Jocas:");
+    create_label("NumeroJocas", "JOCAS");
     char jocas[10];
     sprintf(jocas, "%d", jogo.jocas_number);
     create_label("current_jocas", jocas);
 
-    create_label("Multiplicador", "Multiplicador:");
+    create_label("Multiplicador", "x");
     char multiplicador[10];
     sprintf(multiplicador, "%.1f", jogo.multiplicador);
     create_label("current_multiplicador", multiplicador);
 
-    create_label("Pontuacao", "Pontuação:");
+    create_label("pontuacao", "PONTOS");
     char pontuacao[10];
     sprintf(pontuacao, "%d", jogo.pontuacao);
     create_label("current_pontuacao", pontuacao);
@@ -529,7 +528,7 @@ void jogo_UI()
     jogo.ff = 0;
     jogo.jocas_ganhos = 0;
 
-    create_button("start_game", "Iniciar Jogo", game_start);
+    create_button("start_game", "Começar", game_start);
     create_button("estatisticas_game", "Estatisticas", estatisticas_game);
     create_button("logout_game", "Terminar Sessão", menu_principal);
 

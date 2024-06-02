@@ -785,7 +785,7 @@ ADMIN USERS PAGE
 
 #start_game {
     margin-left: 335px;
-    margin-top: 400px;
+    margin-top: 310px;
     border: none;
     padding: 0px;
     text-decoration: none;
@@ -794,15 +794,14 @@ ADMIN USERS PAGE
 
 #start_game>label {
     color: white;
-    background-color: rgba(39, 39, 39, 255);
-    padding: 15px 30px;
+    background-color: #90ABE4;
+    padding: 15px 38px;
     border-radius: 5px;
-    border: 1px solid #9e9e9e;
 }
 
 #estatisticas_game {
     margin-left: 336px;
-    margin-top: 470px;
+    margin-top: 380px;
     border: none;
     padding: 0px;
     text-decoration: none;
@@ -811,10 +810,9 @@ ADMIN USERS PAGE
 
 #estatisticas_game>label {
     color: white;
-    background-color: rgba(39, 39, 39, 255);
+    background-color: #90ABE4;
     padding: 15px 30px;
     border-radius: 5px;
-    border: 1px solid #9e9e9e;
 }
 
 #logout_game {
@@ -919,7 +917,7 @@ ADMIN USERS PAGE
     letter-spacing: 5px;
     font-size: 40px;
     font-weight: 900;
-    margin-left: 680px;
+    margin-left: 660px;
     margin-top: 30px;
     color: #22b444;
     text-shadow: 2px 0 #0b3f17, -2px 0 #0b3f17, 0 2px #0b3f17, 0 -2px #0b3f17,
@@ -931,7 +929,7 @@ ADMIN USERS PAGE
     letter-spacing: 5px;
     font-size: 40px;
     font-weight: 900;
-    margin-left: 680px;
+    margin-left: 660px;
     margin-top: 30px;
     color: #fddb52;
     text-shadow: 2px 0 #6c5700, -2px 0 #6c5700, 0 2px #6c5700, 0 -2px #6c5700,
@@ -943,7 +941,7 @@ ADMIN USERS PAGE
     letter-spacing: 5px;
     font-size: 40px;
     font-weight: 900;
-    margin-left: 680px;
+    margin-left: 660px;
     margin-top: 30px;
     color: #e74c3c;
     text-shadow: 2px 0 #6c5700, -2px 0 #6c5700, 0 2px #6c5700, 0 -2px #6c5700,
@@ -1049,16 +1047,16 @@ ADMIN USERS PAGE
 
 #NumeroJocas {
     font-size: 15px;
-    margin-left: 700px;
-    margin-top: 520px;
+    margin-left: 392px;
+    margin-top: 530px;
     font-weight: bold;
     color: #ffffff;
 }
 
 #current_jocas {
-    font-size: 15px;
-    margin-left: 750px;
-    margin-top: 520px;
+    font-size: 25px;
+    margin-left: 400px;
+    margin-top: 560px;
     font-weight: bold;
     color: #ffffff;
 }
@@ -1131,33 +1129,36 @@ ADMIN USERS PAGE
 
 #Multiplicador {
     font-size: 15px;
-    margin-left: 700px;
-    margin-top: 540px;
+    margin-left: 130px;
+    margin-top: 565px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fddb52;
+    text-shadow: 2px 0 #6c5700, -2px 0 #6c5700, 0 2px #6c5700, 0 -2px #6c5700,
+        1px 1px #6c5700, -1px -1px #6c5700, 1px -1px #6c5700, -1px 1px #6c5700;
 }
 
 #current_multiplicador {
     font-size: 15px;
-    margin-left: 800px;
-    margin-top: 540px;
+    margin-left: 140px;
+    margin-top: 565px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fddb52;
+    text-shadow: 2px 0 #6c5700, -2px 0 #6c5700, 0 2px #6c5700, 0 -2px #6c5700,
+        1px 1px #6c5700, -1px -1px #6c5700, 1px -1px #6c5700, -1px 1px #6c5700;
 }
 
-
-#Pontuacao {
+#pontuacao {
     font-size: 15px;
-    margin-left: 700px;
-    margin-top: 560px;
+    margin-left: 50px;
+    margin-top: 530px;
     font-weight: bold;
     color: #ffffff;
 }
 
 
 #current_pontuacao {
-    font-size: 15px;
-    margin-left: 780px;
+    font-size: 25px;
+    margin-left: 55px;
     margin-top: 560px;
     font-weight: bold;
     color: #ffffff;
@@ -1222,7 +1223,7 @@ ADMIN USERS PAGE
 
 #current_tempo {
     font-size: 15px;
-    margin-left: 705px;
+    margin-left: 690px;
     margin-top: 80px;
     font-size: 30px;
     font-weight: bold;
@@ -1564,11 +1565,6 @@ ADMIN USERS PAGE
     border-radius: 5px;
 }
 
-
-
-
-
-
 #list_header {
     font-weight: 900;
     font-size: 20px;
@@ -1578,28 +1574,28 @@ ADMIN USERS PAGE
     margin-left: 300px;
     margin-top: 50px;
     padding: 5px 20px;
-    color: #fff;
+    color: #000;
 }
 
 #register_nacionalidade {
     margin-left: 300px;
     margin-top: 100px;
     padding: 5px 20px;
-    color: #fff;
+    color: #000;
 }
 
 #register_username {
     margin-left: 300px;
     margin-top: 150px;
     padding: 5px 20px;
-    color: #fff;
+    color: #000;
 }
 
 #register_password {
     margin-left: 300px;
     margin-top: 200px;
     padding: 5px 20px;
-    color: #fff;
+    color: #000;
 }
 
 #open_calendar {
@@ -1635,7 +1631,7 @@ ADMIN USERS PAGE
 
 #last_10_games {
     margin-left: 330px;
-    margin-top: 100px;
+    margin-top: 90px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1650,7 +1646,7 @@ ADMIN USERS PAGE
 
 #last_players_played {
     margin-left: 330px;
-    margin-top: 200px;
+    margin-top: 190px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1666,7 +1662,7 @@ ADMIN USERS PAGE
 }
 #last_patamar {
     margin-left: 330px;
-    margin-top: 300px;
+    margin-top: 290px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1682,7 +1678,7 @@ ADMIN USERS PAGE
 
 #jokers_extra {
     margin-left: 330px;
-    margin-top: 400px;
+    margin-top: 390px;
     font-size: 20px;
     padding: 0px;
     border: none;
@@ -1698,7 +1694,7 @@ ADMIN USERS PAGE
 
 #procurar_jogador {
     margin-left: 330px;
-    margin-top: 500px;
+    margin-top: 490px;
     font-size: 20px;
     padding: 0px;
     border: none;
