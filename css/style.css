@@ -1075,14 +1075,18 @@ ADMIN USERS PAGE
     font-size: 40px;
     margin-left: 160px;
     margin-top: 240px;
-    color: #ffffff;
+    color: #fddb52;
+    text-shadow: 2px 0 #6c5700, -2px 0 #6c5700, 0 2px #6c5700, 0 -2px #6c5700,
+        1px 1px #6c5700, -1px -1px #6c5700, 1px -1px #6c5700, -1px 1px #6c5700;
 }
 
 #jocaEND3 {
     font-size: 40px;
     margin-left: 180px;
     margin-top: 290px;
-    color: #ffffff;
+    color: #22b444;
+    text-shadow: 2px 0 #0b3f17, -2px 0 #0b3f17, 0 2px #0b3f17, 0 -2px #0b3f17,
+        1px 1px #0b3f17, -1px -1px #0b3f17, 1px -1px #0b3f17, -1px 1px #0b3f17;
 }
 
 #jocaEND4 {
@@ -1116,23 +1120,48 @@ ADMIN USERS PAGE
 
 #jocaEND6 {
     font-size: 20px;
-    margin-left: 0px;
-    margin-top: 0px;
+    margin-left: 10px;
+    margin-top: 10px;
     color: #ffffff;
+    font-size: 20px;
+    padding: 0px;
+}
+
+#jocaEND6>label {
+    color: white;
+    background-color: #90ABE4;
+    padding: 5px 18px;
+    border-radius: 5px;
 }
 
 #jocaEND7 {
     font-size: 20px;
-    margin-left: 300px;
-    margin-top: 0px;
+    margin-left: 350px;
+    margin-top: 10px;
     color: #ffffff;
+    padding: 0px;
+}
+
+#jocaEND7>label {
+    color: white;
+    background-color: #90ABE4;
+    padding: 5px 18px;
+    border-radius: 5px;
 }
 
 #jocaEND8 {
     font-size: 20px;
-    margin-left: 600px;
-    margin-top: 0px;
+    margin-left: 650px;
+    margin-top: 10px;
     color: #ffffff;
+    padding: 0px;
+}
+
+#jocaEND8>label {
+    color: white;
+    background-color: #90ABE4;
+    padding: 5px 18px;
+    border-radius: 5px;
 }
 
 
@@ -1768,34 +1797,56 @@ ADMIN USERS PAGE
 }
 
 #search_input {
+    margin-left: 320px;
+    margin-top: 300px;
     color: white;
-    background-color: #90ABE4;
     padding: 5px 20px;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 #search_button {
-    margin-left: 350px;
-    margin-top: 120px;
-    padding: 5px 20px;
+    margin-left: 360px;
+    margin-top: 350px;
+    padding: 0px;
     color: #fff;
 }
 
-
-#search_input_bin_tree {
-    margin-left: 320px;
-    margin-top: 70px;
+#search_button > label {
     color: white;
     background-color: #90ABE4;
-    padding: 5px 20px;
+    padding: 10px 24px;
     border-radius: 5px;
+    
+}
+
+#search_input_bin_tree {
+    margin-left: 330px;
+    margin-top: 310px;
+    padding: 0px;
+    color: #fff;
 }
 
 #search_button_bin_tree {
     margin-left: 370px;
-    margin-top: 120px;
+    margin-top: 130px;
     padding: 5px 20px;
     color: #fff;
+}
+
+#button123{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 0px;
+    border: none;
+    font-size: 20px;
+}
+
+#button123>label {
+    color: white;
+    background-color: #90ABE4;
+    padding: 5px 5px;
+    border-radius: 5px;
 }
 
 #label_arvore_found {
